@@ -1,0 +1,3 @@
+odiseo_pick_my_stuff_frontend_home:
+    path:     /
+    defaults: { _controller: "OdiseoPickMyStuffBundle:Frontend/Home:index" }
