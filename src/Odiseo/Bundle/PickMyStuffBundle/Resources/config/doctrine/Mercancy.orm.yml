@@ -1,0 +1,51 @@
+Odiseo\Bundle\PickMyStuffBundle\Entity\Mercancy:
+    type: entity
+    table: mercancy
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        type:
+            type: string
+            length: 255
+        length:
+            type: string
+            length: 255
+            nullable: true
+        width:
+            type: string
+            length: 255
+            nullable: true
+        height:
+            type: string
+            length: 255
+            nullable: true
+        weight:
+            type: string
+            length: 255
+            nullable: true
+        createdAt:
+            column: created_at
+            type: datetime
+            gedmo:
+              timestampable:
+                on: create
+        updatedAt:
+            column: updated_at
+            type: datetime
+            nullable: true
+            gedmo:
+              timestampable:
+                on: update
+    oneToOne:
+        order:
+            targetEntity: Order
+            inversedBy: mercancy
+            joinColumn:
+                name: order_id
+                referencedColumnName: id
+                onDelete: SET NULL
+    lifecycleCallbacks: {  }

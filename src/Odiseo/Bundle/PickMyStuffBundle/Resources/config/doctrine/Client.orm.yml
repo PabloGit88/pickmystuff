@@ -1,0 +1,57 @@
+Odiseo\Bundle\PickMyStuffBundle\Entity\Client:
+    type: entity
+    table: client
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        fullname:
+            type: string
+            length: 255
+            nullable: true
+        company:
+            type: string
+            length: 255
+            nullable: true
+        email:
+            type: string
+            length: 255
+            nullable: true
+        phone:
+            type: string
+            length: 255
+            nullable: true
+        cellphone:
+            type: string
+            length: 255
+            nullable: true
+        sendText:
+            type: boolean
+            nullable: true
+        createdAt:
+            column: created_at
+            type: datetime
+            gedmo:
+              timestampable:
+                on: create
+        updatedAt:
+            column: updated_at
+            type: datetime
+            nullable: true
+            gedmo:
+              timestampable:
+                on: update
+    oneToMany:
+        orders:
+            targetEntity: Order
+            mappedBy: client
+    oneToOne:
+        address:
+            targetEntity: Address
+            joinColumn:
+              name: address_id
+              referencedColumnName: id           
+    lifecycleCallbacks: {  }

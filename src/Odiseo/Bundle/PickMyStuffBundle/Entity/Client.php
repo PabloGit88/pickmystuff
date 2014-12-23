@@ -3,27 +3,33 @@
 namespace Odiseo\Bundle\PickMyStuffBundle\Entity;
 
 use DateTime;
-use Doctrine\ORM\Mapping as ORM;
 
-class Cliente
+class Client
 {
+	private $id;
     private $createdAt;
     private $updatedAt;
     private $company;
-    private $contact;
+    private $fullname;
     private $email;
     private $phone;
     private $cellphone;
     private $sendText;
     private $address;
-    private $mercancy;
+    private $orders;
+
+    public function getId()
+    {
+        return $this->id;
+    }
     
     public function __construct()
     {
     	parent::__construct();
     	$this->createdAt = new DateTime('now');
+    	$this->orders = new \Doctrine\Common\Collections\ArrayCollection();
     }
-  
+    
     public function getCreatedAt()
     {
         return $this->createdAt;
@@ -48,11 +54,12 @@ class Cliente
     	return $this;
     }
 	
-    public function getContacty() {
-    	return $this->contact;
+    public function getFullname() {
+    	return $this->fullname;
     }
-    public function setContact($contact) {
-    	$this->contact = $contact;
+    
+    public function setFullname($fullname) {
+    	$this->fullname = $fullname;
     	return $this;
     }
     
@@ -102,50 +109,45 @@ class Cliente
     	$this->address = $address;
     	return $this;
     }
-	
- 	public function getMercancy()
+
+ 	/*order*/
+    public function getOrder()
     {
-        return $this->mercancy;
+    	return $this->order;
     }
     
-    public function addtMercancy(Mercancy $mercancy) {
-    	
-    	if (!$this->hasMercancy($mercancy)) {
-    		$mercancy->setMercancy($this);
-    		$this->mercancy->add($mercancy);
-    	}
-    	    	
-    	$this->mercancy = $mercancy;
-    	return $this;
-    } 
-    public function setMercancy(Collection $mercancies)
+    public function addOrder(Order $order) 
     {
-    	foreach ($mercancies as $mercancy) {
-    		$this->addProperty($mercancy);
-    	}
-    
-    	return $this;
-    }
-    /**
-     * {@inheritdoc}
-     */
-    public function removeMercancy(Mercancy $mercancy)
-    {
-    	if ($this->hasProperty($mercancy)) {
-    		$mercancy->setMercancy(null);
-    		$this->mercancy->removeElement($mercancy);
+    	if (!$this->hasOrder($order)) {
+    		$order->setClient($this);
+    		$this->orders->add($order);
     	}
     
     	return $this;
     }
     
-    /**
-     * {@inheritdoc}
-     */
-    public function hasMercancy(Mercancy $mercancy)
+    public function setOrders(Collection $orders)
     {
-    	return $this->mercancy->contains($mercancy);
+    	foreach ($orders as $order) {
+    		$this->addOrder($order);
+    	}
+    
+    	return $this;
     }
     
+    public function removeOrder(Order $order)
+    {
+    	if ($this->hasOrder($order)) {
+    		$order->setClient(null);
+    		$this->orders->removeElement($order);
+    	}
+    
+    	return $this;
+    }
+    
+    public function hasOrder(Order $order)
+    {
+    	return $this->orders->contains($order);
+    }
 
 }

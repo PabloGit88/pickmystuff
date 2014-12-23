@@ -1,0 +1,52 @@
+Odiseo\Bundle\PickMyStuffBundle\Entity\Address:
+    type: entity
+    table: address
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        contactName:
+            type: string
+            length: 255
+        email:
+            type: string
+            length: 255
+            nullable: true
+        phone:
+            type: string
+            length: 255
+            nullable: true
+        cellphone:
+            type: string
+            length: 255
+            nullable: true
+        locality:
+            type: string
+            length: 255
+        province:
+            type: string
+            length: 255
+        zipcode:
+            type: string
+            length: 255
+        deliveryTime:
+            type: string
+            length: 255
+            nullable: true
+        createdAt:
+            column: created_at
+            type: datetime
+            gedmo:
+              timestampable:
+                on: create
+        updatedAt:
+            column: updated_at
+            type: datetime
+            nullable: true
+            gedmo:
+              timestampable:
+                on: update
+    lifecycleCallbacks: {  }

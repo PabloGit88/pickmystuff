@@ -1,0 +1,59 @@
+Odiseo\Bundle\PickMyStuffBundle\Entity\Order:
+    type: entity
+    table: order
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        status:
+            type: string
+            length: 255
+        createdAt:
+            column: created_at
+            type: datetime
+            gedmo:
+              timestampable:
+                on: create
+        updatedAt:
+            column: updated_at
+            type: datetime
+            nullable: true
+            gedmo:
+              timestampable:
+                on: update
+    oneToOne:
+        mercancy:
+            targetEntity: Mercancy
+            mappedBy: order
+        sourceAddress:
+            targetEntity: Address
+            joinColumn:
+              name: sourceAddress_id
+              referencedColumnName: id
+        destinationAddress:
+            targetEntity: Address
+            joinColumn:
+              name: destinationAddress_id
+              referencedColumnName: id
+        mercancy:
+            targetEntity: Mercancy
+            mappedBy: order
+    manyToOne:
+        client:
+            targetEntity: Client
+            inversedBy: orders
+            joinColumn:
+                name: client_id
+                referencedColumnName: id
+                onDelete: SET NULL
+        carrier:
+            targetEntity: Carrier
+            inversedBy: orders
+            joinColumn:
+                name: carrier_id
+                referencedColumnName: id
+                onDelete: SET NULL
+    lifecycleCallbacks: {  }
