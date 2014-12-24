@@ -19,7 +19,7 @@ use Odiseo\Bundle\PickMyStuffBundle\Entity\Address;
  *
  * @author Paweł Jędrzejewski <pjedrzejewski@diweb.pl>
  */
-class LoadClientData extends DataFixture
+class LoadAddressData extends DataFixture
 {
     /**
      * {@inheritdoc}
@@ -40,7 +40,7 @@ class LoadClientData extends DataFixture
 	        $address->setZipcode('131'.$i);
 	        $address->setDeliveryTime('12-12-12');
 
-            $manager->persist($client);
+            $manager->persist($address);
 
             $this->setReference('pickmystuff.address-'.$i, $address);
         }
@@ -58,6 +58,6 @@ class LoadClientData extends DataFixture
      */
     public function getOrder()
     {
-        return 5;
+        return 1;
     }
 }

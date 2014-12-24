@@ -20,7 +20,6 @@ class Address
     
     public function __construct()
     {
-    	parent::__construct();
     	$this->createdAt = new DateTime('now');
     }
 

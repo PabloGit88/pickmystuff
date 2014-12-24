@@ -23,7 +23,6 @@ class Order
     
     public function __construct()
     {
-    	parent::__construct();
     	$this->createdAt = new DateTime('now');
     }
   
@@ -94,8 +93,13 @@ class Order
     {
         return $this->mercancy;
     }
+    public function setMercancy(Mercancy $mercancy)
+    {
+    	$this->mercancy = $mercancy;
+    	return $this;
+    }
     
-    public function addtMercancy(Mercancy $mercancy) {
+ /*   public function addtMercancy(Mercancy $mercancy) {
     	
     	if (!$this->hasMercancy($mercancy)) {
     		$mercancy->setMercancy($this);
@@ -104,16 +108,8 @@ class Order
     	    	
     	$this->mercancy = $mercancy;
     	return $this;
-    } 
-    public function setMercancy(Collection $mercancies)
-    {
-    	foreach ($mercancies as $mercancy) {
-    		$this->addMercancy($mercancy);
-    	}
-    
-    	return $this;
-    }
-    
+    } */
+ /*   
     public function removeMercancy(Mercancy $mercancy)
     {
     	if ($this->hasMercancy($mercancy)) {
@@ -127,6 +123,6 @@ class Order
     public function hasMercancy(Mercancy $mercancy)
     {
     	return $this->mercancy->contains($mercancy);
-    }
+    }*/
 
 }

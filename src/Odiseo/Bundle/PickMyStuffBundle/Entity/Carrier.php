@@ -20,7 +20,6 @@ class Carrier
     }
     public function __construct()
     {
-    	parent::__construct();
     	$this->createdAt = new DateTime('now');
     	$this->orders = new \Doctrine\Common\Collections\ArrayCollection();
     }
@@ -83,7 +82,7 @@ class Carrier
 		return $this;
 	}
 	
-	public function setOrders(Collection $orders)
+	public function setOrders(Order $orders)
 	{
 		foreach ($orders as $order) {
 			$this->addOrder($order);

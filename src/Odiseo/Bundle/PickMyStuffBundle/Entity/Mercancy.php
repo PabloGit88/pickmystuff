@@ -24,7 +24,6 @@ class Mercancy
     
     public function __construct()
     {
-    	parent::__construct();
     	$this->createdAt = new DateTime('now');
     }
   
@@ -52,10 +51,10 @@ class Mercancy
     	return $this;
     }
 	
-    public function getLenght() {
+    public function getLength() {
     	return $this->length;
     }
-    public function setLenght($length) {
+    public function setLength($length) {
     	$this->length = $length;
     	return $this;
     }
@@ -102,7 +101,7 @@ class Mercancy
         return $this->order;
     }
     
-    public function setOrder($order) {
+    public function setOrder(Order $order) {
     	$this->order = $order;
     	return $this;
     }

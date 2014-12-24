@@ -1,6 +1,6 @@
 Odiseo\Bundle\PickMyStuffBundle\Entity\Order:
     type: entity
-    table: order
+    table: order_client
     id:
         id:
             type: integer
@@ -38,9 +38,6 @@ Odiseo\Bundle\PickMyStuffBundle\Entity\Order:
             joinColumn:
               name: destinationAddress_id
               referencedColumnName: id
-        mercancy:
-            targetEntity: Mercancy
-            mappedBy: order
     manyToOne:
         client:
             targetEntity: Client
