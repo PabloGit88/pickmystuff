@@ -1,3 +1,31 @@
-odiseo_conagra_backend_dashboard:
+odiseo_pickmystuff_backend_dashboard:
     pattern: /
-    defaults: { _controller: "OdiseoConAgraBundle:Backend/Main:dashboard" }
+    defaults: { _controller: "OdiseoPickMyStuffBundle:Backend/Main:dashboard" }
+
+odiseo_pickmystuff_backend_user:
+    resource: @OdiseoPickMyStuffBundle/Resources/config/routing/backend/user.yml
+    prefix: /users
+
+odiseo_pickmystuff_backend_client:
+    resource: @OdiseoPickMyStuffBundle/Resources/config/routing/backend/client.yml
+    prefix: /clients
+
+odiseo_pickmystuff_backend_order:
+    resource: @OdiseoPickMyStuffBundle/Resources/config/routing/backend/order.yml
+    prefix: /orders
+
+odiseo_pickmystuff_backend_carrer:
+    resource: @OdiseoPickMyStuffBundle/Resources/config/routing/backend/carrier.yml
+    prefix: /carriers
+
+odiseo_pickmystuff_backend_mercancy:
+    resource: @OdiseoPickMyStuffBundle/Resources/config/routing/backend/mercancy.yml
+    prefix: /mercancies
+
+odiseo_pickmystuff_backend_address:
+    resource: @OdiseoPickMyStuffBundle/Resources/config/routing/backend/address.yml
+    prefix: /address
+
+#FosUserBundle Routes
+odiseo_pickmystuff_backend_security:
+    resource: @OdiseoPickMyStuffBundle/Resources/config/routing/backend/security.yml

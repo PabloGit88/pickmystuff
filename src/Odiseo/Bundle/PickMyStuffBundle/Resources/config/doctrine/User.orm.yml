@@ -1,0 +1,48 @@
+Odiseo\Bundle\PickMyStuffBundle\Entity\User:
+    type: entity
+    table: fos_user
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        createdAt:
+            column: created_at
+            type: datetime
+            gedmo:
+              timestampable:
+                on: create
+        updatedAt:
+            column: updated_at
+            type: datetime
+            nullable: true
+            gedmo:
+              timestampable:
+                on: update  
+        country:
+            column: country
+            type: string
+            length: 255
+            nullable: true
+        province:
+            column: province
+            type: string
+            length: 255
+            nullable: true
+        fullName:
+            column: full_name
+            type: string
+            length: 255
+            nullable: true  
+        position:
+            column: position
+            type: string
+            length: 255
+            nullable: true
+        distributor:
+            column: distributor
+            type: string
+            length: 255
+            nullable: true

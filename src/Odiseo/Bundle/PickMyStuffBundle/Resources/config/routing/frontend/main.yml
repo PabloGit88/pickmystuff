@@ -1,3 +1,12 @@
 odiseo_pick_my_stuff_frontend_home:
-    path:     /
+    path:     /secure/home
     defaults: { _controller: "OdiseoPickMyStuffBundle:Frontend/Home:index" }
+
+#FosUserBundle Routes
+fos_user_security_frontend:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+    prefix: /
+
+fos_user_register_frontend:
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+    prefix: /register

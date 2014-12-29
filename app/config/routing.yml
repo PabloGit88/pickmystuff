@@ -2,3 +2,6 @@ odiseo_pick_my_stuff:
     resource: "@OdiseoPickMyStuffBundle/Resources/config/main.yml"
     prefix:   /
 
+fos_user_registration_confirmed:
+    path:    /register/confirmed
+    defaults: { _controller: OdiseoConAgraBundle:Frontend/Home:index }

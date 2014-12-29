@@ -1,0 +1,34 @@
+odiseo_pickmystuff_backend_client_index:
+    pattern: /
+    methods: [GET]
+    defaults:
+        _controller: odiseo_pickmystuff.controller.client:indexAction
+        _sylius:
+            template: OdiseoPickMyStuffBundle:Backend/client:index.html.twig
+            paginate: 100
+
+odiseo_pickmystuff_backend_client_create:
+    pattern: /new
+    methods: [GET, POST]
+    defaults:
+        _controller: odiseo_pickmystuff.controller.client:createAction
+        _sylius:
+            template: OdiseoPickMyStuffBundle:Backend/client:create.html.twig
+            redirect: odiseo_pickmystuff_backend_client_update
+
+odiseo_pickmystuff_backend_client_update:
+    pattern: /{id}/edit
+    methods: [GET, PUT, POST]
+    defaults:
+        _controller: odiseo_pickmystuff.controller.client:updateAction
+        _sylius:
+            template: OdiseoPickMyStuffBundle:Backend/client:update.html.twig
+            redirect: odiseo_pickmystuff_backend_client_update
+
+odiseo_pickmystuff_backend_client_delete:
+    pattern: /{id}
+    methods: [DELETE]
+    defaults:
+        _controller: odiseo_pickmystuff.controller.client:deleteAction
+        _sylius:
+            redirect: odiseo_pickmystuff_backend_client_index

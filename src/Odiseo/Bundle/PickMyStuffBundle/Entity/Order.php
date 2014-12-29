@@ -99,6 +99,10 @@ class Order
     	return $this;
     }
     
+    public function __toString()
+    {
+    	return $this->getStatus();
+    }    
  /*   public function addtMercancy(Mercancy $mercancy) {
     	
     	if (!$this->hasMercancy($mercancy)) {

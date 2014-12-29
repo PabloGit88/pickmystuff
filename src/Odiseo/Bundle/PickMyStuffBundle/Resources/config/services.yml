@@ -2,3 +2,64 @@ services:
 #    odiseo_pick_my_stuff.example:
 #        class: Odiseo\Bundle\PickMyStuffBundle\Example
 #        arguments: [@service_id, "plain_value", %parameter%]
+
+    pickmystuff_user.registration.form.type:
+        class: Odiseo\Bundle\PickMyStuffBundle\Form\Type\RegistrationFormType
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: pickmystuff_user_registration }
+
+    pickmystuff_user.form.handler.registration:
+        class: Odiseo\Bundle\PickMyStuffBundle\Form\Handler\RegistrationFormHandler
+        arguments: ["@fos_user.registration.form", "@request", "@fos_user.user_manager", "@fos_user.mailer", "@fos_user.util.token_generator"]
+        scope: request
+        public: false
+
+    pickmystuff.twig.extension.route_utils:
+        class: Odiseo\Bundle\PickMyStuffBundle\Twig\RouteUtilsExtension
+        arguments: ["@request_stack"]
+        tags:
+            - { name: twig.extension }
+
+    pickmystuff.backend.menu_builder:
+        class: Odiseo\Bundle\PickMyStuffBundle\Menu\BackendMenuBuilder
+        arguments: ["@knp_menu.factory", "@security.context"]
+
+    pickmystuff.backend.menu.main:
+        class: Knp\Menu\MenuItem # the service definition requires setting the class
+        factory_service: pickmystuff.backend.menu_builder
+        factory_method: createMainMenu
+        arguments: ["@request"]
+        scope: request # needed as we have the request as a dependency here
+        tags:
+            - { name: knp_menu.menu, alias: backend_main_menu } # The alias is what is used to retrieve the menu
+
+    pickmystuff.form.type.user:
+        class: Odiseo\Bundle\PickMyStuffBundle\Form\Type\UserType
+        tags:
+            - { name: form.type, alias: odiseo_pickmystuff_user }
+
+    pickmystuff.form.type.client:
+        class: Odiseo\Bundle\PickMyStuffBundle\Form\Type\ClientType
+        tags:
+            - { name: form.type, alias: odiseo_pickmystuff_client }
+
+    pickmystuff.form.type.order:
+        class: Odiseo\Bundle\PickMyStuffBundle\Form\Type\OrderType
+        tags:
+            - { name: form.type, alias: odiseo_pickmystuff_order }
+
+    pickmystuff.form.type.carrier:
+        class: Odiseo\Bundle\PickMyStuffBundle\Form\Type\CarrierType
+        tags:
+            - { name: form.type, alias: odiseo_pickmystuff_carrier }
+
+    pickmystuff.form.type.mercancy:
+        class: Odiseo\Bundle\PickMyStuffBundle\Form\Type\MercancyType
+        tags:
+            - { name: form.type, alias: odiseo_pickmystuff_mercancy }
+
+    pickmystuff.form.type.address:
+        class: Odiseo\Bundle\PickMyStuffBundle\Form\Type\AddressType
+        tags:
+            - { name: form.type, alias: odiseo_pickmystuff_address }

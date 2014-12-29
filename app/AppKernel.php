@@ -17,6 +17,12 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
         	new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
+        	new Gecko\BackendBundle\GeckoBackendBundle(),
+        	new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+        	new JMS\SerializerBundle\JMSSerializerBundle($this),
+        	new FOS\RestBundle\FOSRestBundle(),
+			new FOS\UserBundle\FOSUserBundle(),
+			new Sylius\Bundle\ResourceBundle\SyliusResourceBundle(),
             new Odiseo\Bundle\PickMyStuffBundle\OdiseoPickMyStuffBundle(),
         );
 

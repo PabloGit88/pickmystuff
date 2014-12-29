@@ -1,6 +1,6 @@
 <?php
 
-namespace Odiseo\Bundle\ConAgraBundle\Controller\Backend;
+namespace Odiseo\Bundle\PickMyStuffBundle\Controller\Backend;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -8,6 +8,6 @@ class MainController extends Controller
 {
     public function dashboardAction()
     {
-        return $this->render('OdiseoConAgraBundle:Backend/Main:dashboard.html.twig');
+        return $this->render('OdiseoPickMyStuffBundle:Backend/Main:dashboard.html.twig');
     }
 }

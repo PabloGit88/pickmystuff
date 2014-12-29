@@ -1,19 +1,19 @@
 <?php
-/*
-namespace Odiseo\Bundle\ChallengeBundle\DataFixtures\ORM;
+
+namespace Odiseo\Bundle\PickMyStuffBundle\DataFixtures\ORM;
 
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Finder\Finder;
-use Odiseo\Bundle\ConAgraBundle\Entity\User;
+use Odiseo\Bundle\PickMyStuffBundle\Entity\User;
 
 class LoadUserData extends DataFixture
 {
     public function load(ObjectManager $manager)
     {
     	$userAdmin = new User();
-    	$userAdmin->setFullName('Admin ConAgra Foods');
+    	$userAdmin->setFullName('Admin PickMyStuff');
     	$userAdmin->setUsername('admin');
-    	$userAdmin->setEmail('admin@conagra.com');
+    	$userAdmin->setEmail('admin@pickmystuff.com');
     	$userAdmin->setPlainPassword('123456');
     	$userAdmin->setEnabled(true);
     	$userAdmin->setRoles(array('ROLE_ADMIN'));
@@ -28,4 +28,3 @@ class LoadUserData extends DataFixture
     	return 1;
     }
 }
-*/
