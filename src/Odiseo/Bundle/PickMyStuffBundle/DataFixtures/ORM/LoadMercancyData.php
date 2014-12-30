@@ -38,6 +38,7 @@ class LoadMercancyData extends DataFixture
 	        $mercancy->setHeight('40cm');
 	        $mercancy->setWidth('15cm');
 	        $mercancy->setWeight('12cm');
+	        $mercancy->setQuantity('1');
 
             $manager->persist($mercancy);
 

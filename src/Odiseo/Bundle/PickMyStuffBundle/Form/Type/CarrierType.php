@@ -11,7 +11,17 @@ class CarrierType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-        ->add('vehicleType', 'text', array(
+        ->add('vehicleType', 'choice', array('choices' => array(
+				'Pickup' => 'Pickup',
+				'Minivan' => 'Minivan', 
+				'Van' => 'Van', 
+				'Canib 15' => 'Canib 15',
+				'Canib 20' => 'Canib 20',
+				'Canib 24' => 'Canib 24',
+				'Refrigerado' => 'Refrigerado',
+				'Plataforma' => 'Plataforma',
+				'Grua' => 'Grua',
+				),
         		'required' => true,
         		'label'    => 'Tipo de Vehiculo'
         ))

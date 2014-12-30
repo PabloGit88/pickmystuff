@@ -11,34 +11,35 @@ class MercancyType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-        ->add('type', 'text', array(
+        ->add('type', 'choice', array('choices' => array(
+				'Sobre' => 'Sobre',
+				'Caja pequeña' => 'Caja pequeña', 
+				'Paleta' => 'Paleta',
+				'Pieza suelta' => 'Pieza suelta',
+				'Vagon' => 'Vagon',
+				),
         		'required' => true,
         		'label'    => 'Tipo'
         ))
         ->add('length', 'text', array(
-        		'required' => true,
+        		'required' => false,
         		'label'    => 'Largo'
         ))
         ->add('width', 'text', array(
-        		'required' => true,
+        		'required' => false,
         		'label'    => 'Ancho'
         ))
         ->add('height', 'text', array(
-        		'required' => true,
+        		'required' => false,
         		'label'    => 'Alto'
         ))
         ->add('weight', 'text', array(
-        		'required' => true,
+        		'required' => false,
         		'label'    => 'Peso'
         ))
         ->add('quantity', 'text', array(
         		'required' => true,
         		'label'    => 'Cantidad'
-        ))
-        ->add('order', 'entity', array(
-    			'class' => 'OdiseoPickMyStuffBundle:Order',
-        		'required' => true,
-        		'label'    => 'Pedido'
         ))
         ;
     }

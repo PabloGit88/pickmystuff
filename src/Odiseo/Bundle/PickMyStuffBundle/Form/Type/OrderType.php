@@ -11,19 +11,22 @@ class OrderType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-        ->add('status', 'text', array(
-        		'required' => true,
-        		'label'    => 'Status'
+        ->add('status', 'choice', array('choices' => array(
+				'Abierto' => 'Abierto',
+				'Enviado' => 'Enviado', 
+				'Recibido' => 'Recibido',
+				'Cerrado' => 'Cerrado',
+			),
+	        'required' => true,
+	        'label'    => 'Status'
         ))
-        ->add('sourceAddress', 'entity', array(
-    			'class' => 'OdiseoPickMyStuffBundle:Address',
+        ->add('collectedTime', 'text', array(
         		'required' => false,
-        		'label'    => 'Direccion de origen'
+        		'label'    => 'Horario deseado de recogido'
         ))
-        ->add('destinationAddress', 'entity', array(
-    			'class' => 'OdiseoPickMyStuffBundle:Address',
+        ->add('deliveryTime', 'text', array(
         		'required' => false,
-        		'label'    => 'Direccion de destino'
+        		'label'    => 'Horario deseado de entrega'
         ))
         ;
     }

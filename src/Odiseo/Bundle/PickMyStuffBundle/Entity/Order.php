@@ -15,6 +15,8 @@ class Order
     private $sourceAddress;
     private $destinationAddress;
     private $mercancy;
+    private $deliveryTime;
+    private $collectedTime;
 
     public function getId()
     {
@@ -96,6 +98,26 @@ class Order
     public function setMercancy(Mercancy $mercancy)
     {
     	$this->mercancy = $mercancy;
+    	return $this;
+    }
+	
+ 	public function getDeliveryTime()
+    {
+        return $this->deliveryTime;
+    }
+    
+    public function setDeliveryTime($deliveryTime) {
+    	$this->deliveryTime = $deliveryTime;
+    	return $this;
+    }
+	
+ 	public function getCollectedTime()
+    {
+        return $this->collectedTime;
+    }
+    
+    public function setCollectedTime($collectedTime) {
+    	$this->collectedTime = $collectedTime;
     	return $this;
     }
     

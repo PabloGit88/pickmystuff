@@ -31,6 +31,10 @@ Odiseo\Bundle\PickMyStuffBundle\Entity\Client:
         sendText:
             type: boolean
             nullable: true
+        desiredDeliveryDate:
+            type: string
+            length: 255
+            nullable: true
         createdAt:
             column: created_at
             type: datetime

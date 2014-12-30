@@ -23,7 +23,7 @@ odiseo_pickmystuff_backend_address_update:
         _controller: odiseo_pickmystuff.controller.address:updateAction
         _sylius:
             template: OdiseoPickMyStuffBundle:Backend/address:update.html.twig
-            redirect: odiseo_pickmystuff_backend_address_update
+            redirect: odiseo_pickmystuff_backend_order_index
 
 odiseo_pickmystuff_backend_address_delete:
     pattern: /{id}

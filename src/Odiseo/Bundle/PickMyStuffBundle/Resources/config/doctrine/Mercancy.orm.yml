@@ -27,6 +27,9 @@ Odiseo\Bundle\PickMyStuffBundle\Entity\Mercancy:
             type: string
             length: 255
             nullable: true
+        quantity:
+            type: string
+            length: 255
         createdAt:
             column: created_at
             type: datetime

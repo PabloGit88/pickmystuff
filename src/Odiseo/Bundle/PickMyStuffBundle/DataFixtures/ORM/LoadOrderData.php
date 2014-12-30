@@ -30,8 +30,8 @@ class LoadOrderData extends DataFixture
         {
         	$client = $this->getReference('pickmystuff.client-'.$i);
         	$carrier = $this->getReference('pickmystuff.carrier-'.$i);
-        	$sourceAddress = $this->getReference('pickmystuff.address-'.$i);
-        	$destinationAddress = $this->getReference('pickmystuff.address-'.$i);
+        	$sourceAddress = $this->getReference('pickmystuff.address-1');
+        	$destinationAddress = $this->getReference('pickmystuff.address-2');
         	
 	        $order = new Order();
 	        
@@ -40,6 +40,8 @@ class LoadOrderData extends DataFixture
 	        $order->setSourceAddress($sourceAddress);
 	        $order->setDestinationAddress($destinationAddress);
 	        $order->setStatus('Abierto');
+	        $order->setCollectedTime('11:30');
+	        $order->setDeliveryTime('15:30');
 
             $manager->persist($order);
 

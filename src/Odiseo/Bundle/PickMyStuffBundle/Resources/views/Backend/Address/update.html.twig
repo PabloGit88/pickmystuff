@@ -1,16 +1,16 @@
 {% extends 'GeckoBackendBundle::layout.html.twig' %}
 
-{% from 'SyliusResourceBundle:Macros:actions.html.twig' import create %}
+{% from 'SyliusResourceBundle:Macros:actions.html.twig' import update %}
 
 {% block section_title %}
-<h1>Pedidos</h1>
+<h1>Addresses</h1>
 {% endblock %}
 
 {% block breadcrums %}
 <ol class="breadcrumb">
 	<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-	<li>Pedidos</li>
-	<li class="active">Nuevo</li>
+	<li>Addresses</li>
+	<li class="active">Editar</li>
 </ol>
 {% endblock %}
 
@@ -18,13 +18,14 @@
 <div class="row">
 	<div class="col-md-12">
 		<div class="box">
-			<form action="{{ path('odiseo_pickmystuff_backend_order_create', {'id': order.id}) }}" method="post" enctype="multipart/form-data">
+			<form action="{{ path('odiseo_pickmystuff_backend_address_update', {'id': address.id}) }}" method="post" enctype="multipart/form-data">
 				<div class="box-body">
 					{{ form_errors(form) }}		
-		    		{% include 'OdiseoPickMyStuffBundle:Backend/Order:_form.html.twig' %}
+		    		<input type="hidden" name="_method" value="PUT">
+		    		{% include 'OdiseoPickMyStuffBundle:Backend/Address:_form.html.twig' %}
 				</div>
 				<div class="box-footer">
-					{{ create() }}
+					{{ update() }}
 				</div>
 			</form>
 		</div>

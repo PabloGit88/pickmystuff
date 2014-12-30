@@ -15,6 +15,7 @@ class Client
     private $phone;
     private $cellphone;
     private $sendText;
+    private $desiredDeliveryDate;
     private $address;
     private $orders;
 
@@ -106,6 +107,16 @@ class Client
     
     public function setAddress(Address $address) {
     	$this->address = $address;
+    	return $this;
+    }
+	
+ 	public function getDesiredDeliveryDate()
+    {
+        return $this->desiredDeliveryDate;
+    }
+    
+    public function setDesiredDeliveryDate($desiredDeliveryDate) {
+    	$this->desiredDeliveryDate = $desiredDeliveryDate;
     	return $this;
     }
 

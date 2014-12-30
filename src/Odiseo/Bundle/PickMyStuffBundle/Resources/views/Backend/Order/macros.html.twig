@@ -11,16 +11,26 @@
 			<tr>
 				<th>ID</th>
 				<th>Status</th>
-				<th>Localidad de origen</th>
-				<th>Localidad de destino</th>
+				<th>Direccion de origen</th>
+				<th>Direccion de destino</th>
+				<th>Horario deseado de recogido</th>
+				<th>Horario deseado de entrega</th>
 				<th></th>
 			</tr>
 			{% for order in orders %}
 	        <tr>
 				<td>{{ order.id }}</td>
 				<td>{{ order.status }}</td>
-				<td>{{ order.sourceAddress.locality }}</td>
-				<td>{{ order.destinationAddress.locality }}</td>
+				<td>
+					{{ order.sourceAddress.street }}
+					<a class="glyphicon glyphicon-pencil" href="{{ path('odiseo_pickmystuff_backend_address_update', {'id': order.sourceAddress.id}) }}"></a>
+				</td>
+				<td>
+					{{ order.destinationAddress.street }}
+					<a class="glyphicon glyphicon-pencil" href="{{ path('odiseo_pickmystuff_backend_address_update', {'id': order.destinationAddress.id}) }}"></a>
+				</td>
+				<td>{{ order.collectedTime }}</td>
+				<td>{{ order.deliveryTime }}</td>
 				<td>									
 					<div class="pull-right">					
               			<a class="btn btn-primary" href="{{ path('odiseo_pickmystuff_backend_order_update', {'id': order.id}) }}"><span>Editar</span></a>

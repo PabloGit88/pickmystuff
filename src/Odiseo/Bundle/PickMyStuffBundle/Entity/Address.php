@@ -16,11 +16,13 @@ class Address
     private $locality;
     private $province;
     private $zipcode;
-    private $deliveryTime;
+    private $street;
+    private $orders;
     
     public function __construct()
     {
     	$this->createdAt = new DateTime('now');
+    	$this->orders = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     public function getId()
@@ -109,19 +111,59 @@ class Address
     	return $this;
     }
 	
- 	public function getDeliveryTime()
+ 	public function getStreet()
     {
-        return $this->deliveryTime;
+        return $this->street;
     }
     
-    public function setDeliveryTime($deliveryTime) {
-    	$this->deliveryTime = $deliveryTime;
+    public function setStreet($street) {
+    	$this->street = $street;
     	return $this;
     }
     
     public function __toString()
     {
-    	return $this->getLocality();
+    	return $this->getStreet();
+    }
+    
+    /*order*/
+    public function getOrder()
+    {
+    	return $this->order;
+    }
+    
+    public function addOrder(Order $order)
+    {
+    	if (!$this->hasOrder($order)) {
+    		$order->setClient($this);
+    		$this->orders->add($order);
+    	}
+    
+    	return $this;
+    }
+    
+    public function setOrders(Order $orders)
+    {
+    	foreach ($orders as $order) {
+    		$this->addOrder($order);
+    	}
+    
+    	return $this;
+    }
+    
+    public function removeOrder(Order $order)
+    {
+    	if ($this->hasOrder($order)) {
+    		$order->setClient(null);
+    		$this->orders->removeElement($order);
+    	}
+    
+    	return $this;
+    }
+    
+    public function hasOrder(Order $order)
+    {
+    	return $this->orders->contains($order);
     }    
     
 }

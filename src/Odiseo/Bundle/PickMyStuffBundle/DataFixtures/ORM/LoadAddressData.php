@@ -38,7 +38,7 @@ class LoadAddressData extends DataFixture
 	        $address->setLocality('Wilde'.$i);
 	        $address->setProvince('Bs.As'.$i);
 	        $address->setZipcode('131'.$i);
-	        $address->setDeliveryTime('12-12-12');
+	        $address->setStreet('Paysandu 1774');
 
             $manager->persist($address);
 

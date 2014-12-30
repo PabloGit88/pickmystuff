@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class UserType extends AbstractType
+class ClientType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -18,7 +18,16 @@ class UserType extends AbstractType
         ->add('fullName', 'text', array(
         		'required' => true,
         		'label'    => 'Nombre y Apellido'
-        ));
+        ))
+        ->add('desiredDeliveryDate', 'text', array(
+        		'required' => true,
+        		'label'    => 'Fecha deseada de entrega'
+        ))
+        ->add('sendText', 'bool', array(
+        		'required' => true,
+        		'label'    => 'Acepta SMS?'
+        ))
+        ;
     }
 
     public function getName()

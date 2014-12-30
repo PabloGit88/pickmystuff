@@ -32,10 +32,9 @@ Odiseo\Bundle\PickMyStuffBundle\Entity\Address:
         zipcode:
             type: string
             length: 255
-        deliveryTime:
+        street:
             type: string
             length: 255
-            nullable: true
         createdAt:
             column: created_at
             type: datetime
@@ -49,4 +48,11 @@ Odiseo\Bundle\PickMyStuffBundle\Entity\Address:
             gedmo:
               timestampable:
                 on: update
+    oneToMany:
+        orders:
+            targetEntity: Order
+            mappedBy: sourceAddress
+        orders:
+            targetEntity: Order
+            mappedBy: destinationAddress
     lifecycleCallbacks: {  }

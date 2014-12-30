@@ -11,6 +11,14 @@ Odiseo\Bundle\PickMyStuffBundle\Entity\Order:
         status:
             type: string
             length: 255
+        collectedTime:
+            type: string
+            length: 255
+            nullable: true
+        deliveryTime:
+            type: string
+            length: 255
+            nullable: true
         createdAt:
             column: created_at
             type: datetime
@@ -28,16 +36,6 @@ Odiseo\Bundle\PickMyStuffBundle\Entity\Order:
         mercancy:
             targetEntity: Mercancy
             mappedBy: order
-        sourceAddress:
-            targetEntity: Address
-            joinColumn:
-              name: sourceAddress_id
-              referencedColumnName: id
-        destinationAddress:
-            targetEntity: Address
-            joinColumn:
-              name: destinationAddress_id
-              referencedColumnName: id
     manyToOne:
         client:
             targetEntity: Client
@@ -53,4 +51,18 @@ Odiseo\Bundle\PickMyStuffBundle\Entity\Order:
                 name: carrier_id
                 referencedColumnName: id
                 onDelete: SET NULL
+        sourceAddress:
+            targetEntity: Address
+            inversedBy: orders
+            joinColumn:
+              name: sourceAddress_id
+              referencedColumnName: id
+              onDelete: SET NULL
+        destinationAddress:
+            targetEntity: Address
+            inversedBy: orders
+            joinColumn:
+              name: destinationAddress_id
+              referencedColumnName: id
+              onDelete: SET NULL
     lifecycleCallbacks: {  }
