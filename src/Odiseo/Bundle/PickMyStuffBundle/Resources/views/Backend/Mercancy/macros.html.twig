@@ -16,7 +16,8 @@
 				<th>Alto</th>
 				<th>Peso</th>
 				<th>Cantidad</th>
-				<th>Pedido</th>
+				<th>Imagen de Mercancia</th>
+				<th>Pedido Nº</th>
 				<th></th>
 			</tr>
 			{% for mercancy in mercancies %}
@@ -27,7 +28,13 @@
 				<td>{{ mercancy.width }}</td>
 				<td>{{ mercancy.height }}</td>
 				<td>{{ mercancy.weight }}</td>
-				<td>{{ mercancy.quantity }}</td>
+				<td>{{ mercancy.quantity }}</td>				
+	            <td class="info">
+	            	{% if mercancy.imageName != null %}
+						<img class="center-block" src="{{ mercancy.imageName|imagine_filter('pick_262x255') }}">
+					{% else %}
+					{% endif %}
+	            </td>
 				<td>{{ mercancy.order.id }}</td>
 				<td>									
 					<div class="pull-right">					

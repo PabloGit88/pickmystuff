@@ -83,6 +83,18 @@ knp_menu:
     templating: false # if true, enables the helper for PHP templates
     default_renderer: twig # The renderer to use, list is also available by default
 
+knp_gaufrette:
+    stream_wrapper: ~
+
+    adapters:
+        mercancy_adapter:
+            local:
+                directory: %kernel.root_dir%/../web/media/image
+                create:    true
+    filesystems:
+        mercancy_image_fs:
+            adapter:    mercancy_adapter
+
 sylius_resource:
     resources:
         odiseo_pickmystuff.user:
@@ -109,3 +121,22 @@ sylius_resource:
             driver: doctrine/orm
             classes:
                 model: Odiseo\Bundle\PickMyStuffBundle\Entity\Address
+
+liip_imagine:
+   data_root: %kernel.root_dir%/../web/media/image
+   filter_sets:
+        pick_262x255:
+            filters:
+                thumbnail: { size: [262, 255], mode: outbound }
+
+vich_uploader:
+   db_driver: orm # or mongodb or propel or phpcr
+   storage:   gaufrette
+
+   mappings:
+        mercancy_images:
+            uri_prefix:         /image
+            upload_destination: mercancy_image_fs
+            inject_on_load:     false
+            delete_on_update:   true
+            delete_on_remove:   true

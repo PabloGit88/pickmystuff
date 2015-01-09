@@ -17,6 +17,7 @@ class Order
     private $mercancy;
     private $deliveryTime;
     private $collectedTime;
+    private $comments;
 
     public function getId()
     {
@@ -120,6 +121,16 @@ class Order
     	$this->collectedTime = $collectedTime;
     	return $this;
     }
+    
+    public function getComments()
+    {
+    	return $this->comments;
+    }
+    public function setComments($comments)
+    {
+    	$this->comments = $comments;
+    	return $this;
+    }    
     
     public function __toString()
     {

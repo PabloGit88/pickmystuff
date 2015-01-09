@@ -32,7 +32,7 @@ Odiseo\Bundle\PickMyStuffBundle\Entity\Client:
             type: boolean
             nullable: true
         desiredDeliveryDate:
-            type: string
+            type: datetime
             length: 255
             nullable: true
         createdAt:

@@ -18,7 +18,7 @@ class OrderType extends AbstractType
 				'Cerrado' => 'Cerrado',
 			),
 	        'required' => true,
-	        'label'    => 'Status'
+	        'label'    => 'Estado'
         ))
         ->add('collectedTime', 'text', array(
         		'required' => false,

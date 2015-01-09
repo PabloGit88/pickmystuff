@@ -1,6 +1,14 @@
 odiseo_pick_my_stuff_frontend_home:
-    path:     /secure/home
+    path:     /
     defaults: { _controller: "OdiseoPickMyStuffBundle:Frontend/Home:index" }
+
+odiseo_pick_my_stuff_frontend_home_submit:
+    path:     /submit
+    defaults: { _controller: "OdiseoPickMyStuffBundle:Frontend/Home:submit" }
+    
+odiseo_pick_my_stuff_frontend_home_add:
+    path:     /add/{id}
+    defaults: { _controller: "OdiseoPickMyStuffBundle:Frontend/Home:submitAdd" }
 
 #FosUserBundle Routes
 fos_user_security_frontend:

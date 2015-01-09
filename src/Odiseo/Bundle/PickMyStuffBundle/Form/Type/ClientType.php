@@ -19,12 +19,14 @@ class ClientType extends AbstractType
         		'required' => true,
         		'label'    => 'Nombre y Apellido'
         ))
-        ->add('desiredDeliveryDate', 'text', array(
-        		'required' => true,
+        ->add('desiredDeliveryDate', 'date', array(
+			    'input'  => 'datetime',
+			    'widget' => 'choice',
+        		'required' => false,
         		'label'    => 'Fecha deseada de entrega'
         ))
-        ->add('sendText', 'bool', array(
-        		'required' => true,
+        ->add('sendText', 'checkbox', array(
+        		'required' => false,
         		'label'    => 'Acepta SMS?'
         ))
         ;

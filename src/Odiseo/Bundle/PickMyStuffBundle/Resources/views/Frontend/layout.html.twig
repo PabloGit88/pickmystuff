@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />	
+		<meta name="keywords" content="pickmystuff">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="mobile-web-app-capable" content="yes">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        
+        <title>{% block title %}Pick My Stuff {% endblock %}</title>
+        
+	    <!-- stylesheets -->
+	    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+	    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
+	    
+		{# stylesheets... #}
+		{% block stylesheets %}
+		{% stylesheets output='css/frontend.min.css' filter='cssrewrite'
+			'bundles/odiseopickmystuff/css/bootstrap.min.css'
+			'bundles/odiseopickmystuff/css/main.css'
+		%}
+		<link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+		{% endstylesheets %}
+		{% endblock %}
+    </head>
+    <body>
+    	<div class="container wrapper">
+    		{% block header %}
+    		<header>
+	    		<nav class="navbar navbar-default" role="navigation">
+  					<div class="container-fluid">
+  						<div class="nav navbar-nav navbar-left">
+  							<img src="">Logo</img>
+  						</div>
+		    			<!-- Brand and toggle get grouped for better mobile display -->
+		    			<div class="navbar-right">
+							<ul class="nav navbar-nav navbar-right">
+	      					  <li class="active"><a href="#">About Us</a></li>
+	      					  <li><a href="#">Services</a></li>
+	      					  <li><a href="#">Contact Us</a></li>
+	      					  <li><a href="#">FAQ</a></li>
+	      					  <li><a href="#">F</a></li>
+	      					  <li><a href="#">T</a></li>
+							</ul>      					  
+		    			</div>
+		    		</div>
+		    	</nav> 
+    		</header>
+    		{% endblock %}
+    		<div id="content">
+				{% block content %}
+				{% endblock %}
+			</div>
+			<footer>
+			</footer>
+		</div>
+		
+		<!-- javascript -->
+		{# javascripts... #}
+		{% block javascripts %}
+		<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+		{% javascripts output='js/frontend.min.js'
+		   'bundles/odiseopickmystuff/js/vendor/bootstrap.min.js'
+		   'bundles/odiseopickmystuff/js/main.js'	
+		%}
+		<script type="text/javascript" src="{{ asset_url }}"></script>
+		{% endjavascripts %}
+		{% endblock %}
+    </body>
+</html>

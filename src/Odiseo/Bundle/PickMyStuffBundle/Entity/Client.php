@@ -115,15 +115,15 @@ class Client
         return $this->desiredDeliveryDate;
     }
     
-    public function setDesiredDeliveryDate($desiredDeliveryDate) {
+    public function setDesiredDeliveryDate(DateTime $desiredDeliveryDate) {
     	$this->desiredDeliveryDate = $desiredDeliveryDate;
     	return $this;
     }
 
  	/*order*/
-    public function getOrder()
+    public function getOrders()
     {
-    	return $this->order;
+    	return $this->orders;
     }
     
     public function addOrder(Order $order) 
@@ -155,7 +155,7 @@ class Client
     	return $this;
     }
     
-    public function hasOrder(Order $order)
+    public function hasOrders(Order $order)
     {
     	return $this->orders->contains($order);
     }

@@ -1,0 +1,4 @@
+Odiseo\Bundle\PickMyStuffBundle\Entity\Mercancy:
+    imageFile:
+        mapping:           mercancy_images
+        filename_property: image_name

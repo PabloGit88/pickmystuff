@@ -11,11 +11,16 @@ Odiseo\Bundle\PickMyStuffBundle\Entity\Order:
         status:
             type: string
             length: 255
+            nullable: true
         collectedTime:
             type: string
             length: 255
             nullable: true
         deliveryTime:
+            type: string
+            length: 255
+            nullable: true
+        comments:
             type: string
             length: 255
             nullable: true
@@ -36,10 +41,12 @@ Odiseo\Bundle\PickMyStuffBundle\Entity\Order:
         mercancy:
             targetEntity: Mercancy
             mappedBy: order
+            cascade: ["persist", "merge"]
     manyToOne:
         client:
             targetEntity: Client
             inversedBy: orders
+            cascade: ["persist", "merge"]
             joinColumn:
                 name: client_id
                 referencedColumnName: id
@@ -47,6 +54,7 @@ Odiseo\Bundle\PickMyStuffBundle\Entity\Order:
         carrier:
             targetEntity: Carrier
             inversedBy: orders
+            cascade: ["persist", "merge"]
             joinColumn:
                 name: carrier_id
                 referencedColumnName: id
@@ -54,6 +62,7 @@ Odiseo\Bundle\PickMyStuffBundle\Entity\Order:
         sourceAddress:
             targetEntity: Address
             inversedBy: orders
+            cascade: ["persist", "merge"]
             joinColumn:
               name: sourceAddress_id
               referencedColumnName: id
@@ -61,6 +70,7 @@ Odiseo\Bundle\PickMyStuffBundle\Entity\Order:
         destinationAddress:
             targetEntity: Address
             inversedBy: orders
+            cascade: ["persist", "merge"]
             joinColumn:
               name: destinationAddress_id
               referencedColumnName: id

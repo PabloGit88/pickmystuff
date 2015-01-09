@@ -1,0 +1,104 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	font-family: 'Lato', sans-serif;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+	background: url(../images/background.jpg) no-repeat;
+	background-size: cover;
+	background-position: bottom center;
+}
+
+.wrapper {
+	height: 100%;
+	position: relative;
+}
+header{
+	background-color: #1edddf;
+}
+header .navbar-default {
+	background: none;
+	border: none;
+}
+
+header .navbar .navbar-brand {
+	padding: 38px 0;
+	height: auto;
+}
+
+header .navbar-nav {
+	float: right;
+}
+
+header .navbar-nav>li {
+	display: table;
+}
+
+header .navbar-default .navbar-nav>.active>a, header .navbar-default .navbar-nav>.active>a:hover,
+	header .navbar-default .navbar-nav>.active>a:focus {
+	background: none;
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	left: 0;
+}
+
+.content-image {
+	height: 100%;
+	width: 100%;
+}
+
+#content {
+	overflow: visible;
+}
+
+
+.modal-footer{
+	text-align:center;
+}
+
+#content form h2{
+	text-align:center;
+}
+
+#content form .contact input{
+	display:inline;
+	width:30%;
+}
+
+#content form .streets{
+	margin-top:10px;
+}
+
+#content form .types{
+	margin-top:40px;
+}
+
+#content form .adds{
+	margin-top:50px;
+}
+
+#content form .addInfo{
+	padding-left:0px;
+}
+
+#content form .image{
+	margin-top: 85px;
+}
+
+#content form .image input{
+	display:inline;
+	width:30%;
+}
+
+#content form .finalizar{
+	margin-top: 30px;
+}

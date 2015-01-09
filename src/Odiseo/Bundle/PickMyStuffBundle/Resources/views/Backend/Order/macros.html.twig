@@ -10,11 +10,12 @@
 		<table class="table table-hover"><tbody>
 			<tr>
 				<th>ID</th>
-				<th>Status</th>
+				<th>Estado</th>
 				<th>Direccion de origen</th>
 				<th>Direccion de destino</th>
 				<th>Horario deseado de recogido</th>
 				<th>Horario deseado de entrega</th>
+				<th>Comentarios de entrega</th>
 				<th></th>
 			</tr>
 			{% for order in orders %}
@@ -31,6 +32,7 @@
 				</td>
 				<td>{{ order.collectedTime }}</td>
 				<td>{{ order.deliveryTime }}</td>
+				<td>{{ order.comments }}</td>
 				<td>									
 					<div class="pull-right">					
               			<a class="btn btn-primary" href="{{ path('odiseo_pickmystuff_backend_order_update', {'id': order.id}) }}"><span>Editar</span></a>

@@ -30,8 +30,9 @@ class LoadClientData extends DataFixture
         {
         	$address = $this->getReference('pickmystuff.address-'.$i);
         	
+        	$date = new \DateTime('15-01-20');
+        	
 	        $client = new Client();
-
 	        $client->setFullname('Pepe '.$i);
 	        $client->setCompany('Compania'.$i);
 	        $client->setAddress($address);
@@ -39,7 +40,7 @@ class LoadClientData extends DataFixture
 	        $client->setPhone('4323412');
 	        $client->setCellphone('15123123');
 	        $client->setSendText(true);
-	        $client->setDesiredDeliveryDate('20-01-15');
+	        $client->setDesiredDeliveryDate($date);
 
             $manager->persist($client);
 

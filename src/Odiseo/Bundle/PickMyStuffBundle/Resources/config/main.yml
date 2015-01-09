@@ -5,3 +5,7 @@ odiseo_pick_my_stuff_frontend:
 odiseo_pick_my_stuff_backend:
     resource: "@OdiseoPickMyStuffBundle/Resources/config/routing/backend/main.yml"
     prefix:   /admin
+
+_imagine:
+    resource: .
+    type:     imagine
