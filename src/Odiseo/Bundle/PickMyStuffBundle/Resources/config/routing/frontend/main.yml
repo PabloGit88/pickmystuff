@@ -11,10 +11,10 @@ odiseo_pick_my_stuff_frontend_home_add:
     defaults: { _controller: "OdiseoPickMyStuffBundle:Frontend/Home:submitAdd" }
 
 #FosUserBundle Routes
-fos_user_security_frontend:
-    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
-    prefix: /
+#fos_user_security_frontend:
+#    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+#    prefix: /
 
-fos_user_register_frontend:
-    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
-    prefix: /register
+#fos_user_register_frontend:
+#    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+#	    prefix: /register
