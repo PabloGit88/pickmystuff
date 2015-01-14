@@ -10,6 +10,18 @@ odiseo_pick_my_stuff_frontend_home_add:
     path:     /add/{id}
     defaults: { _controller: "OdiseoPickMyStuffBundle:Frontend/Home:submitAdd" }
 
+odiseo_pick_my_stuff_frontend_home_aboutus:
+    path:     /aboutus
+    defaults: { _controller: "OdiseoPickMyStuffBundle:Frontend/Home:aboutUs" }
+
+odiseo_pick_my_stuff_frontend_home_contact:
+    path:     /contact
+    defaults: { _controller: "OdiseoPickMyStuffBundle:Frontend/Home:contact" }
+
+odiseo_pick_my_stuff_frontend_home_questions:
+    path:     /services
+    defaults: { _controller: "OdiseoPickMyStuffBundle:Frontend/Home:services" }
+
 #FosUserBundle Routes
 #fos_user_security_frontend:
 #    resource: "@FOSUserBundle/Resources/config/routing/security.xml"

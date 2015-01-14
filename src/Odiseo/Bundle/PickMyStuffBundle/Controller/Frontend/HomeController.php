@@ -80,9 +80,20 @@ class HomeController extends Controller
     		'action' => $this->generateUrl('odiseo_pick_my_stuff_frontend_home_submit'))
     	);
     	
-    	
         return $this->render('OdiseoPickMyStuffBundle:Frontend:index.html.twig', array(
             'form' => $form->createView(),
         ));
+    }
+    
+    public function aboutUsAction()
+    {    	    	
+        return $this->render('OdiseoPickMyStuffBundle:Frontend:aboutUs.html.twig');
+    	
+    }
+    
+    public function contactAction()
+    {    	    	
+        return $this->render('OdiseoPickMyStuffBundle:Frontend:contact.html.twig');
+    	
     }
 }

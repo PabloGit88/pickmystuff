@@ -1,148 +1,150 @@
 {% extends 'OdiseoPickMyStuffBundle:Frontend:layout.html.twig' %}
 
 {% block content %}
-{{ form_start(form) }}
-    {{ form_errors(form) }}
- 	<h2>Detalles de la Orden:</h2>
- 	<div class="row">
-	    <div class="col-md-12 col-sm-12 text-center contact">
-	        {{ form_label(form.client.fullName) }}
-	        {{ form_widget(form.client.fullName, {'attr': {'class': 'form-control'}}) }}
-	    </div>
-    </div>
-    
- 	<div class="row"> 
-		    <div class="col-md-5 col-sm-5 form-group phone">
-		        {{ form_label(form.client.phone) }}
-		        {{ form_widget(form.client.phone, {'attr': {'class': 'form-control'}}) }}
+<div class="container home">
+	<div class="contentForm">
+	{{ form_start(form) }}
+	    {{ form_errors(form) }}
+	 	<h2>Detalles de la Orden:</h2>
+	 	<div class="row contactrow">
+		    <div class="col-md-12 col-sm-12 text-center contact">
+		        {{ form_label(form.client.fullName) }}
+		        {{ form_widget(form.client.fullName, {'attr': {'class': 'form-control'}}) }}
 		    </div>
-		 	<div class="col-md-2 col-sm-2"></div>
-		    <div class="col-md-5 col-sm-5 form-group email">
-		        {{ form_label(form.client.email) }}
-		        {{ form_widget(form.client.email, {'attr': {'class': 'form-control'}}) }}
+	    </div>
+	    
+	 	<div class="row phoneMail"> 
+			    <div class="col-md-5 col-sm-5 form-group phone">
+			        {{ form_label(form.client.phone) }}
+			        {{ form_widget(form.client.phone, {'attr': {'class': 'form-control'}}) }}
+			    </div>
+			 	<div class="col-md-2 col-sm-2"></div>
+			    <div class="col-md-5 col-sm-5 form-group email">
+			        {{ form_label(form.client.email) }}
+			        {{ form_widget(form.client.email, {'attr': {'class': 'form-control'}}) }}
+			    </div>
+	    </div>
+		<div class="row fullnames">
+		    <div class="col-md-2 col-sm-2 fullnameS">
+		        {{ form_label(form.sourceAddress) }}
 		    </div>
-    </div>
-	<div class="row fullnames">
-	    <div class="col-md-1 col-sm-1">
-	    </div>
-	    <div class="col-md-1 col-sm-1 fullnameS">
-	        {{ form_label(form.sourceAddress) }}
-	    </div>
-	    <div class="col-md-3 col-sm-3 contactNameS">
-	        {{ form_widget(form.sourceAddress.contactName, {'attr': {'class': 'form-control'}}) }}
-	    </div>
-	    <div class="col-md-2 col-sm-2">
-	    </div>
-	    <div class="col-md-1 col-sm-1 fullnameD">
-       		{{ form_label(form.destinationAddress) }}
-	    </div>
-	    <div class="col-md-3 col-sm-3 contactNameD">
-       		{{ form_widget(form.destinationAddress.contactName, {'attr': {'class': 'form-control'}}) }}
-	    </div>
-	    <div class="col-md-1 col-sm-1">
-	    </div>
- 	</div>
-	<div class="row streets">
-	    <div class="col-md-2 col-sm-2">
-	    </div>
-	    <div class="col-md-2 col-sm-2 streetS">
-		    {{ form_widget(form.sourceAddress.street, {'attr': {'class': 'form-control'}}) }}
-	    </div>
-	    <div class="col-md-2 col-sm-2">
-	    </div>
-	    <div class="col-md-2 col-sm-2">
-	    </div>
-	    <div class="col-md-2 col-sm-2 streetD">
-	        {{ form_widget(form.destinationAddress.street, {'attr': {'class': 'form-control'}}) }}
-	    </div>
-	    <div class="col-md-2 col-sm-2">
-	    </div>
- 	</div>
- 	<div class="row types">
-	    <div class="col-md-3 col-sm-3">
-	    </div>
-	    <div class="col-md-2 col-sm-2">
-	        {{ form_widget(form.mercancy.type, {'attr': {'class': 'form-control'}}) }}
-	    </div>
-	    <div class="col-md-2 col-sm-2">
-	    </div>	 
-	    <div class="col-md-2 col-sm-2">
-	        {{ form_widget(form.carrier.vehicleType, {'attr': {'class': 'form-control'}}) }}
-	    </div>
-	    <div class="col-md-3 col-sm-2">
-	    </div>
- 	
- 	<div class="row image"> 	
-	    <div class="col-md-12 col-sm-12 text-center">
-	        {{ form_label(form.mercancy.imageFile) }}
-	        {{ form_widget(form.mercancy.imageFile, {'attr': {'class': 'form-control'}}) }}
-	    </div> 
- 	</div>
- 	</div>
-    
- 	<div class="row adds">
-	    <div class="col-md-4 col-sm-4">
-	    </div>
-	    <div class="col-md-2 col-sm-2 addOrder">
-	        {{ form_widget(form.Add, {'attr': {'class': 'btn btn-default'}}) }}
-	    </div>     
-	    <div class="col-md-1 col-sm-1">
-	    </div>	 
-	    <div class="col-md-2 col-sm-2 addInfo">
-	        <a class="btn btn-default showModal">Add more info</a>
-	    </div>     
-	    <div class="col-md-3 col-sm-3">
-	    </div>	 
- 	</div>
- 	
- 	<div class="row finalizar"> 	
-	    <div class="col-md-12 col-sm-12 text-center">
-	        {{ form_widget(form.Finalizar, {'attr': {'class': 'btn btn-default'}}) }}
-	    </div> 
- 	</div>
- 
-	<div class="modal fade">
-		<div class="modal-dialog">
-			<div class="modal-content">
-	    		<div class="modal-header">
-	       			<h3 class="modal-title text-center">Detalles de Entrega</h3>
-				</div>
-				<div class="modal-body"> 
-					<div class="row">
-						<h4 class="text-center">Dimensiones(opcional)</h4>
-					</div>
-					<div class="row"> 
-					    <div class="col-md-3 col-sm-3 form-group lenght">
-					        {{ form_label(form.mercancy.length) }}
-					        {{ form_widget(form.mercancy.length, {'attr': {'class': 'form-control'}}) }}
-					    </div> 
-					    <div class="col-md-3 col-sm-3 form-group width">
-					        {{ form_label(form.mercancy.width) }}
-					        {{ form_widget(form.mercancy.width, {'attr': {'class': 'form-control'}}) }}
-					    </div> 
-					    <div class="col-md-3 col-sm-3 form-group height">
-					        {{ form_label(form.mercancy.height) }}
-					        {{ form_widget(form.mercancy.height, {'attr': {'class': 'form-control'}}) }}
-					    </div>
-					    <div class="col-md-3 col-sm-3 form-group weight">
-					        {{ form_label(form.mercancy.weight) }}
-					        {{ form_widget(form.mercancy.weight, {'attr': {'class': 'form-control'}}) }}
-					    </div>
-					</div>
-					<div class="row">
-		 				<div class="col-md-3 col-sm-3"></div>
-					    <div class="col-md-6 col-sm-6 form-group comments">
-					        {{ form_label(form.comments) }}
-					        {{ form_widget(form.comments, {'attr': {'class': 'form-control'}}) }}
-					    </div>
-		 				<div class="col-md-3 col-sm-3"></div>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Continuar</button>
-					</div>
-				</div>
-	   		 </div>
+		    <div class="col-md-3 col-sm-3 contactNameS">
+		        {{ form_widget(form.sourceAddress.contactName, {'attr': {'class': 'form-control'}}) }}
+		    </div>
+		    <div class="col-md-2 col-sm-2">
+		    </div>
+		    <div class="col-md-1 col-sm-1 fullnameD">
+	       		{{ form_label(form.destinationAddress) }}
+		    </div>
+		    <div class="col-md-3 col-sm-3 contactNameD">
+	       		{{ form_widget(form.destinationAddress.contactName, {'attr': {'class': 'form-control'}}) }}
+		    </div>
+		    <div class="col-md-1 col-sm-1">
+		    </div>
 	 	</div>
+		<div class="row streets">
+		    <div class="col-md-2 col-sm-2">
+		    </div>
+		    <div class="col-md-2 col-sm-2 streetS">
+			    {{ form_widget(form.sourceAddress.street, {'attr': {'class': 'form-control'}}) }}
+		    </div>
+		    <div class="col-md-2 col-sm-2">
+		    </div>
+		    <div class="col-md-2 col-sm-2">
+		    </div>
+		    <div class="col-md-2 col-sm-2 streetD">
+		        {{ form_widget(form.destinationAddress.street, {'attr': {'class': 'form-control'}}) }}
+		    </div>
+		    <div class="col-md-2 col-sm-2">
+		    </div>
+	 	</div>
+	 	<div class="row types">
+		    <div class="col-md-2 col-sm-2">
+		    </div>
+		    <div class="col-md-3 col-sm-3">
+		        {{ form_widget(form.carrier.vehicleType, {'attr': {'class': 'form-control'}}) }}
+		    </div>
+		    <div class="col-md-2 col-sm-2">
+		    </div>	 
+		    <div class="col-md-3 col-sm-3">
+		        {{ form_widget(form.mercancy.type, {'attr': {'class': 'form-control'}}) }}
+		    </div>
+		    <div class="col-md-2 col-sm-2">
+		    </div>
+	 	
+	 	<div class="row image"> 	
+		    <div class="col-md-12 col-sm-12 text-center">
+		        {{ form_label(form.mercancy.imageFile) }}
+		        {{ form_widget(form.mercancy.imageFile, {'attr': {'class': 'form-control'}}) }}
+		    </div> 
+	 	</div>
+	 	</div>
+	    
+	 	<div class="row adds">
+		    <div class="col-md-3 col-sm-3">
+		    </div>
+		    <div class="col-md-2 col-sm-2 addOrder">
+		        {{ form_widget(form.Add, {'attr': {'class': 'btn btn-default'}}) }}
+		    </div>     
+		    <div class="col-md-2 col-sm-2">
+		    </div>	 
+		    <div class="col-md-2 col-sm-2 addInfo">
+		        <a class="btn btn-default showModal">Add more info</a>
+		    </div>     
+		    <div class="col-md-3 col-sm-3">
+		    </div>	 
+	 	</div>
+	 	
+	 	<div class="row finalizar"> 	
+		    <div class="col-md-12 col-sm-12 text-center">
+		        {{ form_widget(form.Finalizar, {'attr': {'class': 'btn btn-default'}}) }}
+		    </div> 
+	 	</div>
+	 
+		<div class="modal fade">
+			<div class="modal-dialog">
+				<div class="modal-content">
+		    		<div class="modal-header">
+		       			<h3 class="modal-title text-center">Detalles de Entrega</h3>
+					</div>
+					<div class="modal-body"> 
+						<div class="row">
+							<h4 class="text-center">Dimensiones(opcional)</h4>
+						</div>
+						<div class="row"> 
+						    <div class="col-md-3 col-sm-3 form-group lenght">
+						        {{ form_label(form.mercancy.length) }}
+						        {{ form_widget(form.mercancy.length, {'attr': {'class': 'form-control'}}) }}
+						    </div> 
+						    <div class="col-md-3 col-sm-3 form-group width">
+						        {{ form_label(form.mercancy.width) }}
+						        {{ form_widget(form.mercancy.width, {'attr': {'class': 'form-control'}}) }}
+						    </div> 
+						    <div class="col-md-3 col-sm-3 form-group height">
+						        {{ form_label(form.mercancy.height) }}
+						        {{ form_widget(form.mercancy.height, {'attr': {'class': 'form-control'}}) }}
+						    </div>
+						    <div class="col-md-3 col-sm-3 form-group weight">
+						        {{ form_label(form.mercancy.weight) }}
+						        {{ form_widget(form.mercancy.weight, {'attr': {'class': 'form-control'}}) }}
+						    </div>
+						</div>
+						<div class="row">
+			 				<div class="col-md-3 col-sm-3"></div>
+						    <div class="col-md-6 col-sm-6 form-group comments">
+						        {{ form_label(form.comments) }}
+						        {{ form_widget(form.comments, {'attr': {'class': 'form-control'}}) }}
+						    </div>
+			 				<div class="col-md-3 col-sm-3"></div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Continuar</button>
+						</div>
+					</div>
+		   		 </div>
+		 	</div>
+		</div>
+	{{ form_end(form) }}
 	</div>
-{{ form_end(form) }}
+</div>
 {% endblock %}
