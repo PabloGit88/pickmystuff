@@ -184,3 +184,7 @@ footer .footer{
 .contact .costumerForm .message label{
 	font-size:20px;
 }
+
+.contact .costumerForm .error{
+	border-color: red;	
+}

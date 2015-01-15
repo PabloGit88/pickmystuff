@@ -36,9 +36,9 @@
   						</div>
 		    			<!-- Brand and toggle get grouped for better mobile display -->
 							<ul class="nav navbar-nav navbar-right">
-	      					  <li class="active about"><a href="{{ path('odiseo_pick_my_stuff_frontend_home_aboutus') }}">About Us</a></li>
+	      					  <li class="active about"><a href="{{ path('odiseo_pick_my_stuff_frontend_aboutus') }}">About Us</a></li>
 	      					  <li class="services"><a href="">Services</a></li>
-	      					  <li class="contactus"><a href="{{ path('odiseo_pick_my_stuff_frontend_home_contact') }}">Contact Us</a></li>
+	      					  <li class="contactus"><a href="{{ path('odiseo_pick_my_stuff_frontend_contact') }}">Contact Us</a></li>
 	      					  <li class="faq"><a href="#">FAQ</a></li>
 	      					  <li><a class="facebook" href="#"><img class="img-responsive" src="{{ asset('bundles/odiseopickmystuff/images/facebook-icon.png') }}"></a></li>
 	      					  <li><a class="twitter" href="#"><img class="img-responsive" src="{{ asset('bundles/odiseopickmystuff/images/twitter-icon.png') }}"></a></li>
@@ -62,6 +62,7 @@
 		{% block javascripts %}
 		<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 		{% javascripts output='js/frontend.min.js'
+           'bundles/odiseopickmystuff/js/vendor/jquery.validate.min.js'
 		   'bundles/odiseopickmystuff/js/vendor/bootstrap-filestyle.min.js'
 		   'bundles/odiseopickmystuff/js/vendor/bootstrap.min.js'
 		   'bundles/odiseopickmystuff/js/main.js'	

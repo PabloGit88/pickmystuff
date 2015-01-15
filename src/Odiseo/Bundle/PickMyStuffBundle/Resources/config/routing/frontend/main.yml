@@ -10,17 +10,23 @@ odiseo_pick_my_stuff_frontend_home_add:
     path:     /add/{id}
     defaults: { _controller: "OdiseoPickMyStuffBundle:Frontend/Home:submitAdd" }
 
-odiseo_pick_my_stuff_frontend_home_aboutus:
+odiseo_pick_my_stuff_frontend_aboutus:
     path:     /aboutus
     defaults: { _controller: "OdiseoPickMyStuffBundle:Frontend/Home:aboutUs" }
 
-odiseo_pick_my_stuff_frontend_home_contact:
+odiseo_pick_my_stuff_frontend_contact:
     path:     /contact
     defaults: { _controller: "OdiseoPickMyStuffBundle:Frontend/Home:contact" }
 
-odiseo_pick_my_stuff_frontend_home_questions:
+odiseo_pick_my_stuff_frontend_questions:
     path:     /services
     defaults: { _controller: "OdiseoPickMyStuffBundle:Frontend/Home:services" }
+
+odiseo_pickmystuff_costumerform:
+    pattern: /costumer-contact-form
+    methods: [POST]
+    defaults:
+        _controller: OdiseoPickMyStuffBundle:Frontend/Costumer:index
 
 #FosUserBundle Routes
 #fos_user_security_frontend:

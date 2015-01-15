@@ -13,3 +13,4 @@ parameters:
 
     locale:            en
     secret:            ThisTokenIsNotSoSecretChangeIt
+    pickmystuff.contact.mail: 'pablo.damico88@gmail.com'
