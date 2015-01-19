@@ -15,8 +15,8 @@ parameters:
     secret:            ThisTokenIsNotSoSecretChangeIt
     pickmystuff.contact.mail: 'pablo.damico88@gmail.com'
     
-    twilio_account_sid: ACa12e2b20b3aff236c4c003117d7a4fff
-    twilio_auth_token: 2694fd2c392d5276b14633c003f75132
+    twilio_account_sid: ACdfd2b20b3affasdfc4c123117d5a3dff
+    twilio_auth_token: 26asdfd1d3adf5256b14633c003f75132
     
     twilio_account_sid_test: AC0523f47ba40252e8de2d1b18e421ce16
     twilio_auth_token_test: 4bd35d4bc677f8e98d371d77707ae872
