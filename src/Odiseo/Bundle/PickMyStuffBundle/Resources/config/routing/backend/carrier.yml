@@ -4,7 +4,7 @@ odiseo_pickmystuff_backend_carrier_index:
     defaults:
         _controller: odiseo_pickmystuff.controller.carrier:indexAction
         _sylius:
-            template: OdiseoPickMyStuffBundle:Backend/carrier:index.html.twig
+            template: OdiseoPickMyStuffBundle:Backend/Carrier:index.html.twig
             paginate: 100
 
 odiseo_pickmystuff_backend_carrier_create:
@@ -13,7 +13,7 @@ odiseo_pickmystuff_backend_carrier_create:
     defaults:
         _controller: odiseo_pickmystuff.controller.carrier:createAction
         _sylius:
-            template: OdiseoPickMyStuffBundle:Backend/carrier:create.html.twig
+            template: OdiseoPickMyStuffBundle:Backend/Carrier:create.html.twig
             redirect: odiseo_pickmystuff_backend_carrier_update
 
 odiseo_pickmystuff_backend_carrier_update:
@@ -22,7 +22,7 @@ odiseo_pickmystuff_backend_carrier_update:
     defaults:
         _controller: odiseo_pickmystuff.controller.carrier:updateAction
         _sylius:
-            template: OdiseoPickMyStuffBundle:Backend/carrier:update.html.twig
+            template: OdiseoPickMyStuffBundle:Backend/Carrier:update.html.twig
             redirect: odiseo_pickmystuff_backend_carrier_update
 
 odiseo_pickmystuff_backend_carrier_delete:

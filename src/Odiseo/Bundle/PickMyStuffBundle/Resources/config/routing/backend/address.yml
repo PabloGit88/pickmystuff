@@ -4,7 +4,7 @@ odiseo_pickmystuff_backend_address_index:
     defaults:
         _controller: odiseo_pickmystuff.controller.address:indexAction
         _sylius:
-            template: OdiseoPickMyStuffBundle:Backend/address:index.html.twig
+            template: OdiseoPickMyStuffBundle:Backend/Address:index.html.twig
             paginate: 100
 
 odiseo_pickmystuff_backend_address_create:
@@ -13,7 +13,7 @@ odiseo_pickmystuff_backend_address_create:
     defaults:
         _controller: odiseo_pickmystuff.controller.address:createAction
         _sylius:
-            template: OdiseoPickMyStuffBundle:Backend/address:create.html.twig
+            template: OdiseoPickMyStuffBundle:Backend/Address:create.html.twig
             redirect: odiseo_pickmystuff_backend_address_update
 
 odiseo_pickmystuff_backend_address_update:
@@ -22,7 +22,7 @@ odiseo_pickmystuff_backend_address_update:
     defaults:
         _controller: odiseo_pickmystuff.controller.address:updateAction
         _sylius:
-            template: OdiseoPickMyStuffBundle:Backend/address:update.html.twig
+            template: OdiseoPickMyStuffBundle:Backend/Address:update.html.twig
             redirect: odiseo_pickmystuff_backend_order_index
 
 odiseo_pickmystuff_backend_address_delete:

@@ -4,7 +4,7 @@ odiseo_pickmystuff_backend_order_index:
     defaults:
         _controller: odiseo_pickmystuff.controller.order:indexAction
         _sylius:
-            template: OdiseoPickMyStuffBundle:Backend/order:index.html.twig
+            template: OdiseoPickMyStuffBundle:Backend/Order:index.html.twig
             paginate: 100
 
 odiseo_pickmystuff_backend_order_create:
@@ -13,7 +13,7 @@ odiseo_pickmystuff_backend_order_create:
     defaults:
         _controller: odiseo_pickmystuff.controller.order:createAction
         _sylius:
-            template: OdiseoPickMyStuffBundle:Backend/order:create.html.twig
+            template: OdiseoPickMyStuffBundle:Backend/Order:create.html.twig
             redirect: odiseo_pickmystuff_backend_order_update
 
 odiseo_pickmystuff_backend_order_update:
@@ -22,7 +22,7 @@ odiseo_pickmystuff_backend_order_update:
     defaults:
         _controller: odiseo_pickmystuff.controller.order:updateAction
         _sylius:
-            template: OdiseoPickMyStuffBundle:Backend/order:update.html.twig
+            template: OdiseoPickMyStuffBundle:Backend/Order:update.html.twig
             redirect: odiseo_pickmystuff_backend_order_update
 
 odiseo_pickmystuff_backend_order_delete:
