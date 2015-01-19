@@ -7,7 +7,8 @@
 			e.preventDefault();			
     		$('.modal').modal('show');  
         }); 
-    	
+
+    	var sendingCostumerForm = false;
     	$(".costumerForm form").validate(
     	{
 			onkeyup: false,
@@ -26,10 +27,10 @@
 			},
 			invalidHandler: function(event, validator)
 			{
-				//alert("Debes completar todos los campos correctamente para continuar.");
+				alert("Debes completar todos los campos correctamente para continuar.");
 			},
 			submitHandler: function(form)
-			{	
+			{
 				if(sendingCostumerForm == false)
 	        	{
 					sendingCostumerForm = true;
@@ -48,7 +49,11 @@
 			        });
 	        	}
 			}    			
-    	});  
+    	});       	
+    });
+    
+    $(".home .contentForm form").submit(function(){
+    	$('.contentForm .sended').show();
     	
     });
     

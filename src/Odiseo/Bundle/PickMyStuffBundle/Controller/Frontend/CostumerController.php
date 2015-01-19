@@ -14,9 +14,9 @@ class CostumerController extends Controller
 		$contact = $request->get('contact');
 		$emailTo = $this->container->getParameter('pickmystuff.contact.mail');
 		$this->get('pickmystuff.send.mailer')->sendCostumerMail($contact,$emailTo);
-		return JsonResponse::create(array(
-				'status' => 'ok'
-		));
+		
+		return $this->render('OdiseoPickMyStuffBundle:Frontend:contact.html.twig');
+        //return $this->redirect($this->generateUrl('odiseo_pick_my_stuff_frontend_contact'));
 	}
 		
 }

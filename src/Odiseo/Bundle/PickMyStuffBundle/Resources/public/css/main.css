@@ -13,7 +13,10 @@ body {
 	background-size: cover;
 	background-position: bottom center;
 }
+.navbar-header .navbar-brand{
+	padding: 6px 9px;
 
+}
 .wrapper {
 	height: 100%;
 	position: relative;
@@ -120,6 +123,12 @@ footer .footer{
 #content .home form .phone label,#content .home form .email label{
 	margin: 0px;
 }
+#content .home .sended{
+	text-align:center;
+	display:none;
+	color: rgb(56, 244, 56);
+	font-size:18px;
+}
 
 #content form .streets{
 	margin-top:10px;
@@ -168,6 +177,11 @@ footer .footer{
 }
 .contact .costumerForm h3{	
 	padding-left: 30px;
+	padding-top: 15px;
+}
+.contact .costumerForm form{
+	padding-bottom: 15px;
+	padding-right: 25px;
 }
 .contact .costumerForm .email{
 	margin-top:10px;
@@ -184,7 +198,26 @@ footer .footer{
 .contact .costumerForm .message label{
 	font-size:20px;
 }
-
 .contact .costumerForm .error{
 	border-color: red;	
+}
+.contact .costumerForm .sended{
+	color:#1edddf;
+	display:none;
+}
+/* about us*/
+
+.content .about {
+	background: url(../images/background_aboutus.jpg) no-repeat !important;
+	background-size: cover;
+	background-position: bottom center;
+}
+#content .container.aboutus{
+	float: left;
+	margin: 50px 0 0 50px;
+	font-size: 19px;
+}#content .container.aboutus .aboutContent{
+	background-color: rgba(155, 151, 151, 0.4);
+	padding: 20px;
+
 }

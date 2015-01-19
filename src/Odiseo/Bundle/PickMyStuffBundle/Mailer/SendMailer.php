@@ -1,6 +1,6 @@
 <?php
 
-namespace Tresepic\BoprBundle\Mailer;
+namespace Odiseo\Bundle\PickMyStuffBundle\Mailer;
 
 use Symfony\Component\DependencyInjection\ContainerInterface as Container;
 //use Odiseo\LanBundle\Entity\User as User;
@@ -36,7 +36,7 @@ class SendMailer
 	
 	public function sendCostumerMail($costumer, $emailTo)
 	{
-		$view = 'OdiseoBundlePickMyStuffBundle:Frontend/Mailer:Email.html.twig';
+		$view = 'OdiseoPickMyStuffBundle:Frontend/Mailer:Email.html.twig';
 		
 		$message = $this->getMessage($view, $costumer, $emailTo);
 		
@@ -63,14 +63,11 @@ class SendMailer
 	
 	private function getMessage($view, $costumer, $emailTo)
 	{
-		$name = $costumer['name'];
-		$lastname = $costumer['lastname'];
 		$email = $costumer['email'];
-		$phone = $costumer['phone'];
-		$question = $costumer['question'];
+		$question = $costumer['message'];
 		return $this->message
 			->setSubject('Servicio al Cliente')
-			->setFrom(array($email => $name))
+			->setFrom(array($email => $email))
 			->setTo($emailTo)
 			->setBody(
 				$this->container->get('templating')->render($view, array('costumer' => $costumer)),

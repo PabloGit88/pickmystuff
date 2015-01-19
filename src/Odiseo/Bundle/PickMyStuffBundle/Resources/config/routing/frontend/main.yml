@@ -23,7 +23,7 @@ odiseo_pick_my_stuff_frontend_questions:
     defaults: { _controller: "OdiseoPickMyStuffBundle:Frontend/Home:services" }
 
 odiseo_pickmystuff_costumerform:
-    pattern: /costumer-contact-form
+    pattern: /contact_form
     methods: [POST]
     defaults:
         _controller: OdiseoPickMyStuffBundle:Frontend/Costumer:index

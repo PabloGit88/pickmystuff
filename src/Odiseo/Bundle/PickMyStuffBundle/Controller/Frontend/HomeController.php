@@ -92,7 +92,7 @@ class HomeController extends Controller
     }
     
     public function contactAction()
-    {    	    	
+    {
         return $this->render('OdiseoPickMyStuffBundle:Frontend:contact.html.twig');
     	
     }
