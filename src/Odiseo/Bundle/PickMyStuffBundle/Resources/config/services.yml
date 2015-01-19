@@ -67,3 +67,9 @@ services:
     pickmystuff.send.mailer:
         class: Odiseo\Bundle\PickMyStuffBundle\Mailer\SendMailer
         arguments: ["@service_container"]
+
+    pickmystuff.sms.sender:
+        class: Odiseo\Bundle\PickMyStuffBundle\Services\SmsSenderService
+        arguments: [%twilio_account_sid_test% , %twilio_auth_token_test%, %twilio_from_number_test%]
+        
+        

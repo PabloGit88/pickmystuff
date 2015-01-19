@@ -30,12 +30,13 @@ class HomeController extends Controller
     	$form->handleRequest($request);
     	
     	$OrderForm = $form->getData();
-    	
 	    if ($form->isValid()) {
 		    $em = $this->getDoctrine()->getManager();
 		    $em->persist($OrderForm);
 		    $em->flush();
 
+		    $this->sendSms();
+			
 			if($form->get('Add')->isClicked())
 			{
 				$nextAction = 'odiseo_pick_my_stuff_frontend_home_add';
@@ -49,6 +50,11 @@ class HomeController extends Controller
 		    
 		    return $this->redirect($this->generateUrl($nextAction, array('id' => $id)));
 		}
+    }
+    
+    private function sendSms(){
+    	$smsSender = $this->get('pickmystuff.sms.sender');
+    	$smsSender->sendTextMessageToNumber("+14108675309", "TEST MESSAGE!!");
     }
     
     public function submitAddAction(Request $request)

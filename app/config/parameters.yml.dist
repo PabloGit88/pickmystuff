@@ -1,10 +1,10 @@
 parameters:
     database_driver:   pdo_mysql
     database_host:     127.0.0.1
-    database_port:     ~
-    database_name:     symfony
+    database_port:     3306
+    database_name:     pickmystuff
     database_user:     root
-    database_password: 123456
+    database_password: 
 
     mailer_transport:  smtp
     mailer_host:       127.0.0.1
@@ -14,3 +14,12 @@ parameters:
     locale:            en
     secret:            ThisTokenIsNotSoSecretChangeIt
     pickmystuff.contact.mail: 'pablo.damico88@gmail.com'
+    
+    twilio_account_sid: ACa12e2b20b3aff236c4c003117d7a4fff
+    twilio_auth_token: 2694fd2c392d5276b14633c003f75132
+    
+    twilio_account_sid_test: AC0523f47ba40252e8de2d1b18e421ce16
+    twilio_auth_token_test: 4bd35d4bc677f8e98d371d77707ae872
+    
+    twilio_from_number: "+15005550006"
+    twilio_from_number_test: "+15005550006"
