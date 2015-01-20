@@ -6,7 +6,11 @@
 	{{ form_start(form) }}
 	    {{ form_errors(form) }}
 	 	<h2>Detalles de la Orden:</h2>
-	 	<span class="glyphicon glyphicon-ok sended">Pedido enviado correctamente!</span>
+	 	
+	 	{% for flashMessage in app.session.flashbag.get('notice') %}
+	 	<p class="sended"><i class="glyphicon glyphicon-ok"></i> {{ flashMessage }}</p>
+		{% endfor %}
+		
 	 	<div class="row contactrow">
 		    <div class="col-md-12 col-sm-12 text-center contact">
 		        {{ form_label(form.client.fullName) }}

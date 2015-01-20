@@ -10,12 +10,22 @@ use Odiseo\Bundle\PickMyStuffBundle\Entity\Client;
 
 class HomeController extends Controller
 {
-    public function indexAction()
+    public function indexAction(Request $request)
     {
-    	$form = $this->createForm(new OrderFrontendType(),null,array(
+    	$order = null;
+    	if($id = $request->get('id'))
+    	{
+    		$repository = $this->get('odiseo_pickmystuff.repository.order');
+    		$orderFormData = $repository->find($id);
+    		
+    		$order = new Order();
+    		$client = $orderFormData->getClient();
+    		$order->setClient($client);
+    	}
+    	
+    	$form = $this->createForm(new OrderFrontendType(), $order, array(
     		'action' => $this->generateUrl('odiseo_pick_my_stuff_frontend_home_submit'))
     	);
-    	
     	
         return $this->render('OdiseoPickMyStuffBundle:Frontend:index.html.twig', array(
             'form' => $form->createView(),
@@ -24,71 +34,38 @@ class HomeController extends Controller
     
     public function submitAction(Request $request)
     {
-    	$form = $this->createForm(new OrderFrontendType()
-    	);
-    	
+    	$form = $this->createForm(new OrderFrontendType());
     	$form->handleRequest($request);
     	
-    	$OrderForm = $form->getData();
-	    if ($form->isValid()) {
+	    if ($form->isValid()) 
+	    {
+	    	$orderForm = $form->getData();
+	    	
 		    $em = $this->getDoctrine()->getManager();
-		    $em->persist($OrderForm);
+		    $em->persist($orderForm);
 		    $em->flush();
 
 		    $this->sendSms();
 			
+		    $vars = array();
+		    $noticeMessage = 'Pedido enviado correctamente!';
+		    
 			if($form->get('Add')->isClicked())
 			{
-				$nextAction = 'odiseo_pick_my_stuff_frontend_home_add';
-				$id = $OrderForm->getId();
-		    	
-		    }else
-		    { 
-		    	$nextAction = 'odiseo_pick_my_stuff_frontend_home';
-		    	$id = "";
+				$vars['id'] = $orderForm->getId();
+				$noticeMessage .= ' Puede agregar otro a continuación';
 		    }
 		    
-		    return $this->redirect($this->generateUrl($nextAction, array('id' => $id)));
+		    $this->get('session')->getFlashBag()->add('notice', $noticeMessage);
+		    
+		    return $this->redirect($this->generateUrl('odiseo_pick_my_stuff_frontend_home', $vars));
 		}
     }
     
-    private function sendSms(){
+    private function sendSms()
+    {
     	$smsSender = $this->get('pickmystuff.sms.sender');
     	$smsSender->sendTextMessageToNumber("+14108675309", "TEST MESSAGE!!");
-    }
-    
-    public function submitAddAction(Request $request)
-    {
-    	$form = $this->createForm(new OrderFrontendType()
-    	);
-    	
-    	$form->handleRequest($request);
-    	
-    	$order = new Order();
-    	$client = new Client();
-    	$id = $request->get('id');
-    	/*$em = $this->getDoctrine()->getManager();
-    	$query = $em->createQueryBuilder()
-	    	->select('o')
-	    	->from('Odiseo\Bundle\PickMyStuffBundle\Entity\Order', 'o')
-	    	->where('o.id = :id')
-	    	->setParameter('id', $id)
-	    	->getQuery()
-    	;*/
-    	$repository = $this->getDoctrine()->getManager()->getRepository('Odiseo\Bundle\PickMyStuffBundle\Entity\Order');
-    	$orderFormData = $repository->find($id);
-    	//$data = $query->getResult();    	
-    	
-    	$client = $orderFormData->getClient();
-    	$order->setClient($client);
-    	
-    	$form = $this->createForm(new OrderFrontendType(),$order,array(
-    		'action' => $this->generateUrl('odiseo_pick_my_stuff_frontend_home_submit'))
-    	);
-    	
-        return $this->render('OdiseoPickMyStuffBundle:Frontend:index.html.twig', array(
-            'form' => $form->createView(),
-        ));
     }
     
     public function aboutUsAction()

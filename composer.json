@@ -29,7 +29,8 @@
 		"sylius/resource-bundle" : "0.12.*",
 		"vich/uploader-bundle" : "0.14.*",
 		"liip/imagine-bundle" : "~0.9",
-		"raulfraile/ladybug-bundle": "dev-master"
+		"raulfraile/ladybug-bundle" : "dev-master",
+		"twilio/sdk": "dev-master"
 	},
 	"scripts" : {
 		"post-install-cmd" : [
