@@ -53,7 +53,7 @@ class MercancyFrontendType extends AbstractType
 		        ),
         ))
         ->add('imageFile', 'file', array(
-        		'required' => true,
+        		'required' => false,
         		'label'    => 'Subir imagen de mercancia:'
         ));
 		;

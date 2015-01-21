@@ -9,13 +9,20 @@ html, body {
 }
 
 body {
-	background: url(../images/background.jpg) no-repeat;
 	background-size: cover;
 	background-position: bottom center;
 }
 .navbar-header .navbar-brand{
 	padding: 6px 9px;
-
+}
+.navbar-header{
+	height:100%;
+}
+.navbar-brand{
+	height:100%;
+}
+.navbar-brand img{
+	height:100%;
 }
 .wrapper {
 	height: 100%;
@@ -54,7 +61,7 @@ header .navbar-right{
 }
 header ul.navbar-right{
 	font-size:30px;
-	padding-top:10px;
+	/*padding-top:10px;*/
 }
 header ul.navbar-right .about,header ul.navbar-right .services,header ul.navbar-right .contactus,header ul.navbar-right .faq{
 	padding-top:13px;
@@ -107,7 +114,11 @@ footer .footer{
 	font-size: 23px;
 	height: 100%;
 }
-
+#content .empezar{
+	position: absolute;
+	top: 65%;
+	left: 48%;
+}
 #content .home form h2{
 	text-align:center;
 	padding-top: 16px;
@@ -163,14 +174,52 @@ footer .footer{
 #content form .finalizar{
 	margin-top: 30px;
 }
-#content form .btn{	
+#content .btn{	
 	background-color: #1edddf;
 	border-color: #1edddf;
 	font-size: 18px;
 }
+/* modal */
+.modal .logo{
+	float:left;
+}
+.modal .modal-header{
+	border:0px;
+	background: #48c2c6 url(../images/logo.png) no-repeat 1% 50%;
+	background-size: contain;
+}
+.modal .modal-header h3{
+	font-size: 31px;
+}
+.modal .celestial{
+	background-color: #48c2c6;	
+	height: 172px;
+}
+.modal .black{
+	background-color:black;
+	height: 225px;
+}
+.modal .black .row{
+	padding-top: 57px;
+}
+.modal .comments label{
+	color:white;
+	font-weight:normal;
+}
+.modal .modal-body h3{
+	margin: 0 0 14px 0;
+}
+.modal .imgDimension{
+	position:absolute;
+	max-width: 20%;
+	left: 40%;
+	top: 37%;
+}
 .modal-footer{
 	text-align:center;
+	border:0px;
 }
+/**/
 /* contact us*/
 .container.contact{
 	margin:0;

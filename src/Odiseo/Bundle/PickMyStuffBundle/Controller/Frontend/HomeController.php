@@ -10,7 +10,14 @@ use Odiseo\Bundle\PickMyStuffBundle\Entity\Client;
 
 class HomeController extends Controller
 {
-    public function indexAction(Request $request)
+    
+    public function indexAction()
+    {    	    	
+        return $this->render('OdiseoPickMyStuffBundle:Frontend:index.html.twig');
+    	
+    }
+    
+    public function orderAction(Request $request)
     {
     	$order = null;
     	if($id = $request->get('id'))
@@ -27,7 +34,7 @@ class HomeController extends Controller
     		'action' => $this->generateUrl('odiseo_pick_my_stuff_frontend_home_submit'))
     	);
     	
-        return $this->render('OdiseoPickMyStuffBundle:Frontend:index.html.twig', array(
+        return $this->render('OdiseoPickMyStuffBundle:Frontend:order.html.twig', array(
             'form' => $form->createView(),
         ));
     }
@@ -58,7 +65,7 @@ class HomeController extends Controller
 		    
 		    $this->get('session')->getFlashBag()->add('notice', $noticeMessage);
 		    
-		    return $this->redirect($this->generateUrl('odiseo_pick_my_stuff_frontend_home', $vars));
+		    return $this->redirect($this->generateUrl('odiseo_pick_my_stuff_frontend_order', $vars));
 		}
     }
     
