@@ -9,8 +9,7 @@ html, body {
 }
 
 body {
-	background-size: cover;
-	background-position: bottom center;
+	overflow-y:hidden;
 }
 .navbar-header .navbar-brand{
 	padding: 6px 9px;
@@ -94,19 +93,17 @@ footer .footer{
 }
 
 #content {
-	overflow: visible;
 	height: 75%;
 }
 .container{
 	height:100%;
 }
+#content input{
+	height:30px;
+}
 #content .contentForm{	
 	background-color: rgba(192,192,192,0.4);
-	/*overflow-y: scroll;
-	overflow-x: hidden;*/
 	height: 95%;
-	overflow-y: auto;
-	overflow-x: hidden;
 }
 #content .home form{	
 	width: 90%;
@@ -114,6 +111,7 @@ footer .footer{
 	font-size: 23px;
 	height: 100%;
 }
+
 #content .empezar{
 	position: absolute;
 	top: 65%;
@@ -121,14 +119,16 @@ footer .footer{
 }
 #content .home form h2{
 	text-align:center;
-	padding-top: 16px;
+	font-size: 28px;
 }
 #content form .phoneMail{
-	margin-top: 22px;
+	margin-top: 1%;
 }
+/*
 #content .home form .contact{
 	margin-top: 10px;
 }
+*/
 #content .home form .contact input{
 	display:inline;
 	width:30%;
@@ -145,17 +145,17 @@ footer .footer{
 #content .home .sended .glyphicon {
 	padding-right: 10px;
 }
-
+/*
 #content form .streets{
 	margin-top:10px;
 }
-
+*/
 #content form .types{
-	margin-top:40px;
+	margin-top:4%;
 }
 
 #content form .adds{
-	margin-top:50px;
+	margin-top:1%;
 }
 
 #content form .addInfo{
@@ -163,7 +163,7 @@ footer .footer{
 }
 
 #content form .image{
-	margin-top: 85px;
+	margin-top: 3%;
 }
 
 #content form .image input{
