@@ -33,7 +33,7 @@ body {
 }
 header{
 	background-color: #1edddf;
-	height: 10%;
+	height: 70px;
 }
 header .navbar-default {
 	background: none;
@@ -86,15 +86,13 @@ footer .footer{
 
 #content{
 	background: url(../images/background.png) no-repeat;
+	height: 100%;
 }
 .content-image {
 	height: 100%;
 	width: 100%;
 }
 
-#content {
-	height: 75%;
-}
 .container{
 	height:100%;
 }
