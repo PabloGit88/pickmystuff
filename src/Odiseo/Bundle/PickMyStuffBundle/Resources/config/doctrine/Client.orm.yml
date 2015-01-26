@@ -19,7 +19,7 @@ Odiseo\Bundle\PickMyStuffBundle\Entity\Client:
         email:
             type: string
             length: 255
-            nullable: true
+            unique: true
         phone:
             type: string
             length: 255
@@ -27,9 +27,6 @@ Odiseo\Bundle\PickMyStuffBundle\Entity\Client:
         cellphone:
             type: string
             length: 255
-            nullable: true
-        sendText:
-            type: boolean
             nullable: true
         desiredDeliveryDate:
             type: datetime

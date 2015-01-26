@@ -15,31 +15,24 @@ class SendMailer
 		$this->message = \Swift_Message::newInstance();
 		$this->container = $container;
 	}
-
-	/*public function sendBoprServicesMail($emailFrom)
+	
+	public function sendHomeMail($order, $emailFrom)
 	{
-		$view = 'OdiseoBundlePickMyStuffBundle:Frontend/Mailer:BoprServicesEmail.html.twig';
-	
-		$message = $this->message
-			->setSubject('Services of Puerto Rico')
-			->setFrom(array($emailFrom))
-			->setTo($this->container->getParameter('tresepic.contact.mail'))
-			->setBody(
-				$this->container->get('templating')->render($view, array('emailFrom' => $emailFrom)),
-				'text/html'
-			);
-	
+		$view = 'OdiseoPickMyStuffBundle:Frontend/Mailer:Order.html.twig';
+		
+		$message = $this->getMessageHome($view, $order, $emailFrom);
+
 		$failures = $this->send($message);
-	
+		
 		return $failures;
-	}*/
+	}
 	
 	public function sendCostumerMail($costumer, $emailTo)
 	{
 		$view = 'OdiseoPickMyStuffBundle:Frontend/Mailer:Email.html.twig';
 		
 		$message = $this->getMessage($view, $costumer, $emailTo);
-		
+
 		$failures = $this->send($message);
 		
 		return $failures;
@@ -71,6 +64,21 @@ class SendMailer
 			->setTo($emailTo)
 			->setBody(
 				$this->container->get('templating')->render($view, array('costumer' => $costumer)),
+				'text/html'
+			);
+	}
+	
+	private function getMessageHome($view, $order, $emailFrom)
+	{
+		/*$email = $order['email'];
+		$question = $order['message'];*/
+		$emailTo = $order->getClient()->getEmail();
+		return $this->message
+			->setSubject('Confirmacion de pedido')
+			->setFrom(array($emailFrom => $emailFrom))
+			->setTo($emailTo)
+			->setBody(
+				$this->container->get('templating')->render($view),
 				'text/html'
 			);
 	}

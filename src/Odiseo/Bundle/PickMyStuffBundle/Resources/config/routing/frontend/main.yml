@@ -6,14 +6,6 @@ odiseo_pick_my_stuff_frontend_order:
     path:     /order
     defaults: { _controller: "OdiseoPickMyStuffBundle:Frontend/Home:order" }
 
-odiseo_pick_my_stuff_frontend_home_submit:
-    path:     /submit
-    defaults: { _controller: "OdiseoPickMyStuffBundle:Frontend/Home:submit" }
-    
-odiseo_pick_my_stuff_frontend_home_add:
-    path:     /add/{id}
-    defaults: { _controller: "OdiseoPickMyStuffBundle:Frontend/Home:submitAdd" }
-
 odiseo_pick_my_stuff_frontend_aboutus:
     path:     /aboutus
     defaults: { _controller: "OdiseoPickMyStuffBundle:Frontend/Home:aboutUs" }

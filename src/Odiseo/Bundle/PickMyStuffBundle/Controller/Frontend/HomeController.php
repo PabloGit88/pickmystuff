@@ -31,48 +31,70 @@ class HomeController extends Controller
     	}
     	
     	$form = $this->createForm(new OrderFrontendType(), $order, array(
-    		'action' => $this->generateUrl('odiseo_pick_my_stuff_frontend_home_submit'))
+    		'action' => $this->generateUrl('odiseo_pick_my_stuff_frontend_order'))
     	);
+    	
+    	if($request->isMethod('POST'))
+    	{
+    		$form->handleRequest($request);
+    		 
+    		if ($form->isValid())
+    		{
+    			$orderForm = $form->getData();
+    			/* si ordena con el mismo mail se pisa el cliente*/
+    			$emailForm = $orderForm->getClient()->getEmail();
+    			$fullnameForm = $orderForm->getClient()->getFullname();
+    			$phoneForm = $orderForm->getClient()->getPhone();
+    		
+    			$repository = $this->get('odiseo_pickmystuff.repository.client');
+    			$clientData = $repository->findOneBy(array('email'  => $emailForm));
+    			if($clientData != null)
+    			{
+    				$clientData->setFullname($fullnameForm);
+    				$clientData->setPhone($phoneForm);
+    				 
+    				$orderForm->setClient($clientData);
+    			}
+    			/**/
+    		
+    			$em = $this->getDoctrine()->getManager();
+    			$em->persist($orderForm);
+    			$em->flush();
+    				
+    			/*send mail*/
+    			$this->sendMail($orderForm);
+    			/**/
+    			//$this->sendSms();
+    				
+    			$vars = array();
+    			$noticeMessage = 'Pedido enviado correctamente!';
+    		
+    			if($form->get('Add')->isClicked())
+    			{
+    				$vars['id'] = $orderForm->getId();
+    				$noticeMessage .= ' Puede agregar otro a continuación';
+    			}
+    		
+    			$this->get('session')->getFlashBag()->add('notice', $noticeMessage);
+    		
+    			return $this->redirect($this->generateUrl('odiseo_pick_my_stuff_frontend_order', $vars));
+    		}    		
+    	}
     	
         return $this->render('OdiseoPickMyStuffBundle:Frontend:order.html.twig', array(
             'form' => $form->createView(),
         ));
     }
     
-    public function submitAction(Request $request)
-    {
-    	$form = $this->createForm(new OrderFrontendType());
-    	$form->handleRequest($request);
-    	
-	    if ($form->isValid()) 
-	    {
-	    	$orderForm = $form->getData();
-	    	
-		    $em = $this->getDoctrine()->getManager();
-		    $em->persist($orderForm);
-		    $em->flush();
-
-		    $this->sendSms();
-			
-		    $vars = array();
-		    $noticeMessage = 'Pedido enviado correctamente!';
-		    
-			if($form->get('Add')->isClicked())
-			{
-				$vars['id'] = $orderForm->getId();
-				$noticeMessage .= ' Puede agregar otro a continuación';
-		    }
-		    
-		    $this->get('session')->getFlashBag()->add('notice', $noticeMessage);
-		    
-		    return $this->redirect($this->generateUrl('odiseo_pick_my_stuff_frontend_order', $vars));
-		}
-    }
-    
     private function sendSms()
     {
     	$smsSender = $this->get('pickmystuff.sms.sender');
     	$smsSender->sendTextMessageToNumber("+14108675309", "TEST MESSAGE!!");
+    }
+    private function sendMail($orderForm)
+    {
+		$emailFrom = $this->container->getParameter('pickmystuff.contact.mail');
+		$this->get('pickmystuff.send.mailer')->sendHomeMail($orderForm,$emailFrom);
     }
     
     public function aboutUsAction()

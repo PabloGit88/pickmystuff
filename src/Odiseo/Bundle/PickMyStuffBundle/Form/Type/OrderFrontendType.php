@@ -32,13 +32,26 @@ class OrderFrontendType extends AbstractType
        		->add('mercancy', new MercancyFrontendType(), array(
         		'label'    => false
        		))
-       		->add('carrier', new CarrierFrontendType(), array(
-        		'label'    => false
-       		))
             ->add('comments', 'textarea', array(
         		'required' => false,
         		'label'    => 'Comentarios de entrega:'
       		))
+	        ->add('vehicleType', 'choice', array('choices' => array(
+					'Pickup' => 'Pickup',
+					'Minivan' => 'Minivan', 
+					'Van' => 'Van', 
+					'Canib 15' => 'Canib 15',
+					'Canib 20' => 'Canib 20',
+					'Canib 24' => 'Canib 24',
+					'Refrigerado' => 'Refrigerado',
+					'Plataforma' => 'Plataforma',
+					'Grua' => 'Grua',
+					),
+	  				'empty_data'  => null,
+	    			'placeholder' => 'Escoger vehiculo',
+	        		'required' => true,
+	        		'label'    => false
+	        ))
    			->add('Add', 'submit', array(
         		'label'    => 'Additional Order'
       		))

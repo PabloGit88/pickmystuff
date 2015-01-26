@@ -25,7 +25,7 @@ class ClientFrontendType extends AbstractType
         		'label'    => 'TELEFONO'
         ))
             ->add('email', 'text', array(
-        		'required' => false,
+        		'required' => true,
         		'label'    => 'EMAIL'
         ))
 		;

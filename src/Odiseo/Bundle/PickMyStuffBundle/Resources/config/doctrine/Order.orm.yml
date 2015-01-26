@@ -24,6 +24,10 @@ Odiseo\Bundle\PickMyStuffBundle\Entity\Order:
             type: string
             length: 255
             nullable: true
+        vehicleType:
+            type: string
+            length: 255
+            nullable: true
         createdAt:
             column: created_at
             type: datetime

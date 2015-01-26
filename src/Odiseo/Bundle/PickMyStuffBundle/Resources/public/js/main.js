@@ -41,6 +41,7 @@
 			        	  success: function(data, textStatus, xhr) 
 			        	  {
 			        		  $('.costumerForm .sended').show();
+			        		  $(form).trigger("reset");
 			              },
 			              complete: function(jqXHR,textStatus)
 			              {
@@ -50,11 +51,6 @@
 	        	}
 			}    			
     	});       	
-    });
-    
-    $(".home .contentForm form").submit(function(){
-    	$('.contentForm .sended').show();
-    	
     });
     
 })( jQuery );

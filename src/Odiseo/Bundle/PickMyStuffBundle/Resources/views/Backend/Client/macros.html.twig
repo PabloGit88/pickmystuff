@@ -13,7 +13,6 @@
 				<th>Nombre y Apellido</th>
 				<th>Email</th>
 				<th>Fecha deseada de entrega</th>
-				<th>Acepta SMS?</th>
 				<th></th>
 			</tr>
 			{% for client in clients %}
@@ -22,11 +21,6 @@
 				<td>{{ client.fullname }}</td>
 				<td>{{ client.email }}</td>
 				<td>{{ client.desiredDeliveryDate|date("d/m/Y") }}</td>
-				{% if client.sendText == true %}
-					<td><span class="glyphicon glyphicon-ok"></span></td>
-				{% else %}
-					<td><span class="glyphicon glyphicon-remove"></span></td>
-				{% endif %}
 				<td>									
 					<div class="pull-right">					
               			<a class="btn btn-primary" href="{{ path('odiseo_pickmystuff_backend_client_update', {'id': client.id}) }}"><span>Editar</span></a>

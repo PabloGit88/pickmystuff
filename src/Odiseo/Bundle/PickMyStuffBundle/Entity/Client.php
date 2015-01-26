@@ -14,7 +14,6 @@ class Client
     private $email;
     private $phone;
     private $cellphone;
-    private $sendText;
     private $desiredDeliveryDate;
     private $address;
     private $orders;
@@ -89,16 +88,6 @@ class Client
 		$this->cellphone = $cellphone;
 		return $this;
 	}
-	
- 	public function getSendText()
-    {
-        return $this->sendText;
-    }
-    
-    public function setSendText($sendText) {
-    	$this->sendText = $sendText;
-    	return $this;
-    }
 	
  	public function getAddress()
     {

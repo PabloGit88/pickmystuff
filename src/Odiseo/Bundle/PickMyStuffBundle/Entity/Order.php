@@ -18,6 +18,7 @@ class Order
     private $deliveryTime;
     private $collectedTime;
     private $comments;
+    private $vehicleType;
 
     public function getId()
     {
@@ -131,6 +132,15 @@ class Order
     	$this->comments = $comments;
     	return $this;
     }    
+        
+    public function getVehicleType() {
+    	return $this->vehicleType;
+    }
+    
+    public function setVehicleType($vehicleType) {
+    	$this->vehicleType = $vehicleType;
+    	return $this;
+    }
     
     public function __toString()
     {
