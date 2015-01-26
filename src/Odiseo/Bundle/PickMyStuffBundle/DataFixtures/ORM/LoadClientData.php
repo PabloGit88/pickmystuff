@@ -39,7 +39,6 @@ class LoadClientData extends DataFixture
 	        $client->setEmail('Pepe'.$i.'@pick.com');
 	        $client->setPhone('4323412');
 	        $client->setCellphone('15123123');
-	        $client->setSendText(true);
 	        $client->setDesiredDeliveryDate($date);
 
             $manager->persist($client);
