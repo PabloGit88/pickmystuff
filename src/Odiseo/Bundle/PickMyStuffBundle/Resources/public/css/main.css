@@ -314,6 +314,7 @@ footer .footer{
 	}
 	#content .contentForm .addOrder{
 		float:left;
+		padding:0;
 	}
 	#content .contentForm .addInfo{
 		float:right;
