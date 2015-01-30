@@ -64,7 +64,6 @@ class HomeController extends Controller
     			/*send mail*/
     			$this->sendMail($orderForm);
     			/**/
-    			//$this->sendSms();
     				
     			$vars = array();
     			$noticeMessage = 'Pedido enviado correctamente!';

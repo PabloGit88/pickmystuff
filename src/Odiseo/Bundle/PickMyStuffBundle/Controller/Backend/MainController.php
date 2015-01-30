@@ -3,11 +3,30 @@
 namespace Odiseo\Bundle\PickMyStuffBundle\Controller\Backend;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class MainController extends Controller
 {
     public function dashboardAction()
     {
         return $this->render('OdiseoPickMyStuffBundle:Backend/Main:dashboard.html.twig');
+    }
+    public function sendSmsAction(Request $request)
+    {
+    	$idCarrier = $request->get('id');
+    	$repository = $this->get('odiseo_pickmystuff.repository.carrier');
+    	$carrierData = $repository->find($idCarrier);
+
+    	$carrierName = $carrierData->getName();
+    	$carrierPhone = $carrierData->getPhone();
+    		
+    	$smsSender = $this->get('pickmystuff.sms.sender');
+    	$smsSender->sendTextMessageToNumber('+14108675309', "TEST MESSAGE!!");
+    	
+
+    	$noticeMessage = 'Sms enviado correctamente al transportista '.$carrierName;
+    	$this->get('session')->getFlashBag()->add('notice', $noticeMessage);
+    	
+    	return $this->redirect($this->generateUrl('odiseo_pickmystuff_backend_carrier_index'));
     }
 }

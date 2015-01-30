@@ -41,7 +41,11 @@ header .navbar-default {
 	background: none;
 	border: none;
 }
-
+header .logo{	
+	height: 100%;
+	z-index: 99999999999;
+	position: relative;
+}
 header .navbar-nav {
 	float: right;
 }
@@ -136,13 +140,13 @@ footer .footer{
 #content .home form .phone label,#content .home form .email label{
 	margin: 0px;
 }
-#content .home .sended {
+#content .home .sended,.page-header .sended {
 	text-align:center;
 	color: rgb(31, 107, 7);
 	font-size:18px;
 }
 
-#content .home .sended .glyphicon, #content .costumerForm .sended .glyphicon {
+#content .home .sended .glyphicon, #content .costumerForm .sended .glyphicon,.page-header .sended .glyphicon{
 	padding-right: 10px;
 }
 /*
@@ -275,4 +279,47 @@ footer .footer{
 	background-color: rgba(155, 151, 151, 0.4);
 	padding: 20px;
 
+}
+
+
+/* Extra Small devices (XS) */
+@media screen and (max-width: 767px) 
+{
+	body {
+		overflow-y:auto;
+	}
+	
+	.navbar .navbar-collapse {
+		position: absolute;
+		right: 0;
+		background-color: #1edddf;
+		z-index: 999999;
+	}
+	.navbar-nav {
+		margin: 0 -15px;
+	}
+	.nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
+		background-color: #31689B;
+	}
+	.navbar-default .navbar-nav > li > a {
+		color: black;
+	}
+	.navbar-toggle {
+		margin-top: 15px;
+	}
+	#content .contentForm{	
+		overflow-y: auto;
+		overflow-x: hidden;
+		height: 75%;
+	}
+	#content .contentForm .addOrder{
+		float:left;
+	}
+	#content .contentForm .addInfo{
+		float:right;
+	}
+	.contact .costumerForm {
+		width: 90%;
+	}	
+	
 }

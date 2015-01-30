@@ -14,7 +14,7 @@ odiseo_pickmystuff_backend_order:
     resource: @OdiseoPickMyStuffBundle/Resources/config/routing/backend/order.yml
     prefix: /orders
 
-odiseo_pickmystuff_backend_carrer:
+odiseo_pickmystuff_backend_carrier:
     resource: @OdiseoPickMyStuffBundle/Resources/config/routing/backend/carrier.yml
     prefix: /carriers
 

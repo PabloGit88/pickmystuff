@@ -23,6 +23,7 @@
 				<td>{{ carrier.vehicleType }}</td>
 				<td>									
 					<div class="pull-right">					
+              			<a class="btn btn-warning" href="{{ path('odiseo_pickmystuff_backend_carrier_send_sms', {'id': carrier.id}) }}"><span>Send SMS</span></a>					
               			<a class="btn btn-primary" href="{{ path('odiseo_pickmystuff_backend_carrier_update', {'id': carrier.id}) }}"><span>Editar</span></a>
 	                    <form action="{{ path('odiseo_pickmystuff_backend_carrier_delete', {'id': carrier.id}) }}" onsubmit="return confirm('Estas seguro?')" method="post" style="display: inline;">
     						<input type="hidden" name="_method" value="DELETE">

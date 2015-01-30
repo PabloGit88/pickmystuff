@@ -32,3 +32,9 @@ odiseo_pickmystuff_backend_carrier_delete:
         _controller: odiseo_pickmystuff.controller.carrier:deleteAction
         _sylius:
             redirect: odiseo_pickmystuff_backend_carrier_index
+
+odiseo_pickmystuff_backend_carrier_send_sms:
+    pattern: /{id}
+    methods: [GET, PUT, POST]
+    defaults:
+        _controller: "OdiseoPickMyStuffBundle:Backend/Main:sendSms"

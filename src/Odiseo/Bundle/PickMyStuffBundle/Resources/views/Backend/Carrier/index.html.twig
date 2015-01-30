@@ -19,7 +19,10 @@
 <div class="page-header">
     <div class="actions-menu">
         {{ buttons.create(path('odiseo_pickmystuff_backend_carrier_create'), 'Crear') }}
-    </div>
+    </div>	 	
+ 	{% for flashMessage in app.session.flashbag.get('notice') %}
+ 	<p class="sended"><i class="glyphicon glyphicon-ok"></i> {{ flashMessage }}</p>
+	{% endfor %}
 </div>
 {{ list(carriers)  }}
 {{ pagination(carriers) }}
