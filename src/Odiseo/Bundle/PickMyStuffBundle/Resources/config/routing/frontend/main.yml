@@ -14,9 +14,13 @@ odiseo_pick_my_stuff_frontend_contact:
     path:     /contact
     defaults: { _controller: "OdiseoPickMyStuffBundle:Frontend/Home:contact" }
 
-odiseo_pick_my_stuff_frontend_questions:
+odiseo_pick_my_stuff_frontend_services:
     path:     /services
     defaults: { _controller: "OdiseoPickMyStuffBundle:Frontend/Home:services" }
+
+odiseo_pick_my_stuff_frontend_faq:
+    path:     /faq
+    defaults: { _controller: "OdiseoPickMyStuffBundle:Frontend/Home:faq" }
 
 odiseo_pickmystuff_costumerform:
     pattern: /contact_form

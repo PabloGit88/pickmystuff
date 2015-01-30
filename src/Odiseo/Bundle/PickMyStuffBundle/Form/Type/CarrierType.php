@@ -33,6 +33,10 @@ class CarrierType extends AbstractType
         		'required' => true,
         		'label'    => 'Teléfono'
         ))
+        ->add('isPaid', 'checkbox', array(
+        		'required' => false,
+        		'label'    => 'Pagado?'
+        ))
         ;
     }
 

@@ -28,6 +28,10 @@ class OrderType extends AbstractType
         		'required' => false,
         		'label'    => 'Horario deseado de entrega'
         ))
+        ->add('isComplete', 'checkbox', array(
+        		'required' => false,
+        		'label'    => 'Completado?'
+        ))
         ;
     }
 

@@ -25,7 +25,7 @@ class AddressType extends AbstractType
         ))
         ->add('province', 'text', array(
         		'required' => true,
-        		'label'    => 'Provincia'
+        		'label'    => 'Pueblo'
         ))
         ->add('zipcode', 'text', array(
         		'required' => true,

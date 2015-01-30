@@ -14,6 +14,7 @@ class Client
     private $email;
     private $phone;
     private $cellphone;
+    private $isFactured;
     private $desiredDeliveryDate;
     private $address;
     private $orders;
@@ -147,6 +148,15 @@ class Client
     public function hasOrders(Order $order)
     {
     	return $this->orders->contains($order);
+    }
+	
+    public function getIsFactured() {
+    	return $this->isFactured;
+    }
+    
+    public function setIsFactured($isFactured) {
+    	$this->isFactured = $isFactured;
+    	return $this;
     }
 
 }

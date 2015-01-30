@@ -11,17 +11,25 @@
 			<tr>
 				<th>ID</th>
 				<th>Nombre y Apellido</th>
+				<th>Telefono</th>
 				<th>Email</th>
-				<th>Fecha deseada de entrega</th>
+				<th>Facturado?</th>
 				<th></th>
 			</tr>
 			{% for client in clients %}
 	        <tr>
 				<td>{{ client.id }}</td>
 				<td>{{ client.fullname }}</td>
+				<td>{{ client.phone }}</td>
 				<td>{{ client.email }}</td>
-				<td>{{ client.desiredDeliveryDate|date("d/m/Y") }}</td>
-				<td>									
+				<td class="text-center">
+					{% if client.isFactured %}
+						<span class="glyphicon glyphicon-ok"></span>
+					{% else %}
+						<span class="glyphicon glyphicon-remove"></span>
+					{% endif %}
+				</td>
+				<td>
 					<div class="pull-right">					
               			<a class="btn btn-primary" href="{{ path('odiseo_pickmystuff_backend_client_update', {'id': client.id}) }}"><span>Editar</span></a>
 	                    <form action="{{ path('odiseo_pickmystuff_backend_client_delete', {'id': client.id}) }}" onsubmit="return confirm('Estas seguro?')" method="post" style="display: inline;">

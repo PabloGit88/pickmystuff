@@ -28,6 +28,9 @@ Odiseo\Bundle\PickMyStuffBundle\Entity\Order:
             type: string
             length: 255
             nullable: true
+        isComplete:
+            type: boolean
+            nullable: true
         createdAt:
             column: created_at
             type: datetime

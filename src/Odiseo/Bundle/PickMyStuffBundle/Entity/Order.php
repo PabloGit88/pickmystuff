@@ -19,6 +19,7 @@ class Order
     private $collectedTime;
     private $comments;
     private $vehicleType;
+    private $isComplete;
 
     public function getId()
     {
@@ -146,30 +147,14 @@ class Order
     {
     	return $this->getStatus();
     }    
- /*   public function addtMercancy(Mercancy $mercancy) {
-    	
-    	if (!$this->hasMercancy($mercancy)) {
-    		$mercancy->setMercancy($this);
-    		$this->mercancy->add($mercancy);
-    	}
-    	    	
-    	$this->mercancy = $mercancy;
-    	return $this;
-    } */
- /*   
-    public function removeMercancy(Mercancy $mercancy)
-    {
-    	if ($this->hasMercancy($mercancy)) {
-    		$mercancy->setMercancy(null);
-    		$this->mercancy->removeElement($mercancy);
-    	}
-    
-    	return $this;
+	
+    public function getIsComplete() {
+    	return $this->isComplete;
     }
     
-    public function hasMercancy(Mercancy $mercancy)
-    {
-    	return $this->mercancy->contains($mercancy);
-    }*/
+    public function setIsComplete($isComplete) {
+    	$this->isComplete = $isComplete;
+    	return $this;
+    }
 
 }

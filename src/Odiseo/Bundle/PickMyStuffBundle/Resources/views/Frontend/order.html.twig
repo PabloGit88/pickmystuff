@@ -1,5 +1,7 @@
 {% extends 'OdiseoPickMyStuffBundle:Frontend:layout.html.twig' %}
 
+{% block contentClass %}order{% endblock %}
+
 {% block content %}
 <div class="container home">
 	<div class="contentForm">
@@ -164,5 +166,9 @@
 	</div>
 	{{ form_end(form) }}
 	</div>
-</div>
+
+	<footer>
+		<div class="separator"></div>
+		<div class="footer"></div>
+	</footer>
 {% endblock %}

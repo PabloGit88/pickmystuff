@@ -20,6 +20,9 @@ Odiseo\Bundle\PickMyStuffBundle\Entity\Carrier:
             type: string
             length: 255
             nullable: true
+        isPaid:
+            type: boolean
+            nullable: true
         createdAt:
             column: created_at
             type: datetime

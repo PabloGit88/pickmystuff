@@ -40,14 +40,14 @@
 	      					<span class="icon-bar"></span>
 	    				</button>
     				</div>   					
-  
+ 
   					<div class="collapse navbar-collapse navbar-ex1-collapse">
 		    			<!-- Brand and toggle get grouped for better mobile display -->
 							<ul class="nav navbar-nav navbar-right">
 	      					  <li class="about"><a href="{{ path('odiseo_pick_my_stuff_frontend_aboutus') }}">About Us</a></li>
-	      					  <li class="services"><a href="">Services</a></li>
+	      					  <li class="services"><a href="{{ path('odiseo_pick_my_stuff_frontend_services') }}">Services</a></li>
 	      					  <li class="contactus"><a href="{{ path('odiseo_pick_my_stuff_frontend_contact') }}">Contact Us</a></li>
-	      					  <li class="faq"><a href="#">FAQ</a></li>
+	      					  <li class="faq"><a href="{{ path('odiseo_pick_my_stuff_frontend_faq') }}">FAQ</a></li>
 	      					  <li><a class="facebook" href="#"><img class="img-responsive" src="{{ asset('bundles/odiseopickmystuff/images/facebook-icon.png') }}"></a></li>
 	      					  <li><a class="twitter" href="#"><img class="img-responsive" src="{{ asset('bundles/odiseopickmystuff/images/twitter-icon.png') }}"></a></li>
 							</ul>      					  
@@ -55,14 +55,10 @@
 		    	</nav> 
     		</header>
     		{% endblock %}
-    		<div id="content">
+    		<div id="content" class="{% block contentClass %}{% endblock %}">
 				{% block content %}
 				{% endblock %}
 			</div>
-			<footer>
-				<div class="separator"></div>
-				<div class="footer"></div>
-			</footer>
 		</div>
 		
 		<!-- javascript -->

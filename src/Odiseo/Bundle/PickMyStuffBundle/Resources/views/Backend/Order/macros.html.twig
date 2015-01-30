@@ -16,6 +16,7 @@
 				<th>Horario deseado de recogido</th>
 				<th>Horario deseado de entrega</th>
 				<th>Comentarios de entrega</th>
+				<th>Completado?</th>
 				<th></th>
 			</tr>
 			{% for order in orders %}
@@ -33,6 +34,13 @@
 				<td>{{ order.collectedTime }}</td>
 				<td>{{ order.deliveryTime }}</td>
 				<td>{{ order.comments }}</td>
+				<td class="text-center">
+					{% if order.isComplete %}
+						<span class="glyphicon glyphicon-ok"></span>
+					{% else %}
+						<span class="glyphicon glyphicon-remove"></span>
+					{% endif %}
+				</td>
 				<td>									
 					<div class="pull-right">					
               			<a class="btn btn-primary" href="{{ path('odiseo_pickmystuff_backend_order_update', {'id': order.id}) }}"><span>Editar</span></a>

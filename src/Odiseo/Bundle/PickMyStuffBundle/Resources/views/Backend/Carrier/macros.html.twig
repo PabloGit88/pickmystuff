@@ -13,6 +13,7 @@
 				<th>Nombre</th>
 				<th>Teléfono</th>
 				<th>Tipo de vehiculo</th>
+				<th>Pagado?</th>
 				<th></th>
 			</tr>
 			{% for carrier in carriers %}
@@ -21,6 +22,13 @@
 				<td>{{ carrier.name }}</td>
 				<td>{{ carrier.phone }}</td>
 				<td>{{ carrier.vehicleType }}</td>
+				<td class="text-center">
+					{% if carrier.isPaid %}
+						<span class="glyphicon glyphicon-ok"></span>
+					{% else %}
+						<span class="glyphicon glyphicon-remove"></span>
+					{% endif %}
+				</td>
 				<td>									
 					<div class="pull-right">					
               			<a class="btn btn-warning" href="{{ path('odiseo_pickmystuff_backend_carrier_send_sms', {'id': carrier.id}) }}"><span>Send SMS</span></a>					

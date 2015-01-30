@@ -28,6 +28,9 @@ Odiseo\Bundle\PickMyStuffBundle\Entity\Client:
             type: string
             length: 255
             nullable: true
+        isFactured:
+            type: boolean
+            nullable: true
         desiredDeliveryDate:
             type: datetime
             length: 255

@@ -99,12 +99,20 @@ class HomeController extends Controller
     public function aboutUsAction()
     {    	    	
         return $this->render('OdiseoPickMyStuffBundle:Frontend:aboutUs.html.twig');
-    	
     }
     
     public function contactAction()
     {
         return $this->render('OdiseoPickMyStuffBundle:Frontend:contact.html.twig');
-    	
+    }
+    
+    public function servicesAction()
+    {
+        return $this->render('OdiseoPickMyStuffBundle:Frontend:services.html.twig');
+    }
+    
+    public function faqAction()
+    {
+        return $this->render('OdiseoPickMyStuffBundle:Frontend:faq.html.twig');
     }
 }

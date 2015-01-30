@@ -13,6 +13,7 @@ class Carrier
     private $vehicleType;
     private $name;
     private $phone;
+    private $isPaid;
 
     public function getId()
     {
@@ -104,5 +105,14 @@ class Carrier
 	public function hasOrder(Order $order)
 	{
 		return $this->orders->contains($order);
-	}
+	}    
+	
+    public function getIsPaid() {
+    	return $this->isPaid;
+    }
+    
+    public function setIsPaid($isPaid) {
+    	$this->isPaid = $isPaid;
+    	return $this;
+    }
 }

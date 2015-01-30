@@ -91,9 +91,28 @@ footer .footer{
 }
 
 #content{
-	background: url(../images/background.png) no-repeat;
 	height: 100%;
+	background-size:cover !important;
 }
+#content.home{
+	background: url(../images/home.jpg) no-repeat;
+}
+#content.order{
+	background: url(../images/orden.jpg) no-repeat;
+}
+#content.about{
+	background: url(../images/aboutus.jpg) no-repeat;
+}
+#content.contact{
+	background: url(../images/background.png) no-repeat;
+}
+#content.services{
+	background: url(../images/services.jpg) no-repeat;
+}
+#content.faq{
+	background: url(../images/FAQ.jpg) no-repeat;
+}
+
 .content-image {
 	height: 100%;
 	width: 100%;
@@ -149,11 +168,7 @@ footer .footer{
 #content .home .sended .glyphicon, #content .costumerForm .sended .glyphicon,.page-header .sended .glyphicon{
 	padding-right: 10px;
 }
-/*
-#content form .streets{
-	margin-top:10px;
-}
-*/
+
 #content form .types{
 	margin-top:4%;
 }
@@ -182,6 +197,25 @@ footer .footer{
 	background-color: #1edddf;
 	border-color: #1edddf;
 	font-size: 18px;
+}
+/*faq*/
+#content .container.faq strong{
+	font-size: 18px;
+}
+/* services/**/
+#content .container.services {
+	margin: 50px 0 0 50px;
+	float: left;
+	font-size: 19px;
+}
+#content .container.services .servicesContent{
+	background-color: rgba(155, 151, 151, 0.4);
+	padding: 20px;
+}
+
+#content .container.faq .faqContent{
+	background-color: rgba(155, 151, 151, 0.4);
+	padding: 20px;
 }
 /* modal */
 .modal .logo{
@@ -265,11 +299,6 @@ footer .footer{
 }
 /* about us*/
 
-.content .about {
-	background: url(../images/background_aboutus.jpg) no-repeat !important;
-	background-size: cover;
-	background-position: bottom center;
-}
 #content .container.aboutus{
 	float: left;
 	margin: 50px 0 0 50px;
@@ -278,9 +307,11 @@ footer .footer{
 #content .container.aboutus .aboutContent{
 	background-color: rgba(155, 151, 151, 0.4);
 	padding: 20px;
-
 }
-
+/* Backend */
+.box .table .checkboxIcon{
+	text-align:center;
+}
 
 /* Extra Small devices (XS) */
 @media screen and (max-width: 767px) 
