@@ -30,12 +30,12 @@
 				<td>{{ mercancy.weight }}</td>
 				<td>{{ mercancy.quantity }}</td>				
 	            {% if mercancy.imageName != null %}
-					<td><img class="center-block" src="{{ mercancy.imageName|imagine_filter('pick_262x255') }}"></td>
+					<td><a href="{{ mercancy.imageName|imagine_filter('pick_500x500') }}" target="_blank"><img class="center-block" src="{{ mercancy.imageName|imagine_filter('pick_262x255') }}"></a></td>
 				{% else %}
 					<td></td>
 				{% endif %}
 	           	{% if mercancy.order != null %}
-					<td>{{ mercancy.order.id }}</td>
+					<td><a href="{{ path('odiseo_pickmystuff_backend_order_update', {'id': mercancy.order.id}) }}">{{ mercancy.order.id }}</a></td>
 				{% else %}
 					<td></td>
 				{% endif %}

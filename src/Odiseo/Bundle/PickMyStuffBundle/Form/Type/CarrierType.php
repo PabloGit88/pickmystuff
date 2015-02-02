@@ -27,11 +27,19 @@ class CarrierType extends AbstractType
         ))
         ->add('name', 'text', array(
         		'required' => true,
-        		'label'    => 'Nombre'
+        		'label'    => 'Nombre y Apellido'
         ))
         ->add('phone', 'text', array(
         		'required' => true,
         		'label'    => 'Teléfono'
+        ))
+        ->add('originTown', 'text', array(
+        		'required' => true,
+        		'label'    => 'Pueblo de Origen'
+        ))
+        ->add('destinationTown', 'text', array(
+        		'required' => true,
+        		'label'    => 'Pueblo de Destino'
         ))
         ->add('isPaid', 'checkbox', array(
         		'required' => false,

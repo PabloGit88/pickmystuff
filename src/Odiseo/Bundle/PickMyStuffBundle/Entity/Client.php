@@ -9,7 +9,6 @@ class Client
 	private $id;
     private $createdAt;
     private $updatedAt;
-    private $company;
     private $fullname;
     private $email;
     private $phone;
@@ -44,14 +43,6 @@ class Client
     public function getUpdatedAt()
     {
         return $this->updatedAt;
-    }
-        
-    public function getComapany() {
-    	return $this->company;
-    }
-    public function setCompany($company) {
-    	$this->company = $company;
-    	return $this;
     }
 	
     public function getFullname() {
@@ -95,7 +86,7 @@ class Client
         return $this->address;
     }
     
-    public function setAddress(Address $address) {
+    public function setAddress($address) {
     	$this->address = $address;
     	return $this;
     }

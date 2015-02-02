@@ -6,6 +6,8 @@ odiseo_pickmystuff_backend_address_index:
         _sylius:
             template: OdiseoPickMyStuffBundle:Backend/Address:index.html.twig
             paginate: 100
+            sortable: true
+            sorting: { id: desc }
 
 odiseo_pickmystuff_backend_address_create:
     pattern: /new

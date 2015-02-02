@@ -78,16 +78,8 @@ footer {
 	width: 100%;
 	left: 0;
 	height: 15%;
-}
-
-footer .separator{
-	height: 5%;
-	background-color: #1edddf;
-}
-
-footer .footer{
-	height: 95%;
-	background-color: black;
+	background: url(../images/footer.png) #6EC9C6 center center no-repeat;
+	background-size: contain;
 }
 
 #content{

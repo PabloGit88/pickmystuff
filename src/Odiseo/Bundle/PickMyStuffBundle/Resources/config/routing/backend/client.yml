@@ -6,6 +6,8 @@ odiseo_pickmystuff_backend_client_index:
         _sylius:
             template: OdiseoPickMyStuffBundle:Backend/Client:index.html.twig
             paginate: 100
+            sortable: true
+            sorting: { id: desc }
 
 odiseo_pickmystuff_backend_client_create:
     pattern: /new

@@ -101,6 +101,7 @@ class Order
     public function setMercancy(Mercancy $mercancy)
     {
     	$this->mercancy = $mercancy;
+    	$this->mercancy->setOrder($this);
     	return $this;
     }
 	

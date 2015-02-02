@@ -28,14 +28,12 @@ class LoadClientData extends DataFixture
     {
         for ($i = 1; $i <= 2; $i++) 
         {
-        	$address = $this->getReference('pickmystuff.address-'.$i);
         	
         	$date = new \DateTime('15-01-20');
         	
 	        $client = new Client();
 	        $client->setFullname('Pepe '.$i);
-	        $client->setCompany('Compania'.$i);
-	        $client->setAddress($address);
+	        $client->setAddress('Direccion'.$i);
 	        $client->setEmail('Pepe'.$i.'@pick.com');
 	        $client->setPhone('4323412');
 	        $client->setCellphone('15123123');

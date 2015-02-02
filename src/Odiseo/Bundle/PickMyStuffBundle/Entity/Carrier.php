@@ -14,6 +14,8 @@ class Carrier
     private $name;
     private $phone;
     private $isPaid;
+    private $originTown;
+    private $destinationTown;
 
     public function getId()
     {
@@ -113,6 +115,24 @@ class Carrier
     
     public function setIsPaid($isPaid) {
     	$this->isPaid = $isPaid;
+    	return $this;
+    }
+	
+    public function getOriginTown() {
+    	return $this->originTown;
+    }
+    
+    public function setOriginTown($originTown) {
+    	$this->originTown = $originTown;
+    	return $this;
+    }    
+	
+    public function getDestinationTown() {
+    	return $this->destinationTown;
+    }
+    
+    public function setDestinationTown($destinationTown) {
+    	$this->destinationTown = $destinationTown;
     	return $this;
     }
 }

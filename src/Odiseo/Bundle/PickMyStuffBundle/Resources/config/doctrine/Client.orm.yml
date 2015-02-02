@@ -12,7 +12,7 @@ Odiseo\Bundle\PickMyStuffBundle\Entity\Client:
             type: string
             length: 255
             nullable: true
-        company:
+        address:
             type: string
             length: 255
             nullable: true
@@ -52,10 +52,10 @@ Odiseo\Bundle\PickMyStuffBundle\Entity\Client:
         orders:
             targetEntity: Order
             mappedBy: client
-    oneToOne:
-        address:
-            targetEntity: Address
-            joinColumn:
-              name: address_id
-              referencedColumnName: id           
+    #oneToOne:
+    #    address:
+    #        targetEntity: Address
+    #        joinColumn:
+    #          name: address_id
+    #          referencedColumnName: id           
     lifecycleCallbacks: {  }

@@ -128,6 +128,9 @@ liip_imagine:
         pick_262x255:
             filters:
                 thumbnail: { size: [262, 255], mode: outbound }
+        pick_500x500:
+            filters:
+                thumbnail: { size: [500, 500], mode: outbound }
 
 vich_uploader:
    db_driver: orm # or mongodb or propel or phpcr

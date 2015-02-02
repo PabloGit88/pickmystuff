@@ -27,6 +27,10 @@ class ClientType extends AbstractType
         		'required' => false,
         		'label'    => 'Facturado?'
         ))
+        ->add('address', 'text', array(
+        		'required' => true,
+        		'label'    => 'Direccion'
+        ))
         ->add('desiredDeliveryDate', 'date', array(
 			    'input'  => 'datetime',
 			    'widget' => 'choice',
