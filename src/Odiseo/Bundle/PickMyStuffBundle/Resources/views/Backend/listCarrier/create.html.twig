@@ -9,7 +9,7 @@
 {% block breadcrums %}
 <ol class="breadcrumb">
 	<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-	<li>Transportistas</li>
+	<li>Transportisa</li>
 	<li class="active">Nuevo</li>
 </ol>
 {% endblock %}
@@ -18,10 +18,10 @@
 <div class="row">
 	<div class="col-md-12">
 		<div class="box">
-			<form action="{{ path('odiseo_pickmystuff_backend_carrier_create', {'id': carrier.id}) }}" method="post" enctype="multipart/form-data">
+			<form action="{{ path('odiseo_pickmystuff_backend_list_carrier_create', {'id': carrier.id}) }}" method="post" enctype="multipart/form-data">
 				<div class="box-body">
 					{{ form_errors(form) }}		
-		    		{% include 'OdiseoPickMyStuffBundle:Backend/Carrier:_form.html.twig' %}
+		    		{% include 'OdiseoPickMyStuffBundle:Backend/listCarrier:_form.html.twig' %}
 				</div>
 				<div class="box-footer">
 					{{ create() }}

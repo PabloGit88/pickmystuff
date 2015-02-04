@@ -26,6 +26,10 @@ odiseo_pickmystuff_backend_address:
     resource: @OdiseoPickMyStuffBundle/Resources/config/routing/backend/address.yml
     prefix: /address
 
+odiseo_pickmystuff_backend_list_carrier:
+    resource: @OdiseoPickMyStuffBundle/Resources/config/routing/backend/listCarriers.yml
+    prefix: /carrierslist
+    
 #FosUserBundle Routes
 odiseo_pickmystuff_backend_security:
     resource: @OdiseoPickMyStuffBundle/Resources/config/routing/backend/security.yml

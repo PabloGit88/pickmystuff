@@ -64,6 +64,11 @@ services:
         tags:
             - { name: form.type, alias: odiseo_pickmystuff_address }
 
+    pickmystuff.form.type.listcarrier:
+        class: Odiseo\Bundle\PickMyStuffBundle\Form\Type\CarrierListType
+        tags:
+            - { name: form.type, alias: odiseo_pickmystuff_list_carrier }
+
     pickmystuff.send.mailer:
         class: Odiseo\Bundle\PickMyStuffBundle\Mailer\SendMailer
         arguments: ["@service_container"]

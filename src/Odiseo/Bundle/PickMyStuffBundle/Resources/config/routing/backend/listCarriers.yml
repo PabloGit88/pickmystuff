@@ -1,0 +1,47 @@
+odiseo_pickmystuff_backend_list_carrier_index:
+    pattern: /
+    methods: [GET]
+    defaults:
+        _controller: odiseo_pickmystuff.controller.carrier:indexAction
+        _sylius:
+            template: OdiseoPickMyStuffBundle:Backend/listCarrier:index.html.twig
+            paginate: 100
+            sortable: true
+            sorting: { id: desc }
+
+odiseo_pickmystuff_backend_list_carrier_create:
+    pattern: /new
+    methods: [GET, POST]
+    defaults:
+        _controller: odiseo_pickmystuff.controller.carrier:createAction
+        _sylius:
+            template: OdiseoPickMyStuffBundle:Backend/listCarrier:create.html.twig
+            redirect: odiseo_pickmystuff_backend_list_carrier_update
+            form: odiseo_pickmystuff_list_carrier
+
+odiseo_pickmystuff_backend_list_carrier_update:
+    pattern: /{id}/edit
+    methods: [GET, PUT, POST]
+    defaults:
+        _controller: odiseo_pickmystuff.controller.carrier:updateAction
+        _sylius:
+            template: OdiseoPickMyStuffBundle:Backend/listCarrier:update.html.twig
+            redirect: odiseo_pickmystuff_backend_list_carrier_update
+            form: odiseo_pickmystuff_list_carrier
+
+odiseo_pickmystuff_backend_list_carrier_delete:
+    pattern: /{id}
+    methods: [DELETE]
+    defaults:
+        _controller: odiseo_pickmystuff.controller.carrier:deleteAction
+        _sylius:
+            redirect: odiseo_pickmystuff_backend_list_carrier_index
+
+backend_carrier_download_excel:
+    path:     /download_excel
+    defaults:
+        _controller: "OdiseoPickMyStuffBundle:Backend/downloadExcel"
+        _sylius:
+            method: createFilterPaginator
+            arguments: [$criteria, $sorting, true]
+            paginate: 99999999999999999999

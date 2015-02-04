@@ -13,9 +13,18 @@ class Carrier
     private $vehicleType;
     private $name;
     private $phone;
+    private $email;
     private $isPaid;
     private $originTown;
     private $destinationTown;
+    private $address;
+    private $photoTruck;
+    private $commissionPermits;
+    private $portsPermits;
+    private $carPolicy;
+    private $mercancyPolicy;
+    private $responsabilityPolicy;
+    private $contractPickmystuff;
 
     public function getId()
     {
@@ -133,6 +142,85 @@ class Carrier
     
     public function setDestinationTown($destinationTown) {
     	$this->destinationTown = $destinationTown;
+    	return $this;
+    }    
+	/**/
+	
+ 	public function getAddress()
+    {
+        return $this->address;
+    }    
+    public function setAddress($address) {
+    	$this->address = $address;
+    	return $this;
+    }
+    
+	public function getEmail() {
+		return $this->email;
+	}	
+	public function setEmail($email) {
+		$this->email = $email;
+		return $this;
+	}
+	
+    public function getPhotoTruck() {
+    	return $this->photoTruck;
+    }    
+    public function setPhotoTruck($photoTruck) {
+    	$this->photoTruck = $photoTruck;
+    	return $this;
+    }    
+	
+    public function getCommissionPermits() {
+    	return $this->commissionPermits;
+    }    
+    public function setCommissionPermits($commissionPermits) {
+    	$this->commissionPermits = $commissionPermits;
+    	return $this;
+    }    
+	
+    public function getPortsPermits() {
+    	return $this->portsPermits;
+    }
+    
+    public function setPortsPermits($portsPermits) {
+    	$this->portsPermits = $portsPermits;
+    	return $this;
+    }    
+	
+    public function getCarPolicy() {
+    	return $this->carPolicy;
+    }
+    
+    public function setCarPolicy($carPolicy) {
+    	$this->carPolicy = $carPolicy;
+    	return $this;
+    }    
+	
+    public function getMercancyPolicy() {
+    	return $this->mercancyPolicy;
+    }
+    
+    public function setMercancyPolicy($mercancyPolicy) {
+    	$this->mercancyPolicy = $mercancyPolicy;
+    	return $this;
+    }    
+	
+    public function getResponsabilityPolicy() {
+    	return $this->responsabilityPolicy;
+    }
+    
+    public function setResponsabilityPolicy($responsabilityPolicy) {
+    	$this->responsabilityPolicy = $responsabilityPolicy;
+    	return $this;
+    }    
+	
+    public function getContractPickmystuff() {
+    	return $this->contractPickmystuff;
+    }
+    
+    public function setContractPickmystuff($contractPickmystuff) {
+    	$this->contractPickmystuff = $contractPickmystuff;
     	return $this;
     }
 }

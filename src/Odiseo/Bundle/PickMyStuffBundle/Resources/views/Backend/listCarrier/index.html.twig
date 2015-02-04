@@ -1,0 +1,30 @@
+{% extends 'GeckoBackendBundle::layout.html.twig' %}
+
+{% import 'SyliusResourceBundle:Macros:buttons.html.twig' as buttons %}
+{% from 'GeckoBackendBundle:Macros:misc.html.twig' import pagination %}
+{% from 'OdiseoPickMyStuffBundle:Backend/listCarrier:macros.html.twig' import list  %}
+
+{% block section_title %}
+<h1>Transportistas</h1>
+{% endblock %}
+
+{% block breadcrums %}
+<ol class="breadcrumb">
+	<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+	<li class="active">Listado de Transportistas</li>
+</ol>
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div class="actions-menu">
+        {{ buttons.create(path('odiseo_pickmystuff_backend_list_carrier_create'), 'Crear') }}
+    </div>	 	
+ 	{% for flashMessage in app.session.flashbag.get('notice') %}
+ 	<p class="sended"><i class="glyphicon glyphicon-ok"></i> {{ flashMessage }}</p>
+	{% endfor %}
+</div>
+{{ list(carriers)  }}
+{{ pagination(carriers) }}
+
+{% endblock %}

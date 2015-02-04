@@ -33,6 +33,11 @@ class BackendMenuBuilder
         		'labelAttributes' => array('icon' => 'fa-dashboard'),
         ))->setLabel("Dashboard");
         
+        $menu->addChild('listCarrier', array(
+        		'route' => 'odiseo_pickmystuff_backend_list_carrier_index',
+        		'labelAttributes' => array('icon' => 'fa-file'),
+        ))->setLabel("Listado de Transportistas");
+        
         $menu->addChild('user', array(
         		'route' => 'odiseo_pickmystuff_backend_user_index',
         		'labelAttributes' => array('icon' => 'fa-user'),

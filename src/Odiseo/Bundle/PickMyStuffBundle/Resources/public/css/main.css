@@ -10,6 +10,7 @@ html, body {
 
 body {
 	overflow-y:hidden;
+	position: fixed;
 }
 .navbar-header .navbar-brand{
 	padding: 6px 9px;
@@ -310,6 +311,7 @@ footer {
 {
 	body {
 		overflow-y:auto;
+		position:relative;
 	}
 	
 	.navbar .navbar-collapse {

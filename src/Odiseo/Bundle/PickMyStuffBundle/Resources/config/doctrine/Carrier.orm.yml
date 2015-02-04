@@ -20,7 +20,36 @@ Odiseo\Bundle\PickMyStuffBundle\Entity\Carrier:
             type: string
             length: 255
             nullable: true
+        email:
+            type: string
+            length: 255
+            nullable: true
+        address:
+            type: string
+            length: 255
+            nullable: true
         isPaid:
+            type: boolean
+            nullable: true
+        photoTruck:
+            type: boolean
+            nullable: true
+        commissionPermits:
+            type: boolean
+            nullable: true
+        portsPermits:
+            type: boolean
+            nullable: true
+        carPolicy:
+            type: boolean
+            nullable: true
+        mercancyPolicy:
+            type: boolean
+            nullable: true
+        responsabilityPolicy:
+            type: boolean
+            nullable: true
+        contractPickmystuff:
             type: boolean
             nullable: true
         originTown:
