@@ -21,10 +21,35 @@ class MainController extends Controller
     	$carrierPhone = $carrierData->getPhone();
     		
     	$smsSender = $this->get('pickmystuff.sms.sender');
-    	$smsSender->sendTextMessageToNumber('+14108675309', "TEST MESSAGE!!");
-    	
 
     	$noticeMessage = 'Sms enviado correctamente al transportista '.$carrierName;
+    	try {
+    		$smsSender->sendTextMessageToNumber('+15005550001', "TEST MESSAGE!!");
+		} catch (\Services_Twilio_RestException $e) {
+    				$noticeMessage = $e->getMessage();
+		}
+    	
+    	
+
+    	
+    	$this->get('session')->getFlashBag()->add('notice', $noticeMessage);
+    	
+    	return $this->redirect($this->generateUrl('odiseo_pickmystuff_backend_carrier_index'));
+    }
+    public function sendSmsAllAction(Request $request)
+    {
+    	$repository = $this->get('odiseo_pickmystuff.repository.carrier');
+    	$carriers = $repository->findAll();
+
+    	foreach ($carriers as $carrierData)
+    	{
+	    		
+	    	$smsSender = $this->get('pickmystuff.sms.sender');
+	    	$smsSender->sendTextMessageToNumber('+14108675309', "TEST MESSAGE!!");
+    		
+    	}
+    	
+    	$noticeMessage = 'Sms enviado correctamente a todos los tranportistas '.$carrierName;
     	$this->get('session')->getFlashBag()->add('notice', $noticeMessage);
     	
     	return $this->redirect($this->generateUrl('odiseo_pickmystuff_backend_carrier_index'));

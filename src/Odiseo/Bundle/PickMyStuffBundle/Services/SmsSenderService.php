@@ -29,9 +29,10 @@ class SmsSenderService
 					"From" => $this->fromNumber,
 					"To" => $number,
 					"Body" => "Test message!",
+   					array()
 			));
-		} catch (Services_Twilio_RestException $e) {
-					echo $e->getMessage();
+		} catch (\Services_Twilio_RestException $e) {
+			throw $e;
 		}
 	}
 	

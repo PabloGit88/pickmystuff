@@ -18,8 +18,16 @@
 {% block content %}
 <div class="page-header">
     <div class="actions-menu">
-        {{ buttons.create(path('odiseo_pickmystuff_backend_carrier_create'), 'Crear') }}
-    </div>	 	
+        {{ buttons.create(path('odiseo_pickmystuff_backend_carrier_create'), 'Crear') }}						
+		<div class="pull-right">	
+			<form action="{{ path('odiseo_pickmystuff_backend_carrier_send_sms_all')}}" onsubmit="return confirm('Confirma enviar sms a todos?')" method="post" style="display: inline;">
+				<input type="hidden" name="_method" value="send">
+				<button class="btn btn-warning">
+					<span>Send SMS to ALL</span>
+				</button>
+			</form>
+		</div>
+    </div>
  	{% for flashMessage in app.session.flashbag.get('notice') %}
  	<p class="sended"><i class="glyphicon glyphicon-ok"></i> {{ flashMessage }}</p>
 	{% endfor %}
