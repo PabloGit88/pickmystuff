@@ -9,7 +9,27 @@ class MainController extends Controller
 {
     public function dashboardAction()
     {
-        return $this->render('OdiseoPickMyStuffBundle:Backend/Main:dashboard.html.twig');
+    	$repository = $this->get('odiseo_pickmystuff.repository.order');
+    	$orders = $repository->findAll();
+    	
+    	$totalOrders = count($orders);
+    	$complete = 0;
+    	$notComplete = 0;
+    	foreach ($orders as $order)
+    	{
+    		$isComplete = $order->getIsComplete();
+    		if($isComplete == true){
+    			$complete++;
+    		}else{
+    			$notComplete++;
+    		}
+    	}
+    	
+        return $this->render('OdiseoPickMyStuffBundle:Backend/Main:dashboard.html.twig', array(
+            'totalOrders' => $totalOrders,
+            'complete' => $complete,
+            'notComplete' => $notComplete,
+        ));
     }
     public function sendSmsAction(Request $request)
     {
@@ -28,9 +48,6 @@ class MainController extends Controller
 		} catch (\Services_Twilio_RestException $e) {
     				$noticeMessage = $e->getMessage();
 		}
-    	
-    	
-
     	
     	$this->get('session')->getFlashBag()->add('notice', $noticeMessage);
     	

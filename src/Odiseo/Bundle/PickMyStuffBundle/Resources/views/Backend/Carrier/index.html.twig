@@ -29,7 +29,7 @@
 		</div>
     </div>
  	{% for flashMessage in app.session.flashbag.get('notice') %}
- 	<p class="sended"><i class="glyphicon glyphicon-ok"></i> {{ flashMessage }}</p>
+ 	<p class="sended"><i class="flash-notice"></i> {{ flashMessage }}</p>
 	{% endfor %}
 </div>
 {{ list(carriers)  }}

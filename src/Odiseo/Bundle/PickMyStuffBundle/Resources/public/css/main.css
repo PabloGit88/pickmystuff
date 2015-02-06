@@ -118,8 +118,10 @@ footer {
 	height:30px;
 }
 #content .contentForm{	
-	background-color: rgba(192,192,192,0.4);
+	background-color: rgba(98, 87, 87, 0.4);;
 	height: 95%;
+	max-height: 100% !important;
+	overflow-y: hidden !important;
 }
 #content .home form{	
 	width: 90%;
@@ -202,12 +204,12 @@ footer {
 	font-size: 19px;
 }
 #content .container.services .servicesContent{
-	background-color: rgba(155, 151, 151, 0.4);
+	background-color: rgba(98, 87, 87, 0.4);
 	padding: 20px;
 }
 
 #content .container.faq .faqContent{
-	background-color: rgba(155, 151, 151, 0.4);
+	background-color: rgba(98, 87, 87, 0.4);
 	padding: 20px;
 }
 /* modal */
@@ -257,7 +259,7 @@ footer {
 }
 .contact .costumerForm{	
 	width: 55%;
-	background-color: rgba(192,192,192,0.4);
+	background-color: rgba(98, 87, 87, 0.4);
 	padding-left: 25px;
 }
 .contact .costumerForm h3{	
@@ -298,20 +300,21 @@ footer {
 	font-size: 19px;
 }
 #content .container.aboutus .aboutContent{
-	background-color: rgba(155, 151, 151, 0.4);
+	background-color: rgba(98, 87, 87, 0.4);
 	padding: 20px;
 }
-/* Backend */
-.box .table .checkboxIcon{
-	text-align:center;
+
+#content .container > div{
+	
+	max-height: 65%;
+	overflow-y: auto;
 }
 
 /* Extra Small devices (XS) */
 @media screen and (max-width: 767px) 
 {
-	body {
+	#content .container {
 		overflow-y:auto;
-		position:relative;
 	}
 	
 	.navbar .navbar-collapse {
@@ -333,7 +336,7 @@ footer {
 		margin-top: 15px;
 	}
 	#content .contentForm{	
-		overflow-y: auto;
+		overflow-y: auto !important;
 		overflow-x: hidden;
 		height: 75%;
 	}
