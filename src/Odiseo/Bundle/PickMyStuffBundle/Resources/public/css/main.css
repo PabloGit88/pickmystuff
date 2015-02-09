@@ -211,6 +211,7 @@ footer {
 #content .container.faq .faqContent{
 	background-color: rgba(98, 87, 87, 0.4);
 	padding: 20px;
+	margin-top: 20px;
 }
 /* modal */
 .modal .logo{
@@ -261,6 +262,7 @@ footer {
 	width: 55%;
 	background-color: rgba(98, 87, 87, 0.4);
 	padding-left: 25px;
+	margin-top: 20px;
 }
 .contact .costumerForm h3{	
 	padding-left: 30px;

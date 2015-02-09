@@ -58,15 +58,16 @@ class MainController extends Controller
     	$repository = $this->get('odiseo_pickmystuff.repository.carrier');
     	$carriers = $repository->findAll();
 
+    	$smsSender = $this->get('pickmystuff.sms.sender');
     	foreach ($carriers as $carrierData)
     	{
-	    		
-	    	$smsSender = $this->get('pickmystuff.sms.sender');
-	    	$smsSender->sendTextMessageToNumber('+14108675309', "TEST MESSAGE!!");
+
+    		$carrierPhone = $carrierData->getPhone();
+	    	$smsSender->sendTextMessageToNumber('+15005550001', "TEST MESSAGE!!");
     		
     	}
     	
-    	$noticeMessage = 'Sms enviado correctamente a todos los tranportistas '.$carrierName;
+    	$noticeMessage = 'Sms enviado correctamente a todos los tranportistas ';
     	$this->get('session')->getFlashBag()->add('notice', $noticeMessage);
     	
     	return $this->redirect($this->generateUrl('odiseo_pickmystuff_backend_carrier_index'));
