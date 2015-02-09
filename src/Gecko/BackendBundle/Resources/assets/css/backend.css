@@ -9,6 +9,11 @@ body > .header .logo {
 	
 }
 
+.sended{
+	color: rgb(243, 156, 18);
+	
+}
+
 .form-group input[type=checkbox]{ width:20px; }
 
 .form-group #lan_configuration_dateBegin_date{ float:left;}

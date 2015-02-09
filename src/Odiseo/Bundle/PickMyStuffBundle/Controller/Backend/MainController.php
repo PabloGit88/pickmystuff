@@ -41,10 +41,9 @@ class MainController extends Controller
     	$carrierPhone = $carrierData->getPhone();
     		
     	$smsSender = $this->get('pickmystuff.sms.sender');
-
     	$noticeMessage = 'Sms enviado correctamente al transportista '.$carrierName;
     	try {
-    		$smsSender->sendTextMessageToNumber('+15005550001', "TEST MESSAGE!!");
+    		$smsSender->sendTextMessageToNumber('+'.$carrierPhone, "TEST MESSAGE!!");
 		} catch (\Services_Twilio_RestException $e) {
     				$noticeMessage = $e->getMessage();
 		}
@@ -59,15 +58,32 @@ class MainController extends Controller
     	$carriers = $repository->findAll();
 
     	$smsSender = $this->get('pickmystuff.sms.sender');
+    	$noticeMessage = 'Sms enviado correctamente a todos los tranportistas ';
     	foreach ($carriers as $carrierData)
     	{
-
     		$carrierPhone = $carrierData->getPhone();
-	    	$smsSender->sendTextMessageToNumber('+15005550001', "TEST MESSAGE!!");
+	    	try {
+	    		$smsSender->sendTextMessageToNumber('+'.$carrierPhone, "TEST MESSAGE!!");
+			} catch (\Services_Twilio_RestException $e) {
+	    				$errorCarriers[] = $carrierData->getName();
+			}
     		
     	}
+    	// si hay error con algun numero de telefono
+    	if(count($errorCarriers) == count($carriers))
+    	{
+    		$noticeMessage = 'No se mando ningun mensaje. Chequea los numeros de telefono';
+    	}else if(count($errorCarriers) > 0)
+    	{
+    		$noticeMessage = $noticeMessage.' excepto el/los transportistas ';
+	    	foreach ($errorCarriers as $carrierName)
+	    	{
+	    		$noticeMessage = $noticeMessage.', '.$carrierName;
+	    		
+	    	}
+	    	$noticeMessage = $noticeMessage.'. Número de telefono inválidos.';
+    	}
     	
-    	$noticeMessage = 'Sms enviado correctamente a todos los tranportistas ';
     	$this->get('session')->getFlashBag()->add('notice', $noticeMessage);
     	
     	return $this->redirect($this->generateUrl('odiseo_pickmystuff_backend_carrier_index'));
