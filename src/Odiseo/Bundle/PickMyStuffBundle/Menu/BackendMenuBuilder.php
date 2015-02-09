@@ -45,27 +45,27 @@ class BackendMenuBuilder
         
         $menu->addChild('client	', array(
         		'route' => 'odiseo_pickmystuff_backend_client_index',
-        		'labelAttributes' => array('icon' => 'fa-user'),
+        		'labelAttributes' => array('icon' => 'fa-users'),
         ))->setLabel("Clientes");
         
         $menu->addChild('order', array(
         		'route' => 'odiseo_pickmystuff_backend_order_index',
-        		'labelAttributes' => array('icon' => 'fa-user'),
+        		'labelAttributes' => array('icon' => 'fa-bars'),
         ))->setLabel("Pedidos");
         
         $menu->addChild('carrier', array(
         		'route' => 'odiseo_pickmystuff_backend_carrier_index',
-        		'labelAttributes' => array('icon' => 'fa-user'),
+        		'labelAttributes' => array('icon' => 'fa-truck'),
         ))->setLabel("Transportistas");
         
         $menu->addChild('mercancy', array(
         		'route' => 'odiseo_pickmystuff_backend_mercancy_index',
-        		'labelAttributes' => array('icon' => 'fa-user'),
+        		'labelAttributes' => array('icon' => 'fa-envelope'),
         ))->setLabel("Paquetes");
         
         $menu->addChild('address', array(
         		'route' => 'odiseo_pickmystuff_backend_address_index',
-        		'labelAttributes' => array('icon' => 'fa-user'),
+        		'labelAttributes' => array('icon' => 'fa-bookmark'),
         ))->setLabel("Direcciones");
         
         return $menu;
