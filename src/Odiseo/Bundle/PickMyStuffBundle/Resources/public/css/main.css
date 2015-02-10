@@ -20,6 +20,19 @@ body {
 	z-index: 99999999999;
 	position: relative;
 }
+.facebook,.twitter{
+	height:100%;
+}
+.facebook{
+	padding-right:0 !important;
+}
+.twitter{
+	padding-left:0 !important;
+}
+.facebook img,.twitter img{
+	height:100%;
+	width:67%;
+}
 .navbar-brand{
 	height:100%;
 }
@@ -352,5 +365,8 @@ footer {
 	.contact .costumerForm {
 		width: 90%;
 	}	
+	.twitter{
+		padding-left:10px !important;
+	}
 	
 }
