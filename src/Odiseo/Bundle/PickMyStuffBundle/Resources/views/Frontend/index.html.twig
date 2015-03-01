@@ -4,8 +4,15 @@
 
 {% block content %}
 <div class="container">
+	<div class="contenidoInicial">
+		<img class="img-responsive center-block" src="{{ asset('bundles/odiseopickmystuff/images/logo_home.png') }}">
+		<img class="img-responsive center-block" src="{{ asset('bundles/odiseopickmystuff/images/text_home.png') }}">
+	</div>
+    {#<p class="transportamos img-responsive">TRANSPORTAMOS TU MERCANCIA EL MISMO DIA</p>#}
+    
     <div class="empezar">
-        <a class="btn btn-default" href="{{ path('odiseo_pick_my_stuff_frontend_order') }}">Empezar</a>
+        <a class="center-block" href="{{ path('odiseo_pick_my_stuff_frontend_order') }}"><img class="img-responsive center-block" src="{{ asset('bundles/odiseopickmystuff/images/ordenar_button.png') }}"></a>
     </div>
 </div>
+<img class="img-responsive center-block" src="{{ asset('bundles/odiseopickmystuff/images/footer_home.png') }}">
 {% endblock %}

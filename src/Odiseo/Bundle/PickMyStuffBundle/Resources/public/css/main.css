@@ -22,16 +22,11 @@ body {
 }
 .facebook,.twitter{
 	height:100%;
-}
-.facebook{
-	padding-right:0 !important;
-}
-.twitter{
-	padding-left:0 !important;
+	padding-top:8px !important;
 }
 .facebook img,.twitter img{
 	height:100%;
-	width:60%;
+	/*width:60%;*/
 }
 .navbar-brand{
 	height:100%;
@@ -48,8 +43,8 @@ body {
 	/**/
 }
 header{
-	background-color: #1edddf;
-	height: 70px;
+	background-color: #636363;
+	height: 61px;
 }
 header .navbar-default {
 	background: none;
@@ -63,9 +58,9 @@ header .logo{
 header .navbar-nav {
 	float: right;
 }
-
 header .navbar-nav>li {
 	display: table;
+	padding: 9px;
 }
 
 header .navbar-default .navbar-nav>.active>a, header .navbar-default .navbar-nav>.active>a:hover,
@@ -77,22 +72,32 @@ header .navbar-nav .logo img{
 }
 header .navbar-right{
 	margin:0;
+	color: #ffffff !important;
 }
 header ul.navbar-right{
-	font-size:30px;
-	/*padding-top:10px;*/
+	font-size: 20px;
+	color: #ffffff !important;
 }
-header ul.navbar-right .about,header ul.navbar-right .services,header ul.navbar-right .contactus,header ul.navbar-right .faq{
-	padding-top:13px;
+.navbar-default .navbar-nav > li > a {
+	color: #ffffff !important;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+	text-transform: uppercase;
 }
-
+.navbar-default .navbar-right > li > a:visited { 
+    background-color: yellow;
+}
+.navbar-default .navbar-nav > li > span {
+	display: block;
+	padding-bottom: 15px;
+	padding-top: 9px;
+}
 footer {
 	position: fixed;
 	bottom: 0;
 	width: 100%;
 	left: 0;
 	height: 15%;
-	background: url(../images/footer.png) #6EC9C6 center center no-repeat;
+	background: url(../images/footer.jpg) #231f20 center center no-repeat;
 	background-size: contain;
 }
 
@@ -102,6 +107,14 @@ footer {
 }
 #content.home{
 	background: url(../images/home.jpg) no-repeat;
+}
+/*#content.home p.transportamos{
+	font-size: 60px;
+	color: #ffffff;
+	text-align: center;
+}*/
+#content.home .contenidoInicial{
+	margin-top: 4%;
 }
 #content.order{
 	background: url(../images/orden.jpg) no-repeat;
@@ -144,9 +157,7 @@ footer {
 }
 
 #content .empezar{
-	position: absolute;
-	top: 65%;
-	left: 48%;
+	margin-top:3%;
 }
 #content .home form h2{
 	text-align:center;
@@ -200,11 +211,6 @@ footer {
 
 #content form .finalizar{
 	margin-top: 1%;
-}
-#content .btn{	
-	background-color: #1edddf;
-	border-color: #1edddf;
-	font-size: 18px;
 }
 /*faq*/
 #content .container.faq strong{

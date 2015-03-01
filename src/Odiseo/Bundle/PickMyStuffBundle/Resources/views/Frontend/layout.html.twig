@@ -29,7 +29,6 @@
     	<div class="container wrapper">
     		{% block header %}
     		<header>
-    			<a class="logo navbar-brand" href="{{ path('odiseo_pick_my_stuff_frontend_home') }}"><img class="img-responsive" src="{{ asset('bundles/odiseopickmystuff/images/logo.png') }}"></a>
 	    		<nav class="navbar navbar-default" role="navigation">
 					<div class="navbar-header">
 	    				<button type="button" class="navbar-toggle" 
@@ -43,13 +42,20 @@
  
   					<div class="collapse navbar-collapse navbar-ex1-collapse">
 		    			<!-- Brand and toggle get grouped for better mobile display -->
-							<ul class="nav navbar-nav navbar-right">
-	      					  <li class="about"><a href="{{ path('odiseo_pick_my_stuff_frontend_aboutus') }}">About Us</a></li>
-	      					  <li class="services"><a href="{{ path('odiseo_pick_my_stuff_frontend_services') }}">Services</a></li>
-	      					  <li class="contactus"><a href="{{ path('odiseo_pick_my_stuff_frontend_contact') }}">Contact Us</a></li>
-	      					  <li class="faq"><a href="{{ path('odiseo_pick_my_stuff_frontend_faq') }}">FAQ</a></li>
+							<ul class="nav navbar-nav navbar-left">
 	      					  <li><a class="facebook" href="#"><img class="img-responsive" src="{{ asset('bundles/odiseopickmystuff/images/facebook-icon.png') }}"></a></li>
 	      					  <li><a class="twitter" href="#"><img class="img-responsive" src="{{ asset('bundles/odiseopickmystuff/images/twitter-icon.png') }}"></a></li>
+							</ul>   
+							<ul class="nav navbar-nav navbar-right">
+	      					  <li class="home active"><a href="{{ path('odiseo_pick_my_stuff_frontend_home') }}">Inicio</a></li>
+	      					  <li><span>::</span></li>
+	      					  <li class="about"><a href="{{ path('odiseo_pick_my_stuff_frontend_aboutus') }}">Quiénes Somos</a></li>
+	      					  <li><span>::</span></li>
+	      					  <li class="services"><a href="{{ path('odiseo_pick_my_stuff_frontend_services') }}">Servicios</a></li>
+	      					  <li><span>::</span></li>
+	      					  <li class="contactus"><a href="{{ path('odiseo_pick_my_stuff_frontend_contact') }}">Contéctanos</a></li>
+	      					  <li><span>::</span></li>
+	      					  <li class="faq"><a href="{{ path('odiseo_pick_my_stuff_frontend_faq') }}">FAQS</a></li>
 							</ul>      					  
 		    		</div>
 		    	</nav> 
@@ -60,7 +66,9 @@
 				{% endblock %}
 			</div>
 		</div>
-		
+		<footer>
+			
+		</footer>
 		<!-- javascript -->
 		{# javascripts... #}
 		{% block javascripts %}
