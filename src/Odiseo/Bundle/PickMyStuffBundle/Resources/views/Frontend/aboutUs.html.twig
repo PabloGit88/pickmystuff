@@ -4,16 +4,26 @@
 
 {% block content %}
 <div class="container aboutus">
-	<h2>Sobre Nosotros</h2>
-	</br>
-	<div class="aboutContent">
-		<p>Pick My Stuff es una empresa puertorriqueña comprometida a facilitarle al consumidor el proceso de recogido y entrega de su mercancía a la misma
-		 vez que ayudamos a los transportistas a conseguir clientes y resolverle un emergencia a las empresas o individuos.  
-		 Nuestra misión es lograr que todos nuestros clientes logren expandir sus negocios llegado a distintos rincones de la isla o
-		 meramente logrando transportar y recoger bienes de un lugar a otro. 
-		</p>
+	<div class="row firstImages">
+		<div class="col-xs-6">
+			<img class="img-responsive center-block" src="{{ asset('bundles/odiseopickmystuff/images/logo_about.png') }}">
+		</div>
+		<div class="col-xs-6">
+			<img class="img-responsive center-block" src="{{ asset('bundles/odiseopickmystuff/images/builds_about.png') }}">
+		</div>
+	</div>
+	<div class="boxContent">
+		<h2 class="quienesSomos">¿Quiénes somos?</h2>
 		</br>
-		<div class="conctamos text-center"><strong>Conectamos tu mercancía con el transportista mas cercano a ti. Somos facilitadores y nos encargamos de todo.</strong></div>
+		<div class="aboutContent">
+			<p>PICK MY STUFF es una empresa puertorriqueña comprometida a facilitarle al consumidor el proceso de recogido y entrega de su mercancía a la misma
+			 vez que ayudamos a los transportistas a conseguir clientes y resolverle un emergencia a las empresas o individuos.</p> 
+			 <p>Nuestra misión es lograr que todos nuestros clientes logren expandir sus negocios llegado a distintos rincones de la isla o
+			 meramente logrando transportar y recoger bienes de un lugar a otro. </p>
+			
+			<h2>Conectamos tu mercancía con el transportista mas cercano a ti.</h2>
+			<h1 class="somos"><strong>¡Somos facilitadores y nos encargamos de todo!</strong></h1>
+		</div>
 	</div>
 </div>
 {% endblock %}

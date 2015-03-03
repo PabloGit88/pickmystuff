@@ -120,7 +120,7 @@ footer {
 	background: url(../images/orden.jpg) no-repeat;
 }
 #content.about{
-	background: url(../images/aboutus.jpg) no-repeat;
+	background: url(../images/home.jpg) no-repeat;
 }
 #content.contact{
 	background: url(../images/background.png) no-repeat;
@@ -316,15 +316,35 @@ footer {
 /* about us*/
 
 #content .container.aboutus{
-	float: left;
-	margin: 50px 0 0 50px;
-	font-size: 19px;
 }
-#content .container.aboutus .aboutContent{
-	background-color: rgba(98, 87, 87, 0.4);
-	padding: 20px;
+#content .container.aboutus h2.quienesSomos{
+	color: #45c2c5;
 }
 
+#content .container.aboutus .firstImages{
+	margin-top:5%;
+}
+
+#content .container.aboutus .boxContent{
+	background-color: #ffffff;
+	padding: 20px;
+	border-radius: 10px;
+}
+#content .container.aboutus .boxContent .aboutContent{
+	font-size:24px;
+}
+
+#content .container.aboutus .boxContent .aboutContent h2{
+	background-color: #45c2c5;
+	padding: 12px;
+	border-radius: 10px;
+	color: #ffffff;
+	margin-left: -2%;
+	z-index: 9999999;
+}
+#content .container.aboutus .boxContent .aboutContent h1{
+	padding-left: 8%;
+}
 #content .container > div{
 	
 	max-height: 65%;
