@@ -4,14 +4,48 @@
 
 {% block content %}
 <div class="container services">
-	<h2>SERVICIOS:</h2>
-	</br>
-	<div class="servicesContent">
-		<p>
-			Ofrecemos servicios de transportación de carga terrestre, tanto a individuos como empresas a cualquier parte de Puerto Rico, Vieques, Culebra, Isla Vírgenes Estadounidenses y Británicas.
-			</br></br>
-			Movemos cualquier tipo de mercancía ya que contamos con una flota variada de vehículos desde autos, pickups, minivans hasta remolque para vagones de 40-53 pies.   		
+	<div class="row firstContent">
+		<div class="col-xs-6">
+			<img class="img-responsive pull-left" src="{{ asset('bundles/odiseopickmystuff/images/logo_services.png') }}">
+		</div>
+		<div class="col-xs-6">
+			<p class="rightText">TRANSPORTAMOS LO QUE SEA,</br>
+			DONDE SEA Y CUANDO SEA.</p>
+		</div>
+	</div>
+	<div class="boxContent">
+		<h2 class="titleService">Servicios</h2>
+		</br>
+		<div class="servicesContent">
+			<p><strong>
+				Ofrecemos servicios de transportación de carga terrestre, tanto a individuos como empresas a cualquier parte de Puerto Rico, Vieques, Culebra, Isla Vírgenes Estadounidenses y Británicas.
+
+				Movemos cualquier tipo de mercancía ya que contamos con una flota variada de vehículos desde autos, pickups, minivans hasta remolque para vagones de 40-53 pies.   		
+			</strong>
+			</p>
 			</br>
+			<div class="row steps">
+				<div class="col-xs-6 firstStep">
+					<div class="row">
+						<div class="col-xs-6">
+							<img class="img-responsive center-block" src="{{ asset('bundles/odiseopickmystuff/images/1_services.png') }}">
+						</div>
+						<div class="col-xs-6">
+							<p class="ordena">Ordena</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-6 secondStep">
+					<div class="row">
+						<div class="col-xs-6">
+							<img class="img-responsive center-block" src="{{ asset('bundles/odiseopickmystuff/images/2_services.png') }}">
+						</div>
+						<div class="col-xs-6">
+							<p class="recibe">Recibe tu paquete</p>
+						</div>
+					</div>
+				</div>
+			</div>
 			<ol>
 				<li>
 					<strong>Servicio de Entrega de Mercancía: </strong>
@@ -106,7 +140,7 @@
 					</ul>
 			</ul>
 			<h3><strong>Tenemos el vehículo que necesitas para lograr tu entrega, solo llámanos.</strong></h3>
-		</p>
+		</div>
 	</div>
 </div>
 {% endblock %}

@@ -123,10 +123,10 @@ footer {
 	background: url(../images/home.jpg) no-repeat;
 }
 #content.contact{
-	background: url(../images/background.png) no-repeat;
+	background: url(../images/home.jpg) no-repeat;
 }
 #content.services{
-	background: url(../images/services.jpg) no-repeat;
+	background-color: #45c2c5;
 }
 #content.faq{
 	background: url(../images/FAQ.jpg) no-repeat;
@@ -216,21 +216,125 @@ footer {
 #content .container.faq strong{
 	font-size: 18px;
 }
-/* services/**/
-#content .container.services {
-	margin: 50px 0 0 50px;
-	float: left;
-	font-size: 19px;
-}
-#content .container.services .servicesContent{
-	background-color: rgba(98, 87, 87, 0.4);
-	padding: 20px;
-}
 
 #content .container.faq .faqContent{
 	background-color: rgba(98, 87, 87, 0.4);
 	padding: 20px;
 	margin-top: 20px;
+}
+
+/* about us*/
+
+#content .container.aboutus{
+}
+#content .container.aboutus h2.quienesSomos{
+	color: #45c2c5;
+}
+
+#content .container.aboutus .firstContent{
+	margin-top:5%;
+}
+
+#content .container.aboutus .boxContent{
+	background-color: #ffffff;
+	padding: 20px 60px 20px 60px;
+	border-radius: 10px;
+	margin-top: -2%;
+}
+#content .container.aboutus .boxContent .aboutContent{
+	font-size:24px;
+}
+
+#content .container.aboutus .boxContent .aboutContent h2{
+	background-color: #45c2c5;
+	padding: 12px;
+	border-radius: 10px;
+	color: #ffffff;
+	margin-left: -60px;
+	z-index: 9999999;
+}
+#content .container.aboutus .boxContent .aboutContent h1{
+	padding-left: 8%;
+}
+/**/
+/* services/**/
+#content .container.services {
+	font-size:20px;
+}
+#content .container.services .boxContent{
+	background-color: #ffffff;
+	padding: 20px 60px 20px 60px;
+	border-radius: 10px;
+	max-height: 57%;
+	overflow-y: auto;
+}
+#content .container.services .firstContent{
+	margin-top:5%;
+}
+#content .container.services .firstContent p.rightText{
+	float:right;
+	color:#ffffff;
+}
+#content .container.services .boxContent .titleService{
+	color:#45c2c5;
+	text-align:center;
+}
+#content .container.services .servicesContent .steps .firstStep p.ordena{
+	color:#45c2c5;
+}
+/* contact us*/
+#content .container.contact .firstContent{
+	margin-top:5%;
+}
+#content .container.contact .costumerForm{
+	margin-top:2%;
+}
+.contact .costumerForm{	
+	background-color: #ffffff;
+	padding: 20px 60px 20px 60px;
+	border-radius: 10px;
+}
+.contact .costumerForm h2{	
+	color:#45c2c5;
+}
+.contact .costumerForm form{
+	padding-bottom: 15px;
+	padding-right: 25px;
+}
+.contact .costumerForm .email{
+	margin-top:10px;
+}
+.contact .costumerForm .message{
+	margin-top:20px;
+}
+.contact .costumerForm .submitContent{
+	margin-top:20px;
+}
+.contact .costumerForm .email label{
+	font-size:20px;
+}
+.contact .costumerForm .message label{
+	font-size:20px;
+}
+.contact .costumerForm .enviar{
+	background-color:#40b4b7;
+	padding: 5px 31px 3px 28px;
+	color: #fff;
+	/*background: url(../images/button_contact.jpg) no-repeat;*/
+	float:right;
+}
+.contact .costumerForm .manImage{
+margin-top: -8%;
+}
+.contact .costumerForm .email input,.contact .costumerForm .message textarea{
+	border-color:#45c2c5;
+}
+.contact .costumerForm .error{
+	border-color: red !important;	
+}
+.contact .costumerForm .sended{
+	color: rgb(31, 107, 7);
+	display:none;
 }
 /* modal */
 .modal .logo{
@@ -273,84 +377,6 @@ footer {
 	border:0px;
 }
 /**/
-/* contact us*/
-.container.contact{
-	margin:0;
-}
-.contact .costumerForm{	
-	width: 55%;
-	background-color: rgba(98, 87, 87, 0.4);
-	padding-left: 25px;
-	margin-top: 20px;
-}
-.contact .costumerForm h3{	
-	padding-left: 30px;
-	padding-top: 15px;
-}
-.contact .costumerForm form{
-	padding-bottom: 15px;
-	padding-right: 25px;
-}
-.contact .costumerForm .email{
-	margin-top:10px;
-}
-.contact .costumerForm .message{
-	margin-top:20px;
-}
-.contact .costumerForm .submitContent{
-	margin-top:20px;
-}
-.contact .costumerForm .email label{
-	font-size:20px;
-}
-.contact .costumerForm .message label{
-	font-size:20px;
-}
-.contact .costumerForm .error{
-	border-color: red;	
-}
-.contact .costumerForm .sended{
-	color: rgb(31, 107, 7);
-	display:none;
-}
-/* about us*/
-
-#content .container.aboutus{
-}
-#content .container.aboutus h2.quienesSomos{
-	color: #45c2c5;
-}
-
-#content .container.aboutus .firstImages{
-	margin-top:5%;
-}
-
-#content .container.aboutus .boxContent{
-	background-color: #ffffff;
-	padding: 20px;
-	border-radius: 10px;
-}
-#content .container.aboutus .boxContent .aboutContent{
-	font-size:24px;
-}
-
-#content .container.aboutus .boxContent .aboutContent h2{
-	background-color: #45c2c5;
-	padding: 12px;
-	border-radius: 10px;
-	color: #ffffff;
-	margin-left: -2%;
-	z-index: 9999999;
-}
-#content .container.aboutus .boxContent .aboutContent h1{
-	padding-left: 8%;
-}
-#content .container > div{
-	
-	max-height: 65%;
-	overflow-y: auto;
-}
-
 /* Extra Small devices (XS) */
 @media screen and (max-width: 767px) 
 {

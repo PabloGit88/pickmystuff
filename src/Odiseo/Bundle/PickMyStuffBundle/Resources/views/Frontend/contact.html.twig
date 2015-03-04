@@ -4,22 +4,33 @@
 
 {% block content %}
 <div class="container contact">
-	 	<div class="costumerForm">
-	        <h3>CONTACT US</h3>
-	       	<div class="sended"><h4><i class="glyphicon glyphicon-ok"></i>Sended succesful!</h4></div>
-	       	<form action="{{ path('odiseo_pickmystuff_costumerform') }}" method="post" class="clearfix">
-	       		<div class="email field1">
-	       			<label>EMAIL</label>
-	      	  		<input class="form-control" type="text" name="contact[email]" data-rule-required="true" data-rule-email="true">
-	       		</div>
-	       		<div class="message">
-	       			<label>MESSAGE</label>
-					<textarea class="form-control" rows="9" name="contact[message]" data-rule-required="true" ></textarea>	        			
-	       		</div>
-				<div class="submitContent">
-					<button class="btn btn-default" type="submit">Send</button>
-				</div>
-	       	</form>
+		<div class="row firstContent">
+			<div class="col-xs-12">
+				<img class="img-responsive pull-left" src="{{ asset('bundles/odiseopickmystuff/images/logo_about.png') }}">
+			</div>
+		</div>
+	 	<div class="costumerForm row">
+			<div class="col-xs-6">
+		        <h2>Contáctanos</h2>
+		       	<div class="sended"><h4><i class="glyphicon glyphicon-ok"></i>Sended succesful!</h4></div>
+		       	<form action="{{ path('odiseo_pickmystuff_costumerform') }}" method="post" class="clearfix">
+		       		<div class="email">
+		       			<label>Correo Electrónico</label>
+		      	  		<input class="form-control" type="text" name="contact[email]" data-rule-required="true" data-rule-email="true">
+		       		</div>
+		       		<div class="message">
+		       			<label>Mensaje</label>
+						<textarea class="form-control" rows="9" name="contact[message]" data-rule-required="true" ></textarea>	        			
+		       		</div>
+					<div class="submitContent">
+					{#	<button class="btn enviar" type="submit">Enviar</button> #}
+						<input class="enviar" type="submit" value="ENVIAR"/>
+					</div>
+		       	</form>
+			</div>
+			<div class="col-md-6 col-sm-6 hidden-xs manImage">
+				<img class="img-responsive pull-left" src="{{ asset('bundles/odiseopickmystuff/images/manImage_contact.png') }}">
+			</div>
        </div>
 </div>
 {% endblock %}
