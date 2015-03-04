@@ -25,39 +25,39 @@
 			</p>
 			</br>
 			<div class="row steps">
-				<div class="col-xs-6 firstStep">
+				<div class="col-md-6 col-sm-6 firstStep">
 					<div class="row">
-						<div class="col-xs-6">
+						<div class="col-md-6 col-sm-6">
 							<img class="img-responsive center-block" src="{{ asset('bundles/odiseopickmystuff/images/1_services.png') }}">
 						</div>
-						<div class="col-xs-6">
+						<div class="col-md-6 col-sm-6">
 							<p class="ordena">Ordena</p>
 						</div>
 					</div>
 				</div>
-				<div class="col-xs-6 secondStep">
+				<div class="col-md-6 col-sm-6 secondStep">
 					<div class="row">
-						<div class="col-xs-6">
+						<div class="col-md-6 col-sm-6">
 							<img class="img-responsive center-block" src="{{ asset('bundles/odiseopickmystuff/images/2_services.png') }}">
 						</div>
-						<div class="col-xs-6">
+						<div class="col-md-6 col-sm-6">
 							<p class="recibe">Recibe tu paquete</p>
 						</div>
 					</div>
 				</div>
 			</div>
-			<ol>
+			<ol class="olServices">
 				<li>
 					<strong>Servicio de Entrega de Mercancía: </strong>
 					<ol style="list-style-type: lower-latin">
-						<li><strong>MISMO DÍA</strong> (Hay Prisa)</li>
-						<li><strong>PRÓXIMO DÍA</strong> (No hay Prisa)</li>
+						<li>MISMO DÍA (Hay Prisa)</li>
+						<li>PRÓXIMO DÍA (No hay Prisa)</li>
 					</ol>
 				</li>
-				<li><strong>Servicio Boomerang: </strong>Recogemos tu mercancía par aser llevada a sus destino y te la devolvemos el mismo día. </li>
+				<li><strong>Servicio Bumeran: </strong>Recogemos tu mercancía par aser llevada a sus destino y te la devolvemos el mismo día. </li>
 			</ol>
-			<p>Nuestra mayor ventaja es que puedes ordenar tu entrega en cualquier momento y la puedes recibir el mismo día.</p>
-			<ul>
+			<p class="mayorVentaja">Nuestra mayor ventaja es que puedes ordenar tu entrega en cualquier momento y la puedes recibir el mismo día.</p>
+			<ul class="ventajas">
 				<li>Precios razonables.</li>
 				<li>Resolvemos una emergencia.</li>
 				<li>Resolvemos cuando no hay personal disponible.</li>
@@ -66,10 +66,9 @@
 				<li>Nos encargamos de conseguirle el vehículo adecuado para mover su   mercancía y el transportista que necesita.</li>
 				<li>Facturamos y pagamos al transportista.</li>
 			</ul>
-			<div class="ayudamos text-center"><strong>Ayudamos al cliente, transportista, ambiente y a nosotros, todo el mundo sale ganando.</strong></div>
-			<h2><strong>¿Que Transportamos?</strong></h2>
-			<span><strong>Transportamos desde:</strong></span>
-			<ul>
+			<h2 class="queTransportamos text-center"><strong>¿Que Transportamos?</strong></h2>
+			<span>Transportamos desde:</span>
+			<ul class="transportamos">
 				<li>Sobres, como: documentos legales, contratos, facturas, cheques, nominas, etc.</li>
 				<li>Canastas de regalos, comida, ropa, computadoras, losas, etc.</li>
 				<li>Materiales de construcción</li>
@@ -81,66 +80,74 @@
 				<li>Bultos, vehículos completos</li>
 				<li>Todo lo que sea legalmente transportable</li>
 			</ul>
-			<div class="transportamos text-center"><strong>Transportamos lo que sea, donde sea y cuando sea.</strong></div>
-			</br></br>
-			<div class="conectamos text-center"><span>“TE CONECTAMOS CON EL TRASPORTISTA MAS CERCANO A TI”</span></div>
-			<h2><strong>Nuestra Flota de Vehículos:</strong></h2>
-			<ul>
-				<li>Autos</li>
-				<li>Pick-ups Pequeñas, Medianas y Grandes</li>
-					<ul style="list-style-type: circle">
-						<li>Abiertas</li>
-						<li>Cerrada</li>
-						<li>Con Racks</li>
-					</ul>
-				<li>Minivans</li>
-					<ul>
-						<li>Secas</li>
-						<li>Refrigeradas</li>
-					</ul>
-				<li>Vanes</li>
-					<ul>
-						<li>Sencilla</li>
-						<li>Caja Larga</li>
-						<li>Caja Larga techo Alto</li>
-						<li>Secas y Refrigeradas</li>
-					</ul>
-				<li>Stepvans</li>
-					<ul>
-						<li>Desde 10’ a 16’</li>
-						<li>Secas y Refrigerados</li>
-					</ul>
-				<li>Camiones Cerrados</li>
-					<ul>
-						<li>Desde 16’ , 18’, 20’, 22’, 24’, 26’, 28’ y 30’</li>
-						<li>Secos y Refrigerados</li>
-					</ul>
-				<li>Camiones Plataformas</li>
-					<ul>
-						<li>Desde 20’ hasta 24’</li>
-					</ul>
-				<li>Remolques</li>
-					<ul>
-						<li>Un eje</li>
-						<li>Doble eje</li>
-					</ul>
-				<li>Grúas</li>
-					<ul>
-						<li>Plataformas</li>
-						<li>Para autos y camiones</li>
-					</ul>
-				<li>Vagones</li>
-					<ul>
-						<li>Desde 20’, 40’, 45’ y 53’</li>
-						<li>Secos y Refrigerados</li>
-					</ul>
-				<li>Tanques de Agua</li>
-					<ul>
-						<li>5,000 hasta 15,000 galones</li>
-					</ul>
-			</ul>
-			<h3><strong>Tenemos el vehículo que necesitas para lograr tu entrega, solo llámanos.</strong></h3>
 		</div>
 	</div>
+	<div class="nuestraFlota">
+		<h2>Nuestra Flota de Vehículos:</h2>
+	</div>
+	<div class="secondBoxContent">
+		<ul class="flota">
+			<div class="row">
+				<div class="col-xs-6">
+					<li>Autos</li>
+					<li>Pick-ups Pequeñas, Medianas y Grandes</li>
+						<ul class="caracteristicas">
+							<li>Abiertas</li>
+							<li>Cerrada</li>
+							<li>Con Racks</li>
+						</ul>
+					<li>Minivans</li>
+						<ul class="caracteristicas">
+							<li>Secas</li>
+							<li>Refrigeradas</li>
+						</ul>
+					<li>Vanes</li>
+						<ul class="caracteristicas">
+							<li>Sencilla</li>
+							<li>Caja Larga</li>
+							<li>Caja Larga techo Alto</li>
+							<li>Secas y Refrigeradas</li>
+						</ul>
+					<li>Stepvans</li>
+						<ul class="caracteristicas">
+							<li>Desde 10’ a 16’</li>
+							<li>Secas y Refrigerados</li>
+						</ul>
+				</div>
+				<div class="col-xs-6">
+					<li>Camiones Cerrados</li>
+						<ul class="caracteristicas">
+							<li>Desde 16’ , 18’, 20’, 22’, 24’, 26’, 28’ y 30’</li>
+							<li>Secos y Refrigerados</li>
+						</ul>
+					<li>Camiones Plataformas</li>
+						<ul class="caracteristicas">
+							<li>Desde 20’ hasta 24’</li>
+						</ul>
+					<li>Remolques</li>
+						<ul class="caracteristicas">
+							<li>Un eje</li>
+							<li>Doble eje</li>
+						</ul>
+					<li>Grúas</li>
+						<ul class="caracteristicas">
+							<li>Plataformas</li>
+							<li>Para autos y camiones</li>
+						</ul>
+					<li>Vagones</li>
+						<ul class="caracteristicas">
+							<li>Desde 20’, 40’, 45’ y 53’</li>
+							<li>Secos y Refrigerados</li>
+						</ul>
+					<li>Tanques de Agua</li>
+						<ul class="caracteristicas">
+							<li>5,000 hasta 15,000 galones</li>
+						</ul>
+				</div>
+			</div>
+		</ul>
+		<img class="img-responsive center-block" src="{{ asset('bundles/odiseopickmystuff/images/automoviles_services.png') }}">
+	</div>
+	<h3 class="llamanos"><strong>Tenemos el vehículo que necesitas para lograr tu entrega, solo llámanos.</strong></h3>
 </div>
 {% endblock %}

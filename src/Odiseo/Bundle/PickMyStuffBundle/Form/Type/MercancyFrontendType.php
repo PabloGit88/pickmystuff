@@ -20,9 +20,8 @@ class MercancyFrontendType extends AbstractType
 				'Vagon' => 'Vagon',
 				),
   				'empty_data'  => null,
-    			'placeholder' => 'Tipo de Mercancia',
         		'required' => true,
-        		'label'    => false
+        		'label'    => 'Tipo de Mercancia'
         ))
         ->add('length', 'text', array(
         		'required' => false,
@@ -54,7 +53,7 @@ class MercancyFrontendType extends AbstractType
         ))
         ->add('imageFile', 'file', array(
         		'required' => false,
-        		'label'    => 'Subir imagen de mercancia:'
+        		'label'    => 'Imagen de mercancia'
         ))
 		;
 	}

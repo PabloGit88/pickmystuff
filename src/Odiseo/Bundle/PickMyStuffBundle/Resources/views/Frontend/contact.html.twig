@@ -10,7 +10,7 @@
 			</div>
 		</div>
 	 	<div class="costumerForm row">
-			<div class="col-xs-6">
+			<div class="col-md-6">
 		        <h2>Contáctanos</h2>
 		       	<div class="sended"><h4><i class="glyphicon glyphicon-ok"></i>Sended succesful!</h4></div>
 		       	<form action="{{ path('odiseo_pickmystuff_costumerform') }}" method="post" class="clearfix">
@@ -20,7 +20,7 @@
 		       		</div>
 		       		<div class="message">
 		       			<label>Mensaje</label>
-						<textarea class="form-control" rows="9" name="contact[message]" data-rule-required="true" ></textarea>	        			
+						<textarea class="form-control" rows="3" name="contact[message]" data-rule-required="true" ></textarea>	        			
 		       		</div>
 					<div class="submitContent">
 					{#	<button class="btn enviar" type="submit">Enviar</button> #}
@@ -28,9 +28,9 @@
 					</div>
 		       	</form>
 			</div>
-			<div class="col-md-6 col-sm-6 hidden-xs manImage">
-				<img class="img-responsive pull-left" src="{{ asset('bundles/odiseopickmystuff/images/manImage_contact.png') }}">
+			<div class="col-md-6 col-sm-6 hidden-xs hidden-sm">
 			</div>
+			<img class="img-responsive manImage hidden-xs hidden-sm" src="{{ asset('bundles/odiseopickmystuff/images/manImage_contact.png') }}">
        </div>
 </div>
 {% endblock %}

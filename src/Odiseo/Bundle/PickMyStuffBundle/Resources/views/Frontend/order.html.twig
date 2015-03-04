@@ -4,110 +4,125 @@
 
 {% block content %}
 <div class="container home">
+	<div class="row firstContent">
+		<div class="col-xs-6">
+			<img class="img-responsive pull-left" src="{{ asset('bundles/odiseopickmystuff/images/logo_about.png') }}">
+		</div>
+		<div class="col-xs-6">
+			<p class="rightText">Orden</p>
+		</div>
+	</div>
 	<div class="contentForm">
+		<div class="row orderDivImage">
+			<div class="col-md-12 hidden-xs">     
+			</div>
+		</div>
+		<img class="img-responsive orderImage" src="{{ asset('bundles/odiseopickmystuff/images/image_order.png') }}">
 	{{ form_start(form) }}
 	    {{ form_errors(form) }}
-	 	<h2>Detalles de la Orden:</h2>
+	 	<span class="detalleOrden">Detalles de la Orden</span>
 	 	
 	 	{% for flashMessage in app.session.flashbag.get('notice') %}
 	 	<p class="sended"><i class="glyphicon glyphicon-ok"></i> {{ flashMessage }}</p>
 		{% endfor %}
-		
-	 	<div class="row contactrow">
-		    <div class="col-md-12 col-sm-12 text-center contact">
-		        {{ form_label(form.client.fullName) }}
-		        {{ form_widget(form.client.fullName, {'attr': {'class': 'form-control'}}) }}
-		    </div>
-	    </div>
-	    {#}{#}
 		<div class="row">
-			<div class="col-md-5 col-sm-5"> 
-				<div class="row phoneMail">
-				    <div class="col-md-12 col-sm-12 form-group phone">
-				        {{ form_label(form.client.phone) }}
+			<div class="col-xs-6">
+			 	<div class="row form-group">
+				    <div class="col-xs-3">
+				        {{ form_label(form.client.fullName) }}
+				    </div>
+				    <div class="col-xs-9">
+				        {{ form_widget(form.client.fullName, {'attr': {'class': 'form-control'}}) }}
+				    </div>
+			    </div>
+			    {#}{#}
+				<div class="row form-group">
+				    <div class="col-xs-3">
+						{{ form_label(form.client.phone) }}
+				    </div>
+				    <div class="col-xs-9">
 				        {{ form_widget(form.client.phone, {'attr': {'class': 'form-control'}}) }}
 				    </div>
 				</div>
-				<div class="row fullnames">
-				    <div class="col-md-4 col-sm-4 fullnameS">
-				        {{ form_label(form.sourceAddress) }}
-				    </div>
-				    <div class="col-md-6 col-sm-6 contactNameS">
-				        {{ form_widget(form.sourceAddress.contactName, {'attr': {'class': 'form-control'}}) }}
-				    </div>
-				    <div class="col-md-2 col-sm-2"></div>
-				</div>
-				<div class="row streets">
-				    <div class="col-md-5 col-sm-5 col-md-offset-4 col-sm-offset-4 streetS">
-					    {{ form_widget(form.sourceAddress.street, {'attr': {'class': 'form-control'}}) }}
-				    </div>
-				    <div class="col-md-3 col-sm-3"></div>
-				</div>
-	 			<div class="row types">
-				    <div class="col-md-6 col-sm-6 col-md-offset-6 col-sm-offset-6">
-				        {{ form_widget(form.vehicleType, {'attr': {'class': 'form-control'}}) }}
-				    </div>
-				</div>
-			</div>
-			<div class="col-md-2 col-md-2"></div>
-			<div class="col-md-5 col-sm-5">
-				<div class="row phoneMail">
-				    <div class="col-md-12 col-sm-12 form-group email">
+				<div class="row form-group">
+				    <div class="col-xs-3">
 				        {{ form_label(form.client.email) }}
+				    </div>
+				    <div class="col-xs-9">
 				        {{ form_widget(form.client.email, {'attr': {'class': 'form-control'}}) }}
 				    </div>
 				</div>
-				<div class="row fullnames">
-				    <div class="col-md-4 col-sm-4 fullnameD">
+				<div class="row form-group">
+				    <div class="col-xs-3">
+				        {{ form_label(form.sourceAddress) }}
+				    </div>
+				    <div class="col-md-9 col-sm-9">
+				        {{ form_widget(form.sourceAddress.contactName, {'attr': {'class': 'form-control'}}) }}
+				    </div>
+				</div>
+				<div class="row form-group">
+				    <div class="col-xs-3">
+				    </div>
+				    <div class="col-xs-9">
+					    {{ form_widget(form.sourceAddress.street, {'attr': {'class': 'form-control'}}) }}
+				    </div>
+				</div>
+				<div class="row form-group">
+				    <div class="col-xs-3">
 			       		{{ form_label(form.destinationAddress) }}
 				    </div>
-				    <div class="col-md-6 col-sm-6 contactNameD">
+				    <div class="col-xs-9">
 			       		{{ form_widget(form.destinationAddress.contactName, {'attr': {'class': 'form-control'}}) }}
 				    </div>
-				    <div class="col-md-2 col-sm-2"></div>
 				</div>
-				<div class="row streets">
-				    <div class="col-md-5 col-sm-5 col-md-offset-4 col-sm-offset-4 streetD">
+				<div class="row form-group">
+				    <div class="col-xs-3">
+				    </div>
+				    <div class="col-xs-9">
 				        {{ form_widget(form.destinationAddress.street, {'attr': {'class': 'form-control'}}) }}
 				    </div>
-				    <div class="col-md-3 col-sm-3"></div>
 				</div>
-	 			<div class="row types">
-				    <div class="col-md-6 col-sm-6">
-		       			 {{ form_widget(form.mercancy.type, {'attr': {'class': 'form-control'}}) }}
+		    </div>
+				    
+			<div class="col-xs-6">
+	 			<div class="row vehicleType">
+				    <div class="col-xs-12 form-group">
+						{{ form_label(form.vehicleType) }}
+				        {{ form_widget(form.vehicleType, {'attr': {'class': 'form-control'}}) }}
 				    </div>
-				    <div class="col-md-6 col-sm-6"></div>
 				</div>
-		    </div>
+	 			<div class="row mercancyType">
+				    <div class="col-xs-12 form-group">
+						{{ form_label(form.vehicleType) }}
+		       			{{ form_widget(form.mercancy.type, {'attr': {'class': 'form-control'}}) }}
+				    </div>
+				</div>
+			 	<div class="row image"> 	
+				    <div class="col-xs-12 form-group">
+				        {{ form_label(form.mercancy.imageFile) }}
+				        {{ form_widget(form.mercancy.imageFile, {'attr': {'class': 'form-control'}}) }}
+				    </div> 
+			 	</div>
+			    
+			 	<div class="row">
+				    <div class="col-xs-12 addInfo">
+				        <a class="pull-right showModal">+ AÑADIR INFORMACION</a>
+				    </div>
+			 	</div>
+			 	
+			 	<div class="row adds">
+					{#  botton add order #}
+				    <div class="col-xs-6 addOrder">
+				        {{ form_widget(form.Add, {'attr': {'class': 'btn btn-default'}}) }}
+				    </div> 	
+					{# botton finalizar#}
+				    <div class="col-xs-6 finalizar">
+				        {{ form_widget(form.Finalizar, {'attr': {'class': 'btn btn-default'}}) }}
+				    </div> 
+			 	</div>
+			 	
+			 </div>
 		</div>
-	 	
-	 	<div class="row image"> 	
-		    <div class="col-md-12 col-sm-12 text-center">
-		        {{ form_label(form.mercancy.imageFile) }}
-		        {{ form_widget(form.mercancy.imageFile, {'attr': {'class': 'form-control'}}) }}
-		    </div> 
-	 	</div>
-	    
-	 	<div class="row adds">
-		    <div class="col-md-3 col-sm-3">
-		    </div>
-		    <div class="col-md-2 col-sm-2 addOrder">
-		        {{ form_widget(form.Add, {'attr': {'class': 'btn btn-default'}}) }}
-		    </div>     
-		    <div class="col-md-2 col-sm-2">
-		    </div>	 
-		    <div class="col-md-2 col-sm-2 addInfo">
-		        <a class="btn btn-default showModal">Add more info</a>
-		    </div>     
-		    <div class="col-md-3 col-sm-3">
-		    </div>	 
-	 	</div>
-	 	
-	 	<div class="row finalizar"> 	
-		    <div class="col-md-12 col-sm-12 text-center">
-		        {{ form_widget(form.Finalizar, {'attr': {'class': 'btn btn-default'}}) }}
-		    </div> 
-	 	</div>
 	 
 		<div class="modal fade">
 			<div class="modal-dialog">
@@ -163,10 +178,8 @@
 				</div>
 		 	</div>
 		</div>
+		{# fin modal #}
 	</div>
 	{{ form_end(form) }}
-	</div>
-
-	<footer>
-	</footer>
+</div>
 {% endblock %}

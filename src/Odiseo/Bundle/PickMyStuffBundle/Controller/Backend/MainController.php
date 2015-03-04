@@ -4,6 +4,7 @@ namespace Odiseo\Bundle\PickMyStuffBundle\Controller\Backend;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class MainController extends Controller
 {
@@ -49,7 +50,8 @@ class MainController extends Controller
 		}
     	
     	$this->get('session')->getFlashBag()->add('notice', $noticeMessage);
-    	
+    	//$response = array('status' => 'success');
+    	//return new JsonResponse($response);
     	return $this->redirect($this->generateUrl('odiseo_pickmystuff_backend_carrier_index'));
     }
     public function sendSmsAllAction(Request $request)

@@ -22,11 +22,11 @@ class ClientFrontendType extends AbstractType
         ))
             ->add('phone', 'text', array(
         		'required' => false,
-        		'label'    => 'TELEFONO'
+        		'label'    => 'Telefonos: '
         ))
             ->add('email', 'text', array(
         		'required' => true,
-        		'label'    => 'EMAIL'
+        		'label'    => 'Email: '
         ))
 		;
 	}

@@ -4,8 +4,16 @@
 
 {% block content %}
 <div class="container faq">
+	<div class="row firstContent">
+		<div class="col-xs-6">
+			<img class="img-responsive pull-left" src="{{ asset('bundles/odiseopickmystuff/images/logo_services.png') }}">
+		</div>
+		<div class="col-xs-6">
+			<p class="rightText">PREGUNTAS FRECUENTES</p>
+		</div>
+	</div>
 	<div class="faqContent">
-		<p>
+		<div class="questions">
 			<div>
 				<strong>¿Que hacemos?</strong><p>Ofrecemos servicios de recogido y entrega de su mercancia tanto para individuos como empresas de todo tipo de mercancia alrededor de toda la
 				isla. </p>
@@ -37,10 +45,10 @@
 			</div>
 			<div>
 		 		<strong>En caso de que un accidente donde se dañe o se rompa la mercancía ¿quien garantiza y asegura mi mercancía?</strong>
-		 		<p>Pick My Stuff se hará responsable por la mercancía que se transporta. Garantizamos una entrega segura y a tiempo.</p>
-		 		<p>Tanto Pick My Stuff, LLC. como cada transportista cuenta con Permiso de la Comisión de Servicios Públicos, Póliza de Auto, Póliza de Mercancía, Póliza de Responsabilidad Publica valorada hasta $100,000.00 hasta $1,000,000.00.</p>
-		 		<p>Contamos con un sistema de inspección de mercancía para así poder asegurar que la mercancía este en buenas condiciones. </p>
-		 		<p>Cuidamos y protegemos la mercancía de nuestros clientes, además nuestros transportistas tienen basta experiencia en mover mercancía.</p>
+		 		<p>Pick My Stuff se hará responsable por la mercancía que se transporta. Garantizamos una entrega segura y a tiempo.</br>
+		 		Tanto Pick My Stuff, LLC. como cada transportista cuenta con Permiso de la Comisión de Servicios Públicos, Póliza de Auto, Póliza de Mercancía, Póliza de Responsabilidad Publica valorada hasta $100,000.00 hasta $1,000,000.00.</br>
+		 		Contamos con un sistema de inspección de mercancía para así poder asegurar que la mercancía este en buenas condiciones. </br>
+		 		Cuidamos y protegemos la mercancía de nuestros clientes, además nuestros transportistas tienen basta experiencia en mover mercancía.</p>
 			</div>
 			<div>
 		 		<strong>¿Cuál es el proceso para reclamar una garantia y/o seguro?</strong>
@@ -49,12 +57,13 @@
 			</div>
 			<div>
 		 		<strong>¿Cuál es el metodo de pago? </strong>
-		 		<p>Aceptamos transferencias electronicas, tarjetas de credito y cheques personales.</p>
-		 		<p>Móvil Cash, PayPal, Apple Pay, etc.</p>
+		 		<p>Aceptamos transferencias electronicas, tarjetas de credito y cheques personales.</br>
+		 		Móvil Cash, PayPal, Apple Pay, etc.</p>
 			</div>
 		 	<strong>Me interesa ser transportista, ¿cual es el proceso? </strong><p>Comunicate con nostros para empezar el proceso de entrevista.</p>
-		 </br></br>
-		</p>
+		 <div class="resolvemos"><h2>Te Resolvemos una Emergencia</h2></div>
+		 <div class="transportamos"><h3>¡Transportamos lo que sea, cuando sea, en donde sea!</h3></div>
+		</div>
 	</div>
 </div>
 {% endblock %}

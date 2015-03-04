@@ -3,7 +3,7 @@ html, body {
 	padding: 0;
 	height: 100%;
 	width: 100%;
-	font-family: 'Myriad Pro', sans-serif;
+	font-family: sans-serif;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 }
@@ -96,7 +96,7 @@ footer {
 	bottom: 0;
 	width: 100%;
 	left: 0;
-	height: 15%;
+	height: 12%;
 	background: url(../images/footer.jpg) #231f20 center center no-repeat;
 	background-size: contain;
 }
@@ -117,7 +117,7 @@ footer {
 	margin-top: 4%;
 }
 #content.order{
-	background: url(../images/orden.jpg) no-repeat;
+	background: url(../images/home.jpg) no-repeat;
 }
 #content.about{
 	background: url(../images/home.jpg) no-repeat;
@@ -129,36 +129,64 @@ footer {
 	background-color: #45c2c5;
 }
 #content.faq{
-	background: url(../images/FAQ.jpg) no-repeat;
-}
-
-.content-image {
-	height: 100%;
-	width: 100%;
+	background-color: #45c2c5;
 }
 
 .container{
 	height:100%;
 }
-#content input{
-	height:30px;
-}
-#content .contentForm{	
-	background-color: rgba(98, 87, 87, 0.4);;
-	height: 95%;
-	max-height: 100% !important;
-	overflow-y: hidden !important;
-}
-#content .home form{	
-	width: 90%;
-	margin: 0 auto;
-	font-size: 23px;
-	height: 100%;
-}
 
 #content .empezar{
 	margin-top:3%;
 }
+/**/
+#content .home form{
+	font-size: 18px;
+}
+#content .home form input{
+	height:30px;
+	border-color:#45c2c5;
+}
+
+#content .home form select{
+	height:30px;
+	border-color:#45c2c5;
+}
+#content.order{
+	overflow-y: auto;
+	max-height:79%;
+}
+#content .container.home .firstContent{
+	margin-top:2%;
+}
+
+#content .container.home .contentForm{
+	background-color: #ffffff;
+	padding: 20px 30px 20px 30px;
+	border-radius: 10px;
+	margin-top: 1%;
+	position:relative;	
+}
+
+#content .container.home .contentForm .orderDivImage{
+	height: 286px;
+}
+#content .container.home .contentForm img.orderImage{
+	position: absolute;
+	height: 47%;
+	top: 0;
+	right: 17%;
+}
+#content .container.home .contentForm span.detalleOrden{
+	font-size:14px;
+}
+#content .container.home .firstContent p.rightText{
+	float:right;
+	font-size:20px;
+	color:#45c2c5;
+	padding-top: 5%;
+}
+
 #content .home form h2{
 	text-align:center;
 	font-size: 28px;
@@ -166,14 +194,8 @@ footer {
 #content form .phoneMail{
 	margin-top: 1%;
 }
-/*
-#content .home form .contact{
-	margin-top: 10px;
-}
-*/
-#content .home form .contact input{
+#content .home form .inline input{
 	display:inline;
-	width:30%;
 }
 #content .home form .phone label,#content .home form .email label{
 	margin: 0px;
@@ -188,85 +210,126 @@ footer {
 	padding-right: 10px;
 }
 
-#content form .types{
-	margin-top:4%;
-}
-
-#content form .adds{
-	margin-top:1%;
-}
-
-#content form .addInfo{
-	padding-left:0px;
-}
-
-#content form .image{
-	margin-top: 1%;
-}
-
-#content form .image input{
-	display:inline;
-	width:30%;
-}
-
 #content form .finalizar{
 	margin-top: 1%;
 }
 /*faq*/
-#content .container.faq strong{
-	font-size: 18px;
+
+#content .container.faq .questions{
+	margin-top:5%;
+}
+#content .container.faq .questions strong{
+	font-size: 20px;
+	color: #1d8385;
+	font-weight: normal;
+	text-transform:uppercase;
+}
+#content .container.faq .questions p{
+	font-size:18px;
+	margin-top:2%;
+	margin-bottom:2%;
+	font-weight:bold;
 }
 
 #content .container.faq .faqContent{
-	background-color: rgba(98, 87, 87, 0.4);
-	padding: 20px;
-	margin-top: 20px;
+	background-color: #ffffff;
+	padding: 20px 80px 20px 120px;
+	border-radius: 10px;
+	overflow-y: auto;
+	margin-top: 2%;
+	margin-bottom: 3%;
 }
-
+#content.faq{
+	max-height: 79%;
+	overflow-y: auto;
+}
+#content .container.faq .firstContent{
+	margin-top:5%;
+}
+#content .container.faq .firstContent p.rightText{
+	float:right;
+	font-size:33px;
+	color:#ffffff;
+	padding-top: 3%;
+}
+#content .container.faq .faqContent .resolvemos{
+	width: 49%;
+	margin: 0 auto;
+}
+#content .container.faq .faqContent h2{
+	background-color: #45c2c5;
+	padding: 12px;
+	text-align:center;
+	border-radius: 10px;
+	color: #ffffff;
+	z-index: 9999999;
+}
+#content .container.faq .faqContent .transportamos{
+	text-align:center;
+}
+#content .container.faq .faqContent .transportamos h3{
+	text-align:center;
+	font-size:30px;
+}
 /* about us*/
 
 #content .container.aboutus{
+
 }
-#content .container.aboutus h2.quienesSomos{
+#content .container.aboutus h3.quienesSomos{
 	color: #45c2c5;
+	margin-top:0px;
 }
 
 #content .container.aboutus .firstContent{
-	margin-top:5%;
+	margin-top:2%;
 }
 
 #content .container.aboutus .boxContent{
+	max-height: 52%;
 	background-color: #ffffff;
 	padding: 20px 60px 20px 60px;
 	border-radius: 10px;
 	margin-top: -2%;
 }
 #content .container.aboutus .boxContent .aboutContent{
-	font-size:24px;
+	font-size:15px;
 }
 
-#content .container.aboutus .boxContent .aboutContent h2{
+#content .container.aboutus .boxContent .aboutContent .conectamos{
+	margin-left: -75px;
+	width:70%;
+}
+#content .container.aboutus .boxContent .aboutContent h3{
+	font-size:20px;
 	background-color: #45c2c5;
 	padding: 12px;
 	border-radius: 10px;
 	color: #ffffff;
-	margin-left: -60px;
 	z-index: 9999999;
 }
-#content .container.aboutus .boxContent .aboutContent h1{
+#content .container.aboutus .boxContent .aboutContent h2{
+	font-size:22px;
 	padding-left: 8%;
 }
 /**/
 /* services/**/
+#content.services{
+	max-height: 79%;
+	overflow-y: auto;
+}
 #content .container.services {
 	font-size:20px;
+}
+#content .container.services .servicesContent{
+	background: url(../images/boxes_services.jpg) no-repeat 112% 105%;
 }
 #content .container.services .boxContent{
 	background-color: #ffffff;
 	padding: 20px 60px 20px 60px;
 	border-radius: 10px;
-	max-height: 57%;
 	overflow-y: auto;
+	margin-top: 2%;
 }
 #content .container.services .firstContent{
 	margin-top:5%;
@@ -274,20 +337,83 @@ footer {
 #content .container.services .firstContent p.rightText{
 	float:right;
 	color:#ffffff;
+	font-size:30px;
+	padding-top: 3%;
 }
 #content .container.services .boxContent .titleService{
 	color:#45c2c5;
 	text-align:center;
 }
-#content .container.services .servicesContent .steps .firstStep p.ordena{
+#content .container.services .firstStep p.ordena,#content .container.services .secondStep p.recibe{
 	color:#45c2c5;
+	font-size:35px;
+	padding-top:9px;
+	font-weight:bold;
+}
+#content .container.services .secondStep p.recibe{
+	line-height: 26px;
+}
+#content .container.services .steps .firstStep img,#content .container.services .steps .secondStep img{
+	float:right;
+}
+#content .container.services .servicesContent .olServices{
+	margin-top:25px;
+	padding-left: 25px;
+}
+#content .container.services .servicesContent p.mayorVentaja{
+	margin-top:25px;
+}
+#content .container.services .servicesContent ul.ventajas{
+	margin-top:10px;
+	padding-left: 12px;
+    list-style: none;
+}
+#content .container.services .servicesContent ul.transportamos{
+	padding-left: 12px;
+    list-style: none;	
+}
+#content .container.services .servicesContent ul.ventajas li:before,#content .container.services .servicesContent ul.transportamos li:before  {
+    content: "• ";
+    color: #45c2c5;
+}
+#content .container.services .secondBoxContent{
+	background-color: #ced0d0;
+	padding: 20px 60px 20px 60px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+#content .container.services .nuestraFlota{
+	background-color: #ffffff;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	color:#45c2c5;
+	text-align:center;
+	margin-top: 23px;
+	padding: 1px;
+}
+#content .container.services .secondBoxContent ul.flota{
+    list-style: none;
+}
+#content .container.services .secondBoxContent ul.flota ul.caracteristicas{
+    list-style: none;
+}
+#content .container.services .secondBoxContent ul.flota ul.caracteristicas li:before  {
+    content: "• ";
+    color: #ffffff;
+}
+#content .container.services h3.llamanos{
+    color: #ffffff;
+    text-align:center;
+	margin-bottom: 36px;
 }
 /* contact us*/
 #content .container.contact .firstContent{
-	margin-top:5%;
+	margin-top:2%;
 }
 #content .container.contact .costumerForm{
 	margin-top:2%;
+	position:relative;
+	max-height: 57%;
 }
 .contact .costumerForm{	
 	background-color: #ffffff;
@@ -323,8 +449,11 @@ footer {
 	/*background: url(../images/button_contact.jpg) no-repeat;*/
 	float:right;
 }
-.contact .costumerForm .manImage{
-margin-top: -8%;
+.contact .costumerForm img.manImage{
+	position: absolute;
+	height: 117%;
+	bottom: 0;
+	right: 10%;
 }
 .contact .costumerForm .email input,.contact .costumerForm .message textarea{
 	border-color:#45c2c5;

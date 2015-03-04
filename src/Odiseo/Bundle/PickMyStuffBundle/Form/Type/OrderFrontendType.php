@@ -24,10 +24,10 @@ class OrderFrontendType extends AbstractType
         ))*/
        		->add('client', new ClientFrontendType())
        		->add('sourceAddress', new AddressFrontendType(), array(
-        		'label'    => 'Recogido:'
+        		'label'    => 'Recogido: '
        		))
        		->add('destinationAddress', new AddressFrontendType(), array(
-        		'label'    => 'Entrega:'
+        		'label'    => 'Entrega: '
        		))
        		->add('mercancy', new MercancyFrontendType(), array(
         		'label'    => false
@@ -48,12 +48,11 @@ class OrderFrontendType extends AbstractType
 					'Grua' => 'Grua',
 					),
 	  				'empty_data'  => null,
-	    			'placeholder' => 'Escoger vehiculo',
 	        		'required' => true,
-	        		'label'    => false
+	        		'label'    => 'Escoger Vehiculo'
 	        ))
    			->add('Add', 'submit', array(
-        		'label'    => 'Additional Order'
+        		'label'    => 'Orden Adicional'
       		))
        		->add('Finalizar', 'submit')
 		;
