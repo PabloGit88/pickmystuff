@@ -56,8 +56,8 @@
 			        	sendingInput = false;
 			        	
 			        	console.log(data.status);
-						console.log(data.noticeMessage);
-			            $(".sended").append('enviado');
+			        	console.log(data.noticeMessage);
+			            $(".sended").append(data.noticeMessage);
 				           
 			        }
 			        	

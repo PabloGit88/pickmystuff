@@ -44,7 +44,7 @@ class MainController extends Controller
     	$smsSender = $this->get('pickmystuff.sms.sender');
     	$noticeMessage = 'Sms enviado correctamente al transportista '.$carrierName;
     	$textMessage = $request->get('smsText');
-    	$response = array('status' => "success");
+    	$response = array('status' => 'success');
     	try {
     		$smsSender->sendTextMessageToNumber('+'.$carrierPhone, $textMessage);
 		} catch (\Services_Twilio_RestException $e) {
@@ -52,7 +52,7 @@ class MainController extends Controller
     				$noticeMessage = $e->getMessage();
 		}
 
-		//array_push($response, $noticeMessage);
+		//$response['noticeMessage'] =  $noticeMessage;
     	//$this->get('session')->getFlashBag()->add('notice', $noticeMessage);
     	return new JsonResponse($response);
     	//return $this->redirect($this->generateUrl('odiseo_pickmystuff_backend_carrier_index'));
