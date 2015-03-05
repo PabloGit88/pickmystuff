@@ -622,15 +622,15 @@ footer {
 	#content .container.home .contentForm input {
 		margin-top: 5px;
 		font-size: 10px;
+		height: 19px;
+	}
+	#content .container.home .contentForm select {
+		font-size: 10px;
+		height: 19px;
+		padding-bottom: 1px;
 	}
 	#content .container.home .contentForm label {
 		font-size: 11px;
-	}
-	#content .home form input {
-		height: 19px;
-	}
-	#content .home form select {
-		height: 19px;
 	}
 	.container.home .contentForm .addInfo a {
 		font-size: 8px !important;
