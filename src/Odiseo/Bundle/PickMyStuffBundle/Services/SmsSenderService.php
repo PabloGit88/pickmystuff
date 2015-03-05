@@ -28,7 +28,7 @@ class SmsSenderService
 			$message = $client->account->messages->create(array(
 					"From" => $this->fromNumber,
 					"To" => $number,
-					"Body" => "Test message!",
+					"Body" => $body,
    					array()
 			));
 		} catch (\Services_Twilio_RestException $e) {

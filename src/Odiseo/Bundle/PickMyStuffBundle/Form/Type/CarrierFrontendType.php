@@ -25,6 +25,7 @@ class CarrierFrontendType extends AbstractType
 				'Grua' => 'Grua',
 				),
   				'empty_data'  => null,
+        		'empty_value' => '     ',
         		'required' => true,
         		'label'    => 'Escoger vehiculo'
         ))

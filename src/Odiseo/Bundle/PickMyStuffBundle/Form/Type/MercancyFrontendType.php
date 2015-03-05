@@ -21,6 +21,7 @@ class MercancyFrontendType extends AbstractType
 				),
   				'empty_data'  => null,
         		'required' => true,
+        		'empty_value' => '     ',
         		'label'    => 'Tipo de Mercancia'
         ))
         ->add('length', 'text', array(

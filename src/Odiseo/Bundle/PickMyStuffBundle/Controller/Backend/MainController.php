@@ -43,16 +43,19 @@ class MainController extends Controller
     		
     	$smsSender = $this->get('pickmystuff.sms.sender');
     	$noticeMessage = 'Sms enviado correctamente al transportista '.$carrierName;
+    	$textMessage = $request->get('smsText');
+    	$response = array('status' => "success");
     	try {
-    		$smsSender->sendTextMessageToNumber('+'.$carrierPhone, "TEST MESSAGE!!");
+    		$smsSender->sendTextMessageToNumber('+'.$carrierPhone, $textMessage);
 		} catch (\Services_Twilio_RestException $e) {
+					$response['status'] = "error";
     				$noticeMessage = $e->getMessage();
 		}
-    	
-    	$this->get('session')->getFlashBag()->add('notice', $noticeMessage);
-    	//$response = array('status' => 'success');
-    	//return new JsonResponse($response);
-    	return $this->redirect($this->generateUrl('odiseo_pickmystuff_backend_carrier_index'));
+
+		//array_push($response, $noticeMessage);
+    	//$this->get('session')->getFlashBag()->add('notice', $noticeMessage);
+    	return new JsonResponse($response);
+    	//return $this->redirect($this->generateUrl('odiseo_pickmystuff_backend_carrier_index'));
     }
     public function sendSmsAllAction(Request $request)
     {

@@ -45,18 +45,18 @@
 							<ul class="nav navbar-nav navbar-left">
 	      					  <li><a class="facebook" href="#"><img class="img-responsive" src="{{ asset('bundles/odiseopickmystuff/images/facebook-icon.png') }}"></a></li>
 	      					  <li><a class="twitter" href="#"><img class="img-responsive" src="{{ asset('bundles/odiseopickmystuff/images/twitter-icon.png') }}"></a></li>
-							</ul>   
+							</ul>
 							<ul class="nav navbar-nav navbar-right">
-							{% set currentPath = path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params'))  %}
-	      					  <li class="home{%  if currentPath == 'odiseo_pick_my_stuff_frontend_home' %} active{% else %} {{ currentPath }}{% endif %}"><a href="{{ path('odiseo_pick_my_stuff_frontend_home') }}">Inicio</a></li>
+							{% set currentPath = app.request.attributes.get('_route') %}
+	      					  <li class="home{%  if currentPath == 'odiseo_pick_my_stuff_frontend_home' %} active{% else %}''{% endif %}"><a href="{{ path('odiseo_pick_my_stuff_frontend_home') }}">Inicio</a></li>
 	      					  <li><span>::</span></li>
-	      					  <li class="about{% if(currentPath == 'odiseo_pick_my_stuff_frontend_home') %} active{% else %} {{ currentPath }}{% endif %}"><a href="{{ path('odiseo_pick_my_stuff_frontend_aboutus') }}">Quiénes Somos</a></li>
+	      					  <li class="about{% if(currentPath == 'odiseo_pick_my_stuff_frontend_aboutus') %} active{% else %}''{% endif %}"><a href="{{ path('odiseo_pick_my_stuff_frontend_aboutus') }}">Quiénes Somos</a></li>
 	      					  <li><span>::</span></li>
-	      					  <li class="services{% if(currentPath == 'odiseo_pick_my_stuff_frontend_home') %} active{% else %} {{ currentPath }}{% endif %}"><a href="{{ path('odiseo_pick_my_stuff_frontend_services') }}">Servicios</a></li>
+	      					  <li class="services{% if(currentPath == 'odiseo_pick_my_stuff_frontend_services') %} active{% else %}''{% endif %}"><a href="{{ path('odiseo_pick_my_stuff_frontend_services') }}">Servicios</a></li>
 	      					  <li><span>::</span></li>
-	      					  <li class="contactus{% if(currentPath == 'odiseo_pick_my_stuff_frontend_home') %} active{% else %} {{ currentPath }}{% endif %}"><a href="{{ path('odiseo_pick_my_stuff_frontend_contact') }}">Contéctanos</a></li>
+	      					  <li class="contactus{% if(currentPath == 'odiseo_pick_my_stuff_frontend_contact') %} active{% else %}''{% endif %}"><a href="{{ path('odiseo_pick_my_stuff_frontend_contact') }}">Contéctanos</a></li>
 	      					  <li><span>::</span></li>
-	      					  <li class="faq{% if(currentPath == 'odiseo_pick_my_stuff_frontend_home') %} active{% else %} {{ currentPath }}{% endif %}"><a href="{{ path('odiseo_pick_my_stuff_frontend_faq') }}">FAQS</a></li>
+	      					  <li class="faq{% if(currentPath == 'odiseo_pick_my_stuff_frontend_faq') %} active{% else %}''{% endif %}"><a href="{{ path('odiseo_pick_my_stuff_frontend_faq') }}">FAQS</a></li>
 							</ul>      					  
 		    		</div>
 		    	</nav> 

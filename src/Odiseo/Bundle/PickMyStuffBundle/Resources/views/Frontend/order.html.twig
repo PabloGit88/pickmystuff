@@ -26,65 +26,68 @@
 	 	<p class="sended"><i class="glyphicon glyphicon-ok"></i> {{ flashMessage }}</p>
 		{% endfor %}
 		<div class="row">
-			<div class="col-xs-6">
-			 	<div class="row form-group">
-				    <div class="col-xs-3">
+			<div class="col-xs-6 firstColumn">
+			 	<div class="row form-group fullname">
+				    <div class="col-sm-3 col-xs-5">
 				        {{ form_label(form.client.fullName) }}
 				    </div>
-				    <div class="col-xs-9">
+				    <div class="col-sm-9 col-xs-7">
 				        {{ form_widget(form.client.fullName, {'attr': {'class': 'form-control'}}) }}
 				    </div>
 			    </div>
 			    {#}{#}
-				<div class="row form-group">
-				    <div class="col-xs-3">
+				<div class="row form-group phone">
+				    <div class="col-sm-3 col-xs-5">
 						{{ form_label(form.client.phone) }}
 				    </div>
-				    <div class="col-xs-9">
+				    <div class="col-sm-9 col-xs-7">
 				        {{ form_widget(form.client.phone, {'attr': {'class': 'form-control'}}) }}
 				    </div>
 				</div>
-				<div class="row form-group">
-				    <div class="col-xs-3">
+				<div class="row form-group email">
+				    <div class="col-sm-3 col-xs-5">
 				        {{ form_label(form.client.email) }}
 				    </div>
-				    <div class="col-xs-9">
+				    <div class="col-sm-9 col-xs-7">
 				        {{ form_widget(form.client.email, {'attr': {'class': 'form-control'}}) }}
 				    </div>
 				</div>
-				<div class="row form-group">
-				    <div class="col-xs-3">
+				<div class="row form-group sourceAdress">
+				    <div class="col-sm-3 col-xs-5">
 				        {{ form_label(form.sourceAddress) }}
 				    </div>
-				    <div class="col-md-9 col-sm-9">
+				    <div class="col-sm-9 col-xs-7">
 				        {{ form_widget(form.sourceAddress.contactName, {'attr': {'class': 'form-control'}}) }}
 				    </div>
 				</div>
-				<div class="row form-group">
-				    <div class="col-xs-3">
+				<div class="row form-group street">
+				    <div class="col-sm-3 col-xs-5">
 				    </div>
-				    <div class="col-xs-9">
+				    <div class="col-sm-9 col-xs-7">
 					    {{ form_widget(form.sourceAddress.street, {'attr': {'class': 'form-control'}}) }}
 				    </div>
 				</div>
 				<div class="row form-group">
-				    <div class="col-xs-3">
+				    <div class="col-sm-3 col-xs-5">
 			       		{{ form_label(form.destinationAddress) }}
 				    </div>
-				    <div class="col-xs-9">
+				    <div class="col-sm-9 col-xs-7 destinationName">
 			       		{{ form_widget(form.destinationAddress.contactName, {'attr': {'class': 'form-control'}}) }}
 				    </div>
 				</div>
 				<div class="row form-group">
-				    <div class="col-xs-3">
+				    <div class="col-sm-3 col-xs-5">
 				    </div>
-				    <div class="col-xs-9">
+				    <div class="col-sm-9 col-xs-7">
 				        {{ form_widget(form.destinationAddress.street, {'attr': {'class': 'form-control'}}) }}
 				    </div>
 				</div>
 		    </div>
 				    
-			<div class="col-xs-6">
+			<div class="col-xs-1">
+		    </div>
+				    
+			<div class="col-xs-5 secondColumn">
 	 			<div class="row vehicleType">
 				    <div class="col-xs-12 form-group">
 						{{ form_label(form.vehicleType) }}
@@ -93,11 +96,11 @@
 				</div>
 	 			<div class="row mercancyType">
 				    <div class="col-xs-12 form-group">
-						{{ form_label(form.vehicleType) }}
+						{{ form_label(form.mercancy.type) }}
 		       			{{ form_widget(form.mercancy.type, {'attr': {'class': 'form-control'}}) }}
 				    </div>
 				</div>
-			 	<div class="row image"> 	
+			 	<div class="row imageFile"> 	
 				    <div class="col-xs-12 form-group">
 				        {{ form_label(form.mercancy.imageFile) }}
 				        {{ form_widget(form.mercancy.imageFile, {'attr': {'class': 'form-control'}}) }}
@@ -112,11 +115,13 @@
 			 	
 			 	<div class="row adds">
 					{#  botton add order #}
-				    <div class="col-xs-6 addOrder">
+				    <div class="col-md-3 col-sm-hidden col-xs-hidden">
+				    </div> 	
+				    <div class="col-md-5 col-xs-7 addOrder">
 				        {{ form_widget(form.Add, {'attr': {'class': 'btn btn-default'}}) }}
 				    </div> 	
 					{# botton finalizar#}
-				    <div class="col-xs-6 finalizar">
+				    <div class="col-md-4 col-xs-5 finalizar">
 				        {{ form_widget(form.Finalizar, {'attr': {'class': 'btn btn-default'}}) }}
 				    </div> 
 			 	</div>

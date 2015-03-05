@@ -83,13 +83,18 @@ header ul.navbar-right{
 	font-family: "Trebuchet MS", Helvetica, sans-serif;
 	text-transform: uppercase;
 }
-.navbar-default .navbar-right > li > a:visited { 
-    background-color: yellow;
+.navbar-nav > li > a {
+	line-height: 15px;
 }
 .navbar-default .navbar-nav > li > span {
 	display: block;
 	padding-bottom: 15px;
 	padding-top: 9px;
+}
+.navbar-default .navbar-nav li.active a {
+
+	background-color: #45c2c5;
+	border-radius: 25px;
 }
 footer {
 	position: fixed;
@@ -140,28 +145,35 @@ footer {
 	margin-top:3%;
 }
 /**/
+#content.order{
+	overflow-y: auto;
+	max-height:82%;
+}
 #content .home form{
 	font-size: 18px;
 }
 #content .home form input{
 	height:30px;
 	border-color:#45c2c5;
+	text-align: center;
+	border-radius: 0px;
 }
-
+#content .container.home .contentForm .imageFile input{
+}
 #content .home form select{
 	height:30px;
 	border-color:#45c2c5;
 }
-#content.order{
-	overflow-y: auto;
-	max-height:79%;
+#content .container.home{
+	width: 970px;
 }
 #content .container.home .firstContent{
 	margin-top:2%;
 }
 
 #content .container.home .contentForm{
-	background-color: #ffffff;
+	background-color: #ffffff;	
+	margin-bottom: 5%;
 	padding: 20px 30px 20px 30px;
 	border-radius: 10px;
 	margin-top: 1%;
@@ -173,12 +185,16 @@ footer {
 }
 #content .container.home .contentForm img.orderImage{
 	position: absolute;
-	height: 47%;
+	height: 43%;
 	top: 0;
 	right: 17%;
 }
 #content .container.home .contentForm span.detalleOrden{
 	font-size:14px;
+	font-weight:bold;
+	color:#6e6e6e;
+	display: block;
+	margin-bottom: 20px;
 }
 #content .container.home .firstContent p.rightText{
 	float:right;
@@ -186,33 +202,50 @@ footer {
 	color:#45c2c5;
 	padding-top: 5%;
 }
-
+#content .container.home .contentForm .secondColumn{
+	margin-top:-3%;
+}
+#content .container.home .contentForm .addInfo a{
+	font-size: 12px;
+}
+#content .container.home .contentForm .adds{
+	margin-top:12%;
+}
+#content .container.home .contentForm .addOrder button{
+	background-color: #3eb4b8;
+	color: #fff;
+	background-image: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0.2) 51%);
+	border-radius: 15px;
+	width: 132px;
+}
+#content .container.home .contentForm .finalizar button{
+	background-color: #5BCE0B;
+	color: #000;
+	font-weight: bold;
+	background-image: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 54%, rgba(255,255,255,0.3) 55%);
+	border-radius: 15px;
+	width: 111px;
+}
 #content .home form h2{
 	text-align:center;
 	font-size: 28px;
 }
-#content form .phoneMail{
-	margin-top: 1%;
-}
-#content .home form .inline input{
-	display:inline;
-}
 #content .home form .phone label,#content .home form .email label{
 	margin: 0px;
 }
-#content .home .sended,.page-header .sended {
+.page-header .sended {
 	text-align:center;
 	color: rgb(31, 107, 7);
 	font-size:18px;
 }
-
+#content .home .sended{
+	color: rgb(31, 107, 7);
+	font-size:18px;
+}
 #content .home .sended .glyphicon, #content .costumerForm .sended .glyphicon,.page-header .sended .glyphicon{
 	padding-right: 10px;
 }
 
-#content form .finalizar{
-	margin-top: 1%;
-}
 /*faq*/
 
 #content .container.faq .questions{
@@ -240,7 +273,7 @@ footer {
 	margin-bottom: 3%;
 }
 #content.faq{
-	max-height: 79%;
+	max-height: 82%;
 	overflow-y: auto;
 }
 #content .container.faq .firstContent{
@@ -315,7 +348,7 @@ footer {
 /**/
 /* services/**/
 #content.services{
-	max-height: 79%;
+	max-height: 82%;
 	overflow-y: auto;
 }
 #content .container.services {
@@ -338,7 +371,7 @@ footer {
 	float:right;
 	color:#ffffff;
 	font-size:30px;
-	padding-top: 3%;
+	padding-left: 8%;
 }
 #content .container.services .boxContent .titleService{
 	color:#45c2c5;
@@ -516,11 +549,12 @@ footer {
 	.navbar .navbar-collapse {
 		position: absolute;
 		right: 0;
-		background-color: #1edddf;
+		background-color: #636363;
 		z-index: 999999;
 	}
 	.navbar-nav {
-		margin: 0 -15px;
+		float:none !important;
+		margin:0;
 	}
 	.nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
 		background-color: #31689B;
@@ -531,23 +565,123 @@ footer {
 	.navbar-toggle {
 		margin-top: 15px;
 	}
-	#content .contentForm{	
-		overflow-y: auto !important;
-		overflow-x: hidden;
-		height: 75%;
+	.navbar-default .navbar-nav > li > span {
+		display: none;
 	}
-	#content .contentForm .addOrder{
-		float:left;
-		padding:0;
-	}
-	#content .contentForm .addInfo{
-		float:right;
-	}
-	.contact .costumerForm {
+	#content .container.contact{
 		width: 90%;
 	}	
 	.twitter{
 		padding-left:10px !important;
 	}
-	
+	#content .container.aboutus .boxContent .aboutContent .conectamos {
+		margin-left: 0px;
+		width: 100%;
+	}
+	#content .container.aboutus .boxContent {
+		max-height: 100%;
+		padding: 9px 14px 6px 16px;
+	}
+	#content .container.aboutus .boxContent .aboutContent h2 {
+		font-size: 17px;
+	}
+	#content .container.services .servicesContent {
+		background-image: none;
+	}
+	#content .container.services .firstContent p.rightText {
+		font-size: 12px;
+	}
+	#content .container.services .boxContent {
+		padding: 20px 30px 20px 30px;
+	}
+	#content .container.services .secondBoxContent {
+		padding: 20px 19px 20px 3px;
+		font-size:15px;
+	}
+	#content .container.services .secondBoxContent ul.flota ul.caracteristicas {
+		padding-left:10px;
+	}
+	#content .container.faq .firstContent p.rightText {
+		font-size: 16px;
+	}
+	#content .container.faq .faqContent {
+		padding: 20px 30px 20px 31px;
+	}
+	#content .container.faq .faqContent .resolvemos {
+		width: 100%;
+	}
+	#content .container.home {
+		width: 100% !important;
+	}
+	#content .container.home .contentForm .orderDivImage {
+		height: 129px;
+	}
+	#content .container.home .contentForm img.orderImage {
+		height: 21% !important;
+	}
+	#content .container.home .contentForm input {
+		margin-top: 5px;
+	}
+	#content .container.home .contentForm label {
+		font-size: 11px;
+	}
+	#content .home form input {
+		height: 19px;
+	}
+	#content .home form select {
+		height: 19px;
+	}
+	.container.home .contentForm .addInfo a {
+		font-size: 8px !important;
+	}
+	#content .container.home .contentForm .addOrder button {
+		width: 75px;
+		font-size: 8px;
+	}
+	#content .container.home .contentForm .finalizar button {
+		width: 58px;
+		font-size: 8px;
+	}
+	.contact .costumerForm{
+		padding: 20px 15px 20px 16px;
+	}
+	#content .home .sended {
+		color: rgb(31, 107, 7);
+		font-size: 12px;
+	}
 }
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+{
+	header ul.navbar-right {
+	
+		font-size: 15px;
+	}	
+	.navbar-default .navbar-nav > li > span {
+		padding-top: 14px;
+	}
+	header .navbar-nav>li {
+		display: table;
+		padding: 5px;
+	}	
+	#content .container.aboutus .boxContent .aboutContent {
+		font-size: 13px;
+	}
+	#content .container.aboutus .boxContent .aboutContent h3 {
+		font-size: 16px;
+	}
+	#content .container.aboutus .boxContent .aboutContent h2 {
+		font-size: 20px;
+	}
+	#content .container.home {
+		width: 750px;
+	}
+	#content .container.home .contentForm img.orderImage {
+		position: absolute;
+		height: 38%;
+		top: 4%;
+		right: 9%;
+	}
+}
+
+
