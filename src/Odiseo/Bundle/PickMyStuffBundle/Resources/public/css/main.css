@@ -621,6 +621,7 @@ footer {
 	}
 	#content .container.home .contentForm input {
 		margin-top: 5px;
+		font-size: 10px;
 	}
 	#content .container.home .contentForm label {
 		font-size: 11px;
