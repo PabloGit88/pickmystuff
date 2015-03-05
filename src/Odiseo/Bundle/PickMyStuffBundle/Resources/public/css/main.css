@@ -62,11 +62,6 @@ header .navbar-nav>li {
 	display: table;
 	padding: 9px;
 }
-
-header .navbar-default .navbar-nav>.active>a, header .navbar-default .navbar-nav>.active>a:hover,
-	header .navbar-default .navbar-nav>.active>a:focus {
-	background: none;
-}
 header .navbar-nav .logo img{
 	padding: 10px 0 0 0;
 }
@@ -96,6 +91,11 @@ header ul.navbar-right{
 	background-color: #45c2c5;
 	border-radius: 25px;
 }
+.navbar-default .navbar-nav li a:hover {
+
+	background-color: #45c2c5;
+	border-radius: 25px;
+}
 footer {
 	position: fixed;
 	bottom: 0;
@@ -113,11 +113,7 @@ footer {
 #content.home{
 	background: url(../images/home.jpg) no-repeat;
 }
-/*#content.home p.transportamos{
-	font-size: 60px;
-	color: #ffffff;
-	text-align: center;
-}*/
+
 #content.home .contenidoInicial{
 	margin-top: 4%;
 }
@@ -207,6 +203,7 @@ footer {
 }
 #content .container.home .contentForm .addInfo a{
 	font-size: 12px;
+	cursor: pointer;
 }
 #content .container.home .contentForm .adds{
 	margin-top:12%;
