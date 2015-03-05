@@ -32,6 +32,7 @@ class MainController extends Controller
             'notComplete' => $notComplete,
         ));
     }
+    
     public function sendSmsAction(Request $request)
     {
     	$idCarrier = $request->get('id');
@@ -43,7 +44,8 @@ class MainController extends Controller
     		
     	$smsSender = $this->get('pickmystuff.sms.sender');
     	$noticeMessage = 'Sms enviado correctamente al transportista '.$carrierName;
-    	$textMessage = $request->get('smsText');
+    	$textMessage = $request->request->get('smsText');
+
     	$response = array('status' => 'success');
     	try {
     		$smsSender->sendTextMessageToNumber('+'.$carrierPhone, $textMessage);
@@ -52,7 +54,7 @@ class MainController extends Controller
     				$noticeMessage = $e->getMessage();
 		}
 
-		//$response['noticeMessage'] =  $noticeMessage;
+		$response['noticeMessage'] =  $noticeMessage;
     	//$this->get('session')->getFlashBag()->add('notice', $noticeMessage);
     	return new JsonResponse($response);
     	//return $this->redirect($this->generateUrl('odiseo_pickmystuff_backend_carrier_index'));

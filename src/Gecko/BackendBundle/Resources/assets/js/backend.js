@@ -35,7 +35,8 @@
 	    			dataSms = textSms;
 	    		}
 	    		
-	    		var form = $("form.inputSms").get(0);
+	    		//Tenes que usar this para que traer el objeto que disparó el evento, o en realidad sobre el cual fue disparado, o sea, el formulario dado de submit
+	    		var form = $(this).get(0);
 				var formObj = $(form);
 				var formURL = formObj.attr("action");
 				
@@ -44,7 +45,6 @@
 					type: "POST",
 					url: formURL,
 					data: {smsText: dataSms},
-					contentType: false,
 					cache: false,
 					error: function(jqXHR, textStatus, errorThrown)
 			        {
