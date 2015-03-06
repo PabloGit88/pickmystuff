@@ -29,11 +29,28 @@
 	    		sendingInput = true;
 	    		var dataSms = null;
 	    		
-	    		var textSms = prompt("Ingresa el texto del sms", "Texto inicial");
-	
+	    		/*bootbox.prompt({
+	    			  title: "Mensaje de SMS a enviar:",
+	    			  value: "Mensaje",
+	    			  callback: function(result) {
+	    			    if (result === null) {                           
+	    			        Example.show("Prompt dismissed");     
+	    			    } else {                           
+	    			        Example.show("Prompt dismissed");     
+	    			    }
+	    			  }
+	    		});*/
+	    		bootbox.prompt("What is your name?", function(result) {                
+	    			  if (result === null) {                                             
+	    			    Example.show("Prompt dismissed");                              
+	    			  } else {
+	    			    Example.show("Hi <b>"+result+"</b>");                          
+	    			  }
+	    			});
+	    		/*var textSms = prompt("Ingresa el texto del sms", "Texto inicial");
 	    		if (textSms != null) {
 	    			dataSms = textSms;
-	    		}
+	    		}*/
 	    		
 	    		//Tenes que usar this para que traer el objeto que disparó el evento, o en realidad sobre el cual fue disparado, o sea, el formulario dado de submit
 	    		var form = $(this).get(0);

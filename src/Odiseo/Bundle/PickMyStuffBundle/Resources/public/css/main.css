@@ -86,16 +86,16 @@ header ul.navbar-right{
 	padding-bottom: 15px;
 	padding-top: 9px;
 }
-.navbar-default .navbar-nav li.active a {
-	background-color: #45c2c5;
+.navbar-right li.active a {
+	background-color: #45c2c5 !important;
 	border-radius: 25px;
 }
-.navbar-default .navbar-nav li a:hover {
-	background-color: #45c2c5;
+.navbar-right li a:hover {
+	background-color: #45c2c5 !important;
 	border-radius: 25px;
 }
-.navbar-default .navbar-nav > .active > a:hover {
-	background-color: #45c2c5;
+.navbar-right > .active > a:hover {
+	background-color: #45c2c5 !important;
 	border-radius: 25px;
 }
 footer {
