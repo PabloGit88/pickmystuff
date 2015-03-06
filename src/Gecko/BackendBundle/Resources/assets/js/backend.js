@@ -29,24 +29,17 @@
 	    		sendingInput = true;
 	    		var dataSms = null;
 	    		
-	    		/*bootbox.prompt({
+	    		bootbox.prompt({
 	    			  title: "Mensaje de SMS a enviar:",
 	    			  value: "Mensaje",
 	    			  callback: function(result) {
-	    			    if (result === null) {                           
-	    			        Example.show("Prompt dismissed");     
-	    			    } else {                           
-	    			        Example.show("Prompt dismissed");     
+	    			    if (result === null) {
+	    			    	smsText = '';
+	    			    } else {
+	    			    	smsText = textSms;
 	    			    }
 	    			  }
-	    		});*/
-	    		bootbox.prompt("What is your name?", function(result) {                
-	    			  if (result === null) {                                             
-	    			    Example.show("Prompt dismissed");                              
-	    			  } else {
-	    			    Example.show("Hi <b>"+result+"</b>");                          
-	    			  }
-	    			});
+	    		});
 	    		/*var textSms = prompt("Ingresa el texto del sms", "Texto inicial");
 	    		if (textSms != null) {
 	    			dataSms = textSms;
