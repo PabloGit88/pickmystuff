@@ -44,7 +44,6 @@ body {
 }
 header{
 	background-color: #636363;
-	height: 61px;
 }
 header .navbar-default {
 	background: none;
@@ -98,6 +97,9 @@ header ul.navbar-right{
 	background-color: #45c2c5 !important;
 	border-radius: 25px;
 }
+header .navbar-default {
+    margin:0;
+}
 footer {
 	position: fixed;
 	bottom: 0;
@@ -146,6 +148,7 @@ footer {
 #content.order{
 	overflow-y: auto;
 	max-height:82%;
+	width: 100%;
 }
 #content .home form{
 	font-size: 18px;
@@ -274,6 +277,7 @@ footer {
 #content.faq{
 	max-height: 82%;
 	overflow-y: auto;
+	width: 100%;
 }
 #content .container.faq .firstContent{
 	margin-top:5%;
@@ -349,6 +353,7 @@ footer {
 #content.services{
 	max-height: 82%;
 	overflow-y: auto;
+	width: 100%;
 }
 #content .container.services {
 	font-size:20px;
