@@ -66,6 +66,8 @@ class MainController extends Controller
 
     	$smsSender = $this->get('pickmystuff.sms.sender');
     	$noticeMessage = 'Sms enviado correctamente a todos los tranportistas ';
+    	$textMessage = $request->request->get('smsText');
+    	$response = array('status' => 'success');
     	foreach ($carriers as $carrierData)
     	{
     		$carrierPhone = $carrierData->getPhone();
@@ -80,6 +82,8 @@ class MainController extends Controller
     	if(count($errorCarriers) == count($carriers))
     	{
     		$noticeMessage = 'No se mando ningun mensaje. Chequea los numeros de telefono';
+			$response['status'] = "error";
+			
     	}else if(count($errorCarriers) > 0)
     	{
     		$noticeMessage = $noticeMessage.' excepto el/los transportistas ';
@@ -90,9 +94,9 @@ class MainController extends Controller
 	    	}
 	    	$noticeMessage = $noticeMessage.'. Número de telefono inválidos.';
     	}
-    	
-    	$this->get('session')->getFlashBag()->add('notice', $noticeMessage);
-    	
-    	return $this->redirect($this->generateUrl('odiseo_pickmystuff_backend_carrier_index'));
+		$response['noticeMessage'] =  $noticeMessage;
+    	//$this->get('session')->getFlashBag()->add('notice', $noticeMessage);
+    	return new JsonResponse($response);
+    	//return $this->redirect($this->generateUrl('odiseo_pickmystuff_backend_carrier_index'));
     }
 }

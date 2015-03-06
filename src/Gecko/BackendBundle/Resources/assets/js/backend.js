@@ -26,52 +26,45 @@
 
     		if(!sendingInput)
 	    	{
-	    		sendingInput = true;
 	    		var dataSms = null;
-	    		
-	    		bootbox.prompt({
-	    			  title: "Mensaje de SMS a enviar:",
-	    			  value: "Mensaje",
-	    			  callback: function(result) {
-	    			    if (result === null) {
-	    			    	smsText = '';
-	    			    } else {
-	    			    	smsText = textSms;
-	    			    }
-	    			  }
-	    		});
-	    		/*var textSms = prompt("Ingresa el texto del sms", "Texto inicial");
-	    		if (textSms != null) {
-	    			dataSms = textSms;
-	    		}*/
 	    		
 	    		//Tenes que usar this para que traer el objeto que disparó el evento, o en realidad sobre el cual fue disparado, o sea, el formulario dado de submit
 	    		var form = $(this).get(0);
 				var formObj = $(form);
 				var formURL = formObj.attr("action");
 				
-				
-				$.ajax({
-					type: "POST",
-					url: formURL,
-					data: {smsText: dataSms},
-					cache: false,
-					error: function(jqXHR, textStatus, errorThrown)
-			        {
-						console.log(data);
-			        	alert("No se pudo enviar correctamente");
-			        },
-			        success: function(data)
-			        {
-			        	sendingInput = false;
-			        	
-			        	console.log(data.status);
-			        	console.log(data.noticeMessage);
-			            $(".sended").append(data.noticeMessage);
-				           
-			        }
-			        	
-		        });	  
+	    		bootbox.prompt({
+	    			  title: "Mensaje de SMS a enviar:",
+	    			  value: "Mensaje",
+	    			  callback: function(result) {
+	    			    if (result === null) {
+	    			    	
+	    			    } else {
+	    			    	dataSms = result;    					
+	    			    	sendingInput = true;
+	    			    	
+	    					$.ajax({
+	    						type: "POST",
+	    						url: formURL,
+	    						data: {smsText: dataSms},
+	    						cache: false,
+	    						error: function(jqXHR, textStatus, errorThrown)
+	    				        {
+	    				        	alert("No se pudo enviar correctamente");
+	    				        },
+	    				        complete: function(){
+	    				        	sendingInput = false;
+	    				        },
+	    				        success: function(data)
+	    				        {
+	    				            $(".sended").html(data.noticeMessage);
+	    					           
+	    				        }
+	    				        	
+	    			        });		    			    	
+	    			    }
+	    			  }//end callback
+	    		});
 	    	}//end if sending
     	});  
 
