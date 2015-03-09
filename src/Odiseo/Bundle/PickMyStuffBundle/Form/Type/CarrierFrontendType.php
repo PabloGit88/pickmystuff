@@ -14,15 +14,17 @@ class CarrierFrontendType extends AbstractType
 	{
         $builder
         ->add('vehicleType', 'choice', array('choices' => array(
-				'Pickup' => 'Pickup',
-				'Minivan' => 'Minivan', 
-				'Van' => 'Van', 
-				'Canib 15' => 'Canib 15',
-				'Canib 20' => 'Canib 20',
-				'Canib 24' => 'Canib 24',
-				'Refrigerado' => 'Refrigerado',
-				'Plataforma' => 'Plataforma',
+				'Autos' => 'Autos',
+				'PickUps' => 'PickUps', 
+				'Minivans secas' => 'Minivans secas', 
+				'Minivans refrigeradas' => 'Minivans refrigeradas',
+				'Vans' => 'Vans',
+				'StepVans' => 'StepVans',
+				'Camiones cerrados' => 'Camiones cerrados',
+				'Remolques' => 'Remolques',
 				'Grua' => 'Grua',
+				'Vagones' => 'Vagones',
+				'Tanques de agua' => 'Tanques de agua'
 				),
   				'empty_data'  => null,
         		'empty_value' => '     ',

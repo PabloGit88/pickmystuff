@@ -12,6 +12,9 @@ body {
 	overflow-y:hidden;
 	position: fixed;
 }
+a {
+   outline: 0 !important;
+}
 .navbar-header .navbar-brand{
 	padding: 6px 9px;
 }
@@ -106,8 +109,47 @@ footer {
 	width: 100%;
 	left: 0;
 	height: 12%;
-	background: url(../images/footer.jpg) #231f20 center center no-repeat;
+	background-color: #231f20;
 	background-size: contain;
+}
+footer .row{
+	padding-top:2%;	
+}
+
+footer .imageTel .tel{
+	float: right;
+}
+footer .imageTel{
+	padding-left: 16%;
+}
+footer .imageTel .tel img{
+	float: left;
+	padding-right: 5px;
+}
+footer .imageTel .tel span{
+	float: left;
+	color: white;
+	font-size: 20px;
+	padding-top: 7px;
+	font-weight:bold;
+}
+footer .imageTel .tel span a{
+	color: white !important;
+}
+footer a{
+	text-decoration:none !important;   
+	cursor:pointer !important;
+}
+footer .imageEmail .email img{
+	float: left;
+	padding-right: 5px;
+}
+footer .imageEmail .email a{
+	float: left;
+	color: white;
+	font-size: 20px;
+	padding-top: 7px;
+	font-weight:bold;
 }
 
 #content{
@@ -625,8 +667,8 @@ footer {
 	}
 	#content .container.home .contentForm input {
 		margin-top: 5px;
-		font-size: 10px;
-		height: 19px;
+		font-size: 8px;
+		height: 24px;
 	}
 	#content .container.home .contentForm select {
 		font-size: 10px;
@@ -653,6 +695,16 @@ footer {
 	#content .home .sended {
 		color: rgb(31, 107, 7);
 		font-size: 12px;
+	}
+	footer .imageTel .tel span {
+		font-size: 8px !important;
+		padding-top: 14px;
+	}
+	footer .imageEmail .email a {
+		font-size: 8px !important;
+		padding-top: 14px;
+	}footer .imageTel {
+		padding-left: 3% !important;
 	}
 }
 /* Medium Devices, Desktops */
@@ -686,6 +738,12 @@ footer {
 		height: 38%;
 		top: 4%;
 		right: 9%;
+	}
+	footer .imageTel .tel span {
+		font-size: 16px;
+	}
+	footer .imageEmail .email a {
+		font-size: 16px;
 	}
 }
 
