@@ -22,11 +22,11 @@ class OrderType extends AbstractType
         ))
         ->add('collectedTime', 'text', array(
         		'required' => false,
-        		'label'    => 'Horario deseado de recogido'
+        		'label'    => 'Horario recogido'
         ))
         ->add('deliveryTime', 'text', array(
         		'required' => false,
-        		'label'    => 'Horario deseado de entrega'
+        		'label'    => 'Horario entrega'
         ))
         ->add('isComplete', 'checkbox', array(
         		'required' => false,

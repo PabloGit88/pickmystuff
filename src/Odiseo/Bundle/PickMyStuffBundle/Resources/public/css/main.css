@@ -665,25 +665,40 @@ footer .imageEmail .email a{
 	#content .container.home .contentForm img.orderImage {
 		height: 21% !important;
 	}
+	#content .container.home .contentForm .mercancyType {
+		margin-top: 9px
+	}
 	#content .container.home .contentForm input {
 		margin-top: 5px;
 		font-size: 8px;
-		height: 24px;
+		height: 20px;
 	}
 	#content .container.home .contentForm select {
 		font-size: 10px;
 		height: 19px;
 		padding-bottom: 1px;
 	}
+	#content .container.home .contentForm .form-group {
+		margin-bottom:8px !important;
+	}
+	#content .container.home .contentForm span.detalleOrden {
+		margin-bottom: 0px;
+	}
+	#content .container.home .contentForm .secondColumn {
+		margin-top: 0% !important;
+	}
 	#content .container.home .contentForm label {
-		font-size: 11px;
+		font-size: 9px;
 	}
 	.container.home .contentForm .addInfo a {
 		font-size: 8px !important;
 	}
-	#content .container.home .contentForm .addOrder button {
-		width: 75px;
+	#content .container.home .contentForm .addOrder button {		
+		width: 61px;
 		font-size: 8px;
+	}
+	#content .container.home .contentForm .addOrder .btn {		
+		padding: 6px 3px !important;
 	}
 	#content .container.home .contentForm .finalizar button {
 		width: 58px;
