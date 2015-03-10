@@ -200,9 +200,32 @@ footer .imageEmail .email a{
 	border-color:#45c2c5;
 	text-align: center;
 	border-radius: 0px;
+}/*
+#content .container.home .contentForm .imageFile .upload{
+
+	width: 100%;
+	height: 32px;
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	background-color: #FFF;
+	border: 1px solid #45c2c5;
+	border-radius: 0px;
+	cursor: pointer;
+
 }
-#content .container.home .contentForm .imageFile input{
-}
+#content .container.home .contentForm .imageFile .upload input{
+
+	height: 100%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 99;
+	font-size: 50px;
+	opacity: 0;
+
+}*/
+
 #content .home form select{
 	height:30px;
 	border-color:#45c2c5;
@@ -672,6 +695,10 @@ footer .imageEmail .email a{
 		margin-top: 5px;
 		font-size: 8px;
 		height: 20px;
+	}
+	#content .container.home .contentForm .imageFile input {
+		font-size: 6px;
+		padding: 3px 1px 1px 1px;
 	}
 	#content .container.home .contentForm select {
 		font-size: 10px;
