@@ -13,7 +13,7 @@ parameters:
 
     locale:            en
     secret:            ThisTokenIsNotSoSecretChangeIt
-    pickmystuff.contact.mail: 'pablo.damico88@gmail.com'
+    pickmystuff.contact.mail: 'pickmystuff@yahoo.com'
     
     twilio_account_sid: ACfbb1398bfe13fa7d2b1d47a53dd9546c
     twilio_auth_token: a58a7d41067383100185979c57d2c197
