@@ -62,7 +62,7 @@ header .navbar-nav {
 }
 header .navbar-nav>li {
 	display: table;
-	padding: 9px;
+ 	padding: 15px 9px 9px 9px;
 }
 header .navbar-nav .logo img{
 	padding: 10px 0 0 0;
@@ -72,7 +72,7 @@ header .navbar-right{
 	color: #ffffff !important;
 }
 header ul.navbar-right{
-	font-size: 20px;
+	font-size: 15px;
 	color: #ffffff !important;
 }
 .navbar-default .navbar-nav > li > a {
